@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dk-dark: #1D1C33;
+  --dk-amber: #F8BB15;
+  --dk-surface: #F7F6F2;
+  --dk-mid: #6B6A7E;
+  --dk-white: #FFFFFF;
+  --dk-deep: #141324;
+  --dk-border: rgba(29, 28, 51, 0.12);
+
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Syne', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--dk-surface);
+  color: var(--dk-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography utilities */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Section label — reusable */
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dk-mid);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::before {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: var(--dk-amber);
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Buttons */
+.btn-primary {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: var(--dk-dark);
+  color: var(--dk-amber);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-primary:hover {
+  background: #2d2c4a;
+}
+
+.btn-ghost {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--dk-mid);
+  text-decoration: none;
+  border-bottom: 1px solid var(--dk-border);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+  display: inline-block;
+}
+.btn-ghost:hover {
+  color: var(--dk-dark);
+}
+
+.btn-amber {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: var(--dk-amber);
+  color: var(--dk-dark);
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  display: inline-block;
+}
+.btn-amber:hover {
+  opacity: 0.9;
+}
+
+/* Form elements */
+.dk-input {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--dk-white);
+  padding: 0.85rem 1rem;
+  border-radius: 3px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.dk-input:focus {
+  border-color: var(--dk-amber);
+}
+.dk-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
