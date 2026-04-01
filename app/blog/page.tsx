@@ -43,22 +43,13 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
+                className="blog-card-link"
                 style={{
                   background: 'var(--dk-white)',
                   padding: '2rem 2rem 1.75rem',
                   textDecoration: 'none',
                   display: 'block',
-                  borderTop: '3px solid transparent',
-                  transition: 'border-color 0.2s',
                 }}
-                onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLElement).style.borderTopColor =
-                    'var(--dk-amber)')
-                }
-                onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLElement).style.borderTopColor =
-                    'transparent')
-                }
               >
                 <div
                   style={{

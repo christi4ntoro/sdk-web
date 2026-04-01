@@ -116,6 +116,14 @@ body {
   opacity: 0.9;
 }
 
+.blog-card-link {
+  border-top: 3px solid transparent;
+  transition: border-color 0.2s;
+}
+.blog-card-link:hover {
+  border-top-color: var(--dk-amber);
+}
+
 /* Form elements */
 .dk-input {
   font-family: var(--font-sans);

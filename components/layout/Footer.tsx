@@ -35,9 +35,9 @@ export function Footer() {
         }}
       >
         {[
-          { href: '/services', es: 'Servicios', en: 'Services' },
-          { href: '/about', es: 'Nosotros', en: 'About' },
-          { href: '/contact', es: 'Contacto', en: 'Contact' },
+          { href: '/services' as const, es: 'Servicios', en: 'Services' },
+          { href: '/about' as const, es: 'Nosotros', en: 'About' },
+          { href: '/contact' as const, es: 'Contacto', en: 'Contact' },
         ].map((item) => (
           <Link
             key={item.href}

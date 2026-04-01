@@ -43,10 +43,10 @@ export function Nav() {
         }}
       >
         {[
-          { href: '/services', es: 'Servicios', en: 'Services' },
-          { href: '/about', es: 'Nosotros', en: 'About' },
-          { href: '/blog', es: 'Blog', en: 'Blog' },
-          { href: '/contact', es: 'Contacto', en: 'Contact' },
+          { href: '/services' as const, es: 'Servicios', en: 'Services' },
+          { href: '/about' as const, es: 'Nosotros', en: 'About' },
+          { href: '/blog' as const, es: 'Blog', en: 'Blog' },
+          { href: '/contact' as const, es: 'Contacto', en: 'Contact' },
         ].map((item) => (
           <li key={item.href}>
             <Link

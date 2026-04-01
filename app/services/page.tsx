@@ -236,7 +236,7 @@ export default function ServicesPage() {
           >
             {t(
               'Cuéntenos el reto. Le diremos qué servicio tiene más sentido para su organización.',
-              'Tell us the challenge. We'll tell you which service makes the most sense for your organization.'
+              "Tell us the challenge. We'll tell you which service makes the most sense for your organization."
             )}
           </p>
           <Link href="/contact" className="btn-amber">

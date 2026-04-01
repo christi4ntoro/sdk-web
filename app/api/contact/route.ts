@@ -1,17 +1,31 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+let resend: Resend | null = null
+function getResend() {
+  const key = process.env.RESEND_API_KEY
+  if (!key) return null
+  if (!resend) resend = new Resend(key)
+  return resend
+}
 
 export async function POST(req: NextRequest) {
   try {
+    const client = getResend()
+    if (!client) {
+      return NextResponse.json(
+        { error: 'Email not configured' },
+        { status: 503 }
+      )
+    }
+
     const { name, company, email, service, message } = await req.json()
 
     if (!name || !email) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
-    await resend.emails.send({
+    await client.emails.send({
       from: 'Studio Deki <noreply@studiodeki.co>',
       to: ['info@studiodeki.co'],
       replyTo: email,
