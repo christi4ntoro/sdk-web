@@ -7,15 +7,12 @@ export function Statement() {
 
   return (
     <section
-      style={{
-        padding: '8rem 3rem',
-        maxWidth: '1100px',
-        margin: '0 auto',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1.1fr',
-        gap: '5rem',
-        alignItems: 'center',
+      style={{ 
+        padding: '8rem 3rem', 
+        maxWidth: '1100px', 
+        margin: '0 auto' 
       }}
+      className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-center"
     >
       {/* Left */}
       <div>

@@ -14,13 +14,11 @@ export function NumbersBand() {
   return (
     <section style={{ background: 'var(--dk-dark)', padding: '0' }}>
       <div
-        style={{
-          maxWidth: '1100px',
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '2px',
+        style={{ 
+          maxWidth: '1100px', 
+          margin: '0 auto' 
         }}
+        className="grid grid-cols-1 md:grid-cols-3 gap-px"
       >
         {numbers.map((n) => (
           <div
@@ -33,7 +31,7 @@ export function NumbersBand() {
             <div
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: '3.5rem',
+                fontSize: 'clamp(4rem, 5.5vw, 6rem)',
                 fontWeight: 400,
                 lineHeight: 1,
                 color: n.highlight ? 'var(--dk-dark)' : 'var(--dk-white)',

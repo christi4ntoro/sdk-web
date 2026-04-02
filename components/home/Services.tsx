@@ -37,11 +37,7 @@ export function Services() {
       </div>
 
       <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '2px',
-        }}
+        className="grid grid-cols-1 md:grid-cols-3 gap-px"
       >
         {services.map((s) => (
           <ServiceCard key={s.num} service={s} />
