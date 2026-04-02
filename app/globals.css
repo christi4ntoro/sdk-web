@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,8 +11,8 @@
   --dk-deep: #141324;
   --dk-border: rgba(29, 28, 51, 0.12);
 
-  --font-display: 'Instrument Serif', Georgia, serif;
-  --font-sans: 'Syne', system-ui, sans-serif;
+  --font-display: var(--font-instrument), Georgia, serif;
+  --font-sans: var(--font-syne), system-ui, sans-serif;
 }
 
 * {

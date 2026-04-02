@@ -1,26 +1,41 @@
 import type { Metadata } from 'next'
+import { Instrument_Serif, Syne } from 'next/font/google'
 import './globals.css'
 import { LangProvider } from '@/lib/lang-context'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
 
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic'],
+  variable: '--font-instrument',
+  display: 'swap',
+})
+
+const syne = Syne({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '800'],
+  variable: '--font-syne',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
-  title: 'Studio Deki — Experiencias de aprendizaje que funcionan',
+  title: 'Studio Deki — Learning experiences that work',
   description:
-    'Diseño instruccional experto y producción eLearning potenciada por IA. SCORM, xAPI, LMS. Colombia y Latinoamérica.',
+    'Expert instructional design and AI-powered eLearning production. SCORM, xAPI, LMS. Corporate training for organizations that take learning seriously.',
   metadataBase: new URL('https://studiodeki.co'),
   openGraph: {
     title: 'Studio Deki',
-    description: 'Experiencias de aprendizaje que funcionan.',
+    description: 'Learning experiences that work.',
     url: 'https://studiodeki.co',
     siteName: 'Studio Deki',
-    locale: 'es_CO',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Studio Deki',
-    description: 'Experiencias de aprendizaje que funcionan.',
+    description: 'Learning experiences that work.',
   },
   robots: {
     index: true,
@@ -34,15 +49,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="es" className={`${instrumentSerif.variable} ${syne.variable}`}>
       <body>
         <LangProvider>
           <Nav />
