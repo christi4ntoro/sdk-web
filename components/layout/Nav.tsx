@@ -1,70 +1,215 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
+import { useState, useEffect } from 'react'
 import type { ComponentProps } from 'react'
 import { useLang } from '@/lib/lang-context'
+import { useTheme } from '@/lib/theme-context'
 
 type LinkHref = ComponentProps<typeof Link>['href']
 
 const navLinks = [
-  { href: '/services', es: 'Servicios', en: 'Services' },
-  { href: '/insights', es: 'Perspectivas', en: 'Insights' },
-  { href: '/manifesto', es: 'Manifiesto', en: 'Manifesto' },
+  { href: '/services',  es: 'Servicios',    en: 'Services'  },
+  { href: '/insights',  es: 'Perspectivas', en: 'Insights'  },
+  { href: '/manifesto', es: 'Manifiesto',   en: 'Manifesto' },
 ] as const
 
 export function Nav() {
   const { t } = useLang()
+  const { theme } = useTheme()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  // Scroll detection
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
+  // Logo needs to be visible in both light and dark mode.
+  // If your SVG has hardcoded fill="#1D1C33" (navy):
+  //   light mode: navy on warm white = fine
+  //   dark mode:  navy on #141324    = invisible
+  // The filter below inverts it in dark mode.
+  // If your SVG uses fill="currentColor", remove the filter entirely.
+
+  const navBg = scrolled
+    ? 'var(--dk-surface)'
+    : 'var(--dk-surface)'
+  // When you want true transparency on hero, change unscrolled to 'transparent'
+  // For now both states use surface so the border-bottom transition reads cleanly.
 
   return (
-    <nav
-      style={{
-        position: 'sticky',
-        top: 0,
-        zIndex: 100,
-        backgroundColor: 'var(--dk-surface)',
-        borderBottom: '1px solid var(--dk-border)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: '1.25rem 3rem',
-      }}
-    >
-      {/* Logo */}
-      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-        <Image
-          src="/shared/deki-logo.svg"
-          alt="Studio Deki"
-          width={160}
-          height={34}
-          priority
-          style={{ height: '28px', width: 'auto' }}
-        />
-      </Link>
-
-      {/* Links */}
-      <ul
+    <>
+      <nav
         style={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 100,
+          backgroundColor: navBg,
+          borderBottom: scrolled
+            ? '1px solid var(--dk-border)'
+            : '1px solid transparent',
           display: 'flex',
           alignItems: 'center',
-          gap: '2rem',
-          listStyle: 'none',
-          margin: 0,
-          padding: 0,
+          justifyContent: 'space-between',
+          padding: '1.25rem 3rem',
+          transition: 'border-color 0.3s, background-color 0.3s',
         }}
       >
-        {navLinks.map((item) => (
-          <li key={item.href}>
+        {/* Logo */}
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'var(--dk-dark)' }}>
+          <svg
+            height="28"
+            viewBox="0 0 841 318"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="Studio Deki"
+            style={{ width: 'auto', transition: 'color 0.2s' }}
+          >
+            <path d="M399.816 164.594V144.611C399.816 135.572 396.699 127.906 390.477 121.672C384.232 115.455 376.588 112.317 367.527 112.317C358.455 112.317 350.738 115.455 344.371 121.672C337.999 127.906 334.816 135.572 334.816 144.611V164.594C334.816 168.006 336.644 169.683 340.327 169.683H394.305C397.971 169.683 399.816 168.006 399.816 164.594ZM436.771 248.311C436.771 267.289 430.044 283.561 416.599 297.161C403.149 310.767 386.782 317.567 367.527 317.567C348.26 317.567 331.838 310.839 318.227 297.378C304.633 283.922 297.838 267.561 297.838 248.311V144.611C297.838 125.361 304.633 108.989 318.227 95.5444C331.838 82.0999 348.26 75.3555 367.527 75.3555C386.782 75.3555 403.149 82.0999 416.599 95.5444C430.044 108.989 436.771 125.361 436.771 144.611V201.561C436.771 204.956 434.938 206.661 431.26 206.661H340.327C336.644 206.661 334.816 208.361 334.816 211.756V248.311C334.816 257.367 337.999 265.017 344.371 271.256C350.738 277.489 358.455 280.595 367.527 280.595C376.588 280.595 384.232 277.417 390.477 271.028C396.699 264.672 399.816 257.078 399.816 248.311V236.828C399.816 233.15 401.521 231.306 404.916 231.306H431.26C434.938 231.306 436.771 233.15 436.771 236.828V248.311Z" />
+            <path d="M840.566 309.495C840.566 312.89 838.866 314.595 835.471 314.595H809.127C805.716 314.595 804.022 312.89 804.022 309.495V80.4504C804.022 77.056 805.716 75.356 809.127 75.356H835.471C838.866 75.356 840.566 77.056 840.566 80.4504V309.495ZM840.566 32.0226C840.566 35.7004 838.866 37.5559 835.471 37.5559H809.127C805.716 37.5559 804.022 35.7004 804.022 32.0226V5.66704C804.022 2.00037 805.716 0.150391 809.127 0.150391H835.471C838.866 0.150391 840.566 2.00037 840.566 5.66704V32.0226Z" />
+            <path d="M215.716 228.422C215.716 238 212.271 246.222 205.388 253.106C198.494 259.989 190.271 263.434 180.705 263.434H86.1656C76.5822 263.434 68.3545 259.989 61.4656 253.106C54.5712 246.222 51.1378 238 51.1378 228.422V227.017C51.1378 217.211 54.5712 208.867 61.4656 201.978C68.3545 195.106 76.5822 191.65 86.1656 191.65H211.51C214.321 191.65 215.716 193.045 215.716 195.856V228.422ZM301.421 0.00555251C301.277 0.00555251 301.127 0 300.988 0V0.02221C277.538 0.22221 257.538 8.66667 240.921 25.3889C224.127 42.3056 215.716 62.5667 215.716 86.139V140.522H86.1656C62.3489 140.522 42.0879 148.945 25.4101 165.733C8.71009 182.55 0.243425 202.845 0.00453635 226.661V228.078C-0.223242 251.878 8.12687 272.245 25.0436 289.161C41.9825 306.095 62.3489 314.556 86.1656 314.556H180.705C204.51 314.556 224.816 306.15 241.632 289.339C258.438 272.545 266.844 252.239 266.844 228.422V86.139C266.844 76.5668 270.232 68.3445 277.005 61.4389C283.66 54.6723 291.794 51.2278 301.421 51.1278V0.00555251Z" />
+            <path d="M686.488 58.6556C696.677 49.3667 708.566 44.7278 722.472 44.7278H773.472V0H671.36C657.549 0 645.655 4.33889 635.877 13.1222C626.005 21.9056 621.049 32.4223 621.049 44.7278V92.6778C621.049 106.006 616.027 117.328 605.933 126.6C595.866 136 583.86 140.628 570.06 140.628C556.133 140.628 544.244 135.2 534.066 124.189C524.149 113.439 519.11 101.045 518.966 86.8834V86.1389C518.966 62.5723 510.56 42.3056 493.749 25.3889C477.16 8.66667 457.127 0.222219 433.705 0.00555251C433.571 0.00555251 433.405 0.00555251 433.271 0.00555251V51.1334C442.871 51.2278 451.016 54.6723 457.688 61.4389C464.46 68.3445 467.838 76.5667 467.838 86.1389V314.561H518.955V238.884C518.955 225.05 523.988 213.239 534.066 203.361C544.244 193.45 556.133 188.6 570.06 188.6H671.36C685.672 188.6 697.788 193.45 707.655 203.361C717.538 213.239 722.472 225.05 722.472 238.884V314.561H773.472V188.6C773.472 174.167 768.538 162.55 758.772 153.783C748.888 144.972 736.888 140.628 722.872 140.628C708.772 140.628 696.677 136 686.488 126.6C676.399 117.328 671.36 106.006 671.36 92.6778C671.36 79.3612 676.399 68.0445 686.488 58.6556Z" />
+            <path d="M613.721 233.022C604.355 233.022 596.299 236.389 589.588 243.095C582.871 249.817 579.505 257.861 579.505 267.245C579.505 276.606 582.871 284.656 589.588 291.361C596.299 298.106 604.355 301.456 613.721 301.456C623.105 301.456 631.144 298.106 637.86 291.361C644.588 284.656 647.944 276.606 647.944 267.245C647.944 257.861 644.588 249.817 637.86 243.095C631.144 236.389 623.105 233.022 613.721 233.022Z" />
+          </svg>
+        </Link>
+
+        {/* Desktop links */}
+        <ul
+          className="dk-nav-desktop"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '2rem',
+            listStyle: 'none',
+            margin: 0,
+            padding: 0,
+          }}
+        >
+          {navLinks.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href as LinkHref}
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.07em',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  color: 'var(--dk-mid)',
+                  transition: 'color 0.2s',
+                }}
+                onMouseEnter={(e) =>
+                  ((e.currentTarget as HTMLElement).style.color = 'var(--dk-dark)')
+                }
+                onMouseLeave={(e) =>
+                  ((e.currentTarget as HTMLElement).style.color = 'var(--dk-mid)')
+                }
+              >
+                {t(item.es, item.en)}
+              </Link>
+            </li>
+          ))}
+
+          {/* CTA */}
+          <li>
             <Link
-              href={item.href as LinkHref}
+              href="/contact"
               style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: '0.75rem',
-                fontWeight: 600,
+                fontWeight: 700,
+                letterSpacing: '0.07em',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                color: 'var(--dk-surface)',
+                background: 'var(--dk-dark)',
+                padding: '0.45rem 1.1rem',
+                borderRadius: '3px',
+                transition: 'opacity 0.2s',
+              }}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLElement).style.opacity = '0.8')
+              }
+              onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLElement).style.opacity = '1')
+              }
+            >
+              {t('Hablemos', 'Start here')}
+            </Link>
+          </li>
+        </ul>
+
+        {/* Hamburger — mobile only */}
+        <button
+          className="dk-nav-hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          style={{
+            display: 'none', // shown via CSS below
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: '0.25rem',
+            color: 'var(--dk-dark)',
+          }}
+        >
+          {menuOpen ? (
+            // X icon
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          ) : (
+            // Hamburger icon
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <line x1="3" y1="7" x2="21" y2="7" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="17" x2="21" y2="17" />
+            </svg>
+          )}
+        </button>
+      </nav>
+
+      {/* Mobile drawer */}
+      {menuOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 99,
+            background: 'var(--dk-surface)',
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '6rem 3rem 3rem',
+            gap: '0',
+          }}
+        >
+          {navLinks.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href as LinkHref}
+              onClick={() => setMenuOpen(false)}
+              style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '1.1rem',
+                fontWeight: 700,
                 letterSpacing: '0.07em',
                 textTransform: 'uppercase',
                 textDecoration: 'none',
                 color: 'var(--dk-mid)',
+                borderBottom: '1px solid var(--dk-border)',
+                padding: '1.5rem 0',
                 transition: 'color 0.2s',
               }}
               onMouseEnter={(e) =>
@@ -76,37 +221,39 @@ export function Nav() {
             >
               {t(item.es, item.en)}
             </Link>
-          </li>
-        ))}
+          ))}
 
-        {/* CTA */}
-        <li>
           <Link
             href="/contact"
+            onClick={() => setMenuOpen(false)}
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: '0.75rem',
+              fontSize: '1.1rem',
               fontWeight: 700,
               letterSpacing: '0.07em',
               textTransform: 'uppercase',
               textDecoration: 'none',
               color: 'var(--dk-surface)',
               background: 'var(--dk-dark)',
-              padding: '0.45rem 1.1rem',
+              padding: '1.25rem 2rem',
               borderRadius: '3px',
-              transition: 'opacity 0.2s',
+              marginTop: '2rem',
+              textAlign: 'center',
+              display: 'block',
             }}
-            onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLElement).style.opacity = '0.8')
-            }
-            onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLElement).style.opacity = '1')
-            }
           >
             {t('Hablemos', 'Start here')}
           </Link>
-        </li>
-      </ul>
-    </nav>
+        </div>
+      )}
+
+      {/* Responsive styles — no Tailwind needed here, pure CSS */}
+      <style>{`
+        @media (max-width: 768px) {
+          .dk-nav-desktop { display: none !important; }
+          .dk-nav-hamburger { display: flex !important; }
+        }
+      `}</style>
+    </>
   )
 }

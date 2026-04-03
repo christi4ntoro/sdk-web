@@ -141,3 +141,43 @@ body {
 .dk-input::placeholder {
   color: rgba(255, 255, 255, 0.25);
 }
+
+/* ============================================
+   DARK MODE TOKENS
+   Activated by: OS preference (auto)
+   Or: data-theme="dark" on <html> (manual)
+   ============================================ */
+
+   @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --dk-surface: #141324;
+      --dk-white:   #1D1C33;
+      --dk-dark:    #F0EFE9;
+      --dk-mid:     #9B9AAE;
+      --dk-deep:    #0D0C1A;
+      --dk-border:  rgba(240, 239, 233, 0.10);
+    }
+  }
+  
+  [data-theme="dark"] {
+    --dk-surface: #141324;
+    --dk-white:   #1D1C33;
+    --dk-dark:    #F0EFE9;
+    --dk-mid:     #9B9AAE;
+    --dk-deep:    #0D0C1A;
+    --dk-border:  rgba(240, 239, 233, 0.10);
+  }
+  
+  [data-theme="light"] {
+    --dk-surface: #F7F6F2;
+    --dk-white:   #FFFFFF;
+    --dk-dark:    #1D1C33;
+    --dk-mid:     #6B6A7E;
+    --dk-deep:    #141324;
+    --dk-border:  rgba(29, 28, 51, 0.12);
+  }
+
+  .dk-logo {
+    color: var(--dk-dark);
+    transition: color 0.2s;
+  }
