@@ -2,10 +2,19 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useLang, type Lang } from '@/lib/lang-context'
+import type { ComponentProps } from 'react'
+import { useLang } from '@/lib/lang-context'
+
+type LinkHref = ComponentProps<typeof Link>['href']
+
+const navLinks = [
+  { href: '/services', es: 'Servicios', en: 'Services' },
+  { href: '/insights', es: 'Perspectivas', en: 'Insights' },
+  { href: '/manifesto', es: 'Manifiesto', en: 'Manifesto' },
+] as const
 
 export function Nav() {
-  const { lang, setLang, t } = useLang()
+  const { t } = useLang()
 
   return (
     <nav
@@ -40,17 +49,14 @@ export function Nav() {
           alignItems: 'center',
           gap: '2rem',
           listStyle: 'none',
+          margin: 0,
+          padding: 0,
         }}
       >
-        {[
-          { href: '/services' as const, es: 'Servicios', en: 'Services' },
-          { href: '/about' as const, es: 'Nosotros', en: 'About' },
-          { href: '/blog' as const, es: 'Blog', en: 'Blog' },
-          { href: '/contact' as const, es: 'Contacto', en: 'Contact' },
-        ].map((item) => (
+        {navLinks.map((item) => (
           <li key={item.href}>
             <Link
-              href={item.href}
+              href={item.href as LinkHref}
               style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: '0.75rem',
@@ -62,54 +68,45 @@ export function Nav() {
                 transition: 'color 0.2s',
               }}
               onMouseEnter={(e) =>
-                ((e.target as HTMLElement).style.color = 'var(--dk-dark)')
+                ((e.currentTarget as HTMLElement).style.color = 'var(--dk-dark)')
               }
               onMouseLeave={(e) =>
-                ((e.target as HTMLElement).style.color = 'var(--dk-mid)')
+                ((e.currentTarget as HTMLElement).style.color = 'var(--dk-mid)')
               }
             >
               {t(item.es, item.en)}
             </Link>
           </li>
         ))}
-      </ul>
 
-      {/* Language toggle */}
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.25rem',
-          background: 'var(--dk-dark)',
-          borderRadius: '100px',
-          padding: '0.25rem',
-        }}
-      >
-        {(['es', 'en'] as Lang[]).map((l) => (
-          <button
-            key={l}
-            onClick={() => setLang(l)}
+        {/* CTA */}
+        <li>
+          <Link
+            href="/contact"
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: '0.68rem',
+              fontSize: '0.75rem',
               fontWeight: 700,
-              letterSpacing: '0.1em',
-              padding: '0.3rem 0.8rem',
-              borderRadius: '100px',
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'all 0.2s',
-              background: lang === l ? 'var(--dk-amber)' : 'transparent',
-              color: lang === l ? 'var(--dk-dark)' : 'rgba(255,255,255,0.45)',
+              letterSpacing: '0.07em',
               textTransform: 'uppercase',
+              textDecoration: 'none',
+              color: 'var(--dk-surface)',
+              background: 'var(--dk-dark)',
+              padding: '0.45rem 1.1rem',
+              borderRadius: '3px',
+              transition: 'opacity 0.2s',
             }}
+            onMouseEnter={(e) =>
+              ((e.currentTarget as HTMLElement).style.opacity = '0.8')
+            }
+            onMouseLeave={(e) =>
+              ((e.currentTarget as HTMLElement).style.opacity = '1')
+            }
           >
-            {l}
-          </button>
-        ))}
-      </div>
+            {t('Hablemos', 'Start here')}
+          </Link>
+        </li>
+      </ul>
     </nav>
   )
 }
-
-
