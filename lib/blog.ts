@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 
-const INSIGHTS_DIR = path.join(process.cwd(), 'content/insights')
+const INSIGHTS_DIR = path.join(process.cwd(), 'content/blog')
 
 export interface PostMeta {
   slug: string
