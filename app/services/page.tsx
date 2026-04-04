@@ -7,22 +7,22 @@ const services = [
   {
     num: '01',
     es: {
-      title: 'Cursos eLearning a medida',
-      body: 'Desarrollamos contenido interactivo alineado con su marca, sus procesos y su audiencia. Cada módulo pasa por análisis instruccional, diseño visual y pruebas de usabilidad antes de la entrega. Estándar SCORM 1.2 / xAPI. Compatible con cualquier LMS.',
+      title: 'Cursos que tu equipo realmente termina',
+      body: 'Desarrollamos contenido interactivo alineado con tu marca, tus procesos y tu audiencia. Cada módulo pasa por análisis de datos, diseño de experiencia y pruebas antes de la entrega. Estándar SCORM 1.2 / xAPI. Compatible con cualquier LMS.',
       bullets: [
-        'Guión y diseño instruccional',
-        'Locución profesional en español neutro o colombiano',
+        'Análisis de necesidades y diseño instruccional',
+        'Narrativa y storytelling que engancha',
         'Animación, video e infografías',
         'Evaluaciones y trazabilidad de aprendizaje',
         'Entrega en SCORM 1.2 o xAPI',
       ],
     },
     en: {
-      title: 'Custom eLearning courses',
-      body: 'We develop interactive content aligned with your brand, processes, and audience. Every module goes through instructional analysis, visual design, and usability testing before delivery. SCORM 1.2 / xAPI standard. Compatible with any LMS.',
+      title: 'Courses your team actually completes',
+      body: 'We develop interactive content aligned with your brand, processes, and audience. Every module goes through data analysis, experience design, and testing before delivery. SCORM 1.2 / xAPI standard. Compatible with any LMS.',
       bullets: [
-        'Script and instructional design',
-        'Professional voiceover in Spanish or English',
+        'Needs analysis and instructional design',
+        'Narrative and storytelling that hooks',
         'Animation, video, and infographics',
         'Assessments and learning tracking',
         'Delivery in SCORM 1.2 or xAPI',
@@ -32,8 +32,8 @@ const services = [
   {
     num: '02',
     es: {
-      title: 'Capacitación en cumplimiento normativo',
-      body: 'Convertimos normas complejas en formación clara, verificable y lista para auditoría. Trabajamos con equipos de RRHH, Legal y Cumplimiento para garantizar precisión técnica y retención real. Especialidad en SGSST, LAFT, PTEP y reformas laborales.',
+      title: 'Cumplimiento que funciona más allá de la auditoría',
+      body: 'Convertimos normas complejas en formación que tu equipo comprende, aplica y recuerda. Trabajamos con equipos de RRHH, Legal y Cumplimiento para garantizar precisión técnica y retención real. Especialidad en SGSST, LAFT, PTEP y reformas laborales.',
       bullets: [
         'Análisis de la norma y brechas de conocimiento',
         'Módulos por rol: supervisores, empleados, directivos',
@@ -43,8 +43,8 @@ const services = [
       ],
     },
     en: {
-      title: 'Compliance training',
-      body: 'We turn complex regulations into clear, verifiable, audit-ready training. We work with HR, Legal, and Compliance teams to ensure technical accuracy and real retention. Specializing in Colombian labor reform, SGSST, and AML/LAFT.',
+      title: 'Compliance that works beyond the audit',
+      body: 'We turn complex regulations into training your team understands, applies and remembers. We work with HR, Legal, and Compliance teams to ensure technical accuracy and real retention. Specializing in Colombian labor reform, SGSST, and AML/LAFT.',
       bullets: [
         'Regulatory analysis and knowledge gap mapping',
         'Role-specific modules: supervisors, employees, executives',
@@ -57,25 +57,25 @@ const services = [
   {
     num: '03',
     es: {
-      title: 'Plataformas digitales de formación (LMS)',
-      body: 'Implementamos y configuramos su academia corporativa. Desde la instalación hasta la adopción por parte del equipo. Trabajamos con Moodle, TalentLMS, LearnDash y otras plataformas. Si ya tiene un LMS, lo optimizamos.',
+      title: 'Estrategia para sacar el máximo a tu plataforma',
+      body: 'No necesitas otra plataforma. Necesitas saber cómo hacer que la que tienes trabaje para tu gente. Analizamos tu contexto, diseñamos la estrategia de difusión, los flujos de aprendizaje y la experiencia del usuario dentro de tu LMS.',
       bullets: [
-        'Selección e implementación de LMS',
-        'Migración de contenido existente',
-        'Configuración de usuarios, grupos y currículos',
+        'Diagnóstico de tu plataforma actual',
+        'Estrategia de difusión y adopción',
+        'Diseño de flujos y currículos',
+        'Experiencia de usuario para el aprendiz',
         'Capacitación a administradores',
-        'Soporte mensual disponible',
       ],
     },
     en: {
-      title: 'Learning management platforms (LMS)',
-      body: 'We implement and configure your corporate academy from installation to team adoption. We work with Moodle, TalentLMS, LearnDash, and others. If you already have an LMS, we optimize it.',
+      title: 'Strategy to maximize your learning platform',
+      body: "You don't need another platform. You need to know how to make the one you have work for your people. We analyze your context, design the diffusion strategy, learning flows and user experience inside your LMS.",
       bullets: [
-        'LMS selection and implementation',
-        'Existing content migration',
-        'User, group, and curriculum configuration',
+        'Diagnosis of your current platform',
+        'Diffusion and adoption strategy',
+        'Flow and curriculum design',
+        'Learner user experience',
         'Admin training',
-        'Monthly support available',
       ],
     },
   },
@@ -90,7 +90,7 @@ export default function ServicesPage() {
       {/* Hero */}
       <section style={{ padding: '8rem 3rem 5rem', maxWidth: '1100px', margin: '0 auto' }}>
         <div className="section-label" style={{ marginBottom: '2rem' }}>
-          {t('Lo que construimos', 'What we build')}
+          {t('Lo que construimos juntos', 'What we build together')}
         </div>
         <h1
           style={{
@@ -100,25 +100,40 @@ export default function ServicesPage() {
             lineHeight: 1.1,
             letterSpacing: '-0.02em',
             maxWidth: '700px',
+            color: 'var(--dk-dark)',
           }}
         >
           {t(
             <>
-              Formación que su organización
+              Construimos lo que tu organización
               <br />
               <em style={{ color: 'var(--dk-mid)', fontStyle: 'italic' }}>
-                puede demostrar.
+                necesita aprender.
               </em>
             </>,
             <>
-              Training your organization
+              We build what your organization
               <br />
               <em style={{ color: 'var(--dk-mid)', fontStyle: 'italic' }}>
-                can prove.
+                needs to learn.
               </em>
             </>
           )}
         </h1>
+        <p
+          style={{
+            fontSize: '1rem',
+            color: 'var(--dk-mid)',
+            lineHeight: 1.8,
+            maxWidth: '480px',
+            marginTop: '1.75rem',
+          }}
+        >
+          {t(
+            'Tres áreas. Un solo criterio: que funcione de verdad.',
+            'Three areas. One single standard: it has to actually work.'
+          )}
+        </p>
       </section>
 
       {/* Services list */}
@@ -129,13 +144,10 @@ export default function ServicesPage() {
             return (
               <div
                 key={s.num}
+                className="service-row"
                 style={{
                   background: 'var(--dk-white)',
                   padding: '3rem',
-                  display: 'grid',
-                  gridTemplateColumns: '80px 1fr 1fr',
-                  gap: '3rem',
-                  alignItems: 'start',
                 }}
               >
                 {/* Number */}
@@ -144,67 +156,69 @@ export default function ServicesPage() {
                     fontFamily: 'var(--font-display)',
                     fontSize: '2.5rem',
                     fontWeight: 400,
-                    color: 'rgba(29,28,51,0.1)',
+                    color: 'rgba(29,28,51,0.08)',
                     lineHeight: 1,
-                    paddingTop: '0.25rem',
+                    marginBottom: '1.5rem',
                   }}
                 >
                   {s.num}
                 </div>
 
-                {/* Title + body */}
-                <div>
-                  <h2
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '1.15rem',
-                      fontWeight: 700,
-                      color: 'var(--dk-dark)',
-                      marginBottom: '1rem',
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {content.title}
-                  </h2>
-                  <p
-                    style={{
-                      fontSize: '0.88rem',
-                      color: 'var(--dk-mid)',
-                      lineHeight: 1.8,
-                    }}
-                  >
-                    {content.body}
-                  </p>
-                </div>
-
-                {/* Bullets */}
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  {content.bullets.map((b) => (
-                    <li
-                      key={b}
+                <div className="service-inner">
+                  {/* Title + body */}
+                  <div>
+                    <h2
                       style={{
-                        fontSize: '0.82rem',
+                        fontFamily: 'var(--font-sans)',
+                        fontSize: '1.15rem',
+                        fontWeight: 700,
                         color: 'var(--dk-dark)',
-                        lineHeight: 1.5,
-                        display: 'flex',
-                        gap: '0.75rem',
-                        alignItems: 'flex-start',
+                        marginBottom: '1rem',
+                        lineHeight: 1.3,
                       }}
                     >
-                      <span
+                      {content.title}
+                    </h2>
+                    <p
+                      style={{
+                        fontSize: '0.88rem',
+                        color: 'var(--dk-mid)',
+                        lineHeight: 1.85,
+                      }}
+                    >
+                      {content.body}
+                    </p>
+                  </div>
+
+                  {/* Bullets */}
+                  <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                    {content.bullets.map((b) => (
+                      <li
+                        key={b}
                         style={{
-                          width: '6px',
-                          height: '6px',
-                          borderRadius: '50%',
-                          background: 'var(--dk-amber)',
-                          flexShrink: 0,
-                          marginTop: '0.45rem',
+                          fontSize: '0.82rem',
+                          color: 'var(--dk-dark)',
+                          lineHeight: 1.5,
+                          display: 'flex',
+                          gap: '0.75rem',
+                          alignItems: 'flex-start',
                         }}
-                      />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
+                      >
+                        <span
+                          style={{
+                            width: '6px',
+                            height: '6px',
+                            borderRadius: '50%',
+                            background: 'var(--dk-amber)',
+                            flexShrink: 0,
+                            marginTop: '0.45rem',
+                          }}
+                        />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             )
           })}
@@ -224,7 +238,22 @@ export default function ServicesPage() {
               marginBottom: '1.25rem',
             }}
           >
-            {t('¿Por dónde empezamos?', 'Where do we start?')}
+            {t(
+              <>
+                ¿Cuál es el reto de aprendizaje
+                <br />
+                <em style={{ color: 'var(--dk-amber)', fontStyle: 'italic' }}>
+                  de tu organización?
+                </em>
+              </>,
+              <>
+                What is your organization's
+                <br />
+                <em style={{ color: 'var(--dk-amber)', fontStyle: 'italic' }}>
+                  learning challenge?
+                </em>
+              </>
+            )}
           </h2>
           <p
             style={{
@@ -235,16 +264,34 @@ export default function ServicesPage() {
             }}
           >
             {t(
-              'Cuéntenos el reto. Le diremos qué servicio tiene más sentido para su organización.',
-              "Tell us the challenge. We'll tell you which service makes the most sense for your organization."
+              'Cuéntanos el reto. Te decimos qué tiene más sentido para tu organización.',
+              "Tell us the challenge. We'll tell you what makes the most sense for your organization."
             )}
           </p>
           <Link href="/contact" className="btn-amber">
-            {t('Iniciar conversación', 'Start a conversation')}
+            {t('Quiero una solución', 'Find my solution')}
           </Link>
         </div>
       </section>
 
+      {/* Responsive styles */}
+      <style>{`
+        .service-inner {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+          align-items: start;
+        }
+        @media (max-width: 768px) {
+          .service-inner {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+          .service-row {
+            padding: 2rem !important;
+          }
+        }
+      `}</style>
     </div>
   )
 }

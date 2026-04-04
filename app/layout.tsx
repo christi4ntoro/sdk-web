@@ -1,23 +1,23 @@
 import type { Metadata } from 'next'
-import { Instrument_Serif, Syne } from 'next/font/google'
+import { Fraunces, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import { LangProvider } from '@/lib/lang-context'
 import { ThemeProvider } from '@/lib/theme-context'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
 
-const instrumentSerif = Instrument_Serif({
+const fraunces = Fraunces({
   subsets: ['latin'],
   weight: '400',
   style: ['normal', 'italic'],
-  variable: '--font-instrument',
+  variable: '--font-display',
   display: 'swap',
 })
 
-const syne = Syne({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['400', '600', '700', '800'],
-  variable: '--font-syne',
+  weight: ['400', '600', '700'],
+  variable: '--font-sans',
   display: 'swap',
 })
 
@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={`${instrumentSerif.variable} ${syne.variable}`}>
+    <html lang="es" className={`${fraunces.variable} ${plusJakarta.variable}`}>
       <body>
       <ThemeProvider>
         <LangProvider>

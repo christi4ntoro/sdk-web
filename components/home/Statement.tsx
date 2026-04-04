@@ -7,10 +7,10 @@ export function Statement() {
 
   return (
     <section
-      style={{ 
-        padding: '8rem 3rem', 
-        maxWidth: '1100px', 
-        margin: '0 auto' 
+      style={{
+        padding: '8rem 3rem',
+        maxWidth: '1100px',
+        margin: '0 auto',
       }}
       className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-center"
     >
@@ -23,43 +23,40 @@ export function Statement() {
             fontWeight: 400,
             lineHeight: 1.15,
             letterSpacing: '-0.01em',
-            marginBottom: '1.5rem',
+            marginBottom: '1.75rem',
+            color: 'var(--dk-dark)',
           }}
         >
           {t(
             <>
-              Diseño instruccional
+              No fabricamos contenido.
               <br />
-              experto.{' '}
               <em style={{ color: 'var(--dk-mid)', fontStyle: 'italic' }}>
-                Producción
-                <br />
-                potenciada por IA.
+                Diseñamos lo que tu equipo
+                es capaz de hacer después.
               </em>
             </>,
             <>
-              Expert instructional
+              We don't manufacture content.
               <br />
-              design.{' '}
               <em style={{ color: 'var(--dk-mid)', fontStyle: 'italic' }}>
-                AI-powered
-                <br />
-                production.
+                We design what your team
+                can do afterwards.
               </em>
             </>
           )}
         </h2>
         <p
           style={{
-            fontSize: '0.9rem',
+            fontSize: '0.92rem',
             color: 'var(--dk-mid)',
-            lineHeight: 1.85,
+            lineHeight: 1.9,
             fontWeight: 400,
           }}
         >
           {t(
-            'No fabricamos plantillas. Analizamos su contexto, entendemos su audiencia y construimos contenido que cambia comportamientos. La IA acelera nuestra producción. La experiencia define la calidad.',
-            "We don't manufacture templates. We analyze your context, understand your audience, and build content that changes behavior. AI accelerates our production. Experience defines the quality."
+            'La mayoría del eLearning corporativo falla por la misma razón: fue diseñado para existir, no para funcionar. Nosotros empezamos por los datos. Qué necesita tu equipo, cómo aprende, qué contexto tiene. Eso define la estructura. El storytelling hace que se complete. Y la IA nos permite producir con una precisión y velocidad que antes era imposible.',
+            "Most corporate eLearning fails for the same reason: it was designed to exist, not to work. We start with data. What your team needs, how they learn, what context they have. That defines the structure. Storytelling makes it stick. And AI lets us produce with a precision and speed that wasn't possible before."
           )}
         </p>
       </div>
@@ -89,13 +86,13 @@ export function Statement() {
             fontSize: '1.2rem',
             fontStyle: 'italic',
             color: 'var(--dk-white)',
-            lineHeight: 1.65,
+            lineHeight: 1.7,
             marginBottom: '2rem',
           }}
         >
           {t(
-            '"Construimos lo que su organización necesita aprender — no lo que es fácil de producir."',
-            '"We build what your organization needs to learn — not what\'s easy to produce."'
+            '"Hemos visto lo que pasa cuando la formación se diseña para cumplir informes. Nosotros la diseñamos para el momento en que alguien aplica lo que aprendió, y lo hace bien."',
+            '"We\'ve seen what happens when training is built to fill reports. We build it for the moment someone applies what they learned, and gets it right."'
           )}
         </p>
         <div
@@ -104,7 +101,7 @@ export function Statement() {
             fontWeight: 700,
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
-            color: 'rgba(255,255,255,0.35)',
+            color: 'rgba(255,255,255,0.3)',
           }}
         >
           Studio Deki

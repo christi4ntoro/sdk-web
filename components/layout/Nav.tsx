@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import type { ComponentProps } from 'react'
 import { useLang } from '@/lib/lang-context'
-import { useTheme } from '@/lib/theme-context'
 
 type LinkHref = ComponentProps<typeof Link>['href']
 
@@ -16,7 +15,6 @@ const navLinks = [
 
 export function Nav() {
   const { t } = useLang()
-  const { theme } = useTheme()
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 

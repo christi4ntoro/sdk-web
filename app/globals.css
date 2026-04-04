@@ -11,8 +11,8 @@
   --dk-deep: #141324;
   --dk-border: rgba(29, 28, 51, 0.12);
 
-  --font-display: var(--font-instrument), Georgia, serif;
-  --font-sans: var(--font-syne), system-ui, sans-serif;
+  --font-display: var(--font-display), Georgia, serif;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
 }
 
 * {

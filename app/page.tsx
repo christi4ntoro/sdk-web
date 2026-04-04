@@ -3,6 +3,7 @@ import { NumbersBand } from '@/components/home/NumbersBand'
 import { Services } from '@/components/home/Services'
 import { ClientLogos } from '@/components/home/ClientLogos'
 import { Statement } from '@/components/home/Statement'
+import { ManifestoTeaser } from '@/components/home/ManifestoTeaser'
 import { CTASection } from '@/components/home/CTASection'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Services />
       <ClientLogos />
       <Statement />
+      <ManifestoTeaser />
       <CTASection />
     </>
   )

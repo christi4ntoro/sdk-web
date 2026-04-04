@@ -9,82 +9,80 @@ export function Hero() {
   return (
     <section
       style={{
-        padding: '8rem 3rem 6rem',
+        padding: '9rem 3rem 7rem',
         maxWidth: '1100px',
         margin: '0 auto',
       }}
     >
-      {/* Label */}
-      <div className="section-label" style={{ marginBottom: '2rem' }}>
+      <div className="section-label" style={{ marginBottom: '2.5rem' }}>
         {t(
-          'eLearning corporativo · Colombia & Latinoamérica',
-          'Corporate eLearning · Colombia & Latin America'
+          'Formación corporativa · Experiencias que transforman equipos',
+          'Corporate training · Experiences that transform teams'
         )}
       </div>
 
-      {/* Headline */}
       <h1
         style={{
           fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(3.2rem, 6vw, 5.5rem)',
+          fontSize: 'clamp(3.2rem, 6vw, 5.8rem)',
           fontWeight: 400,
-          lineHeight: 1.08,
+          lineHeight: 1.06,
           letterSpacing: '-0.02em',
           color: 'var(--dk-dark)',
-          maxWidth: '820px',
-          marginBottom: '2rem',
+          maxWidth: '860px',
+          marginBottom: '2.25rem',
         }}
       >
         {t(
           <>
-            Experiencias de<br />
-            aprendizaje{' '}
+            Formación que cambia
+            <br />
+            lo que tu equipo{' '}
             <em style={{ color: 'var(--dk-mid)', fontStyle: 'italic' }}>
-              que
+              hace.
               <br />
-              funcionan.
+              No solo lo que sabe.
             </em>
           </>,
           <>
-            Learning experiences
+            Training that changes
             <br />
+            what your team{' '}
             <em style={{ color: 'var(--dk-mid)', fontStyle: 'italic' }}>
-              that actually
+              does.
               <br />
-              work.
+              Not just what they know.
             </em>
           </>
         )}
       </h1>
 
-      {/* Sub */}
       <p
         style={{
           fontSize: '1.05rem',
           fontWeight: 400,
           color: 'var(--dk-mid)',
-          maxWidth: '480px',
-          lineHeight: 1.75,
-          marginBottom: '3rem',
+          maxWidth: '500px',
+          lineHeight: 1.8,
+          marginBottom: '3.25rem',
         }}
       >
         {t(
-          'Diseño instruccional experto, producción potenciada por IA y contenido que su equipo retiene. Para organizaciones que toman en serio la formación.',
-          'Expert instructional design, AI-powered production, and content your team actually retains. For organizations that take learning seriously.'
+          'Producción potenciada por IA, decisiones basadas en datos y contenido que tu organización realmente completa.',
+          'AI-powered production, data-driven decisions and content your organization actually completes.'
         )}
       </p>
 
-      {/* CTAs */}
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '1.5rem',
+          gap: '1.75rem',
           flexWrap: 'wrap',
         }}
       >
         <Link href="/contact" className="btn-primary">
-          {t('Hablemos de su proyecto', "Let's talk about your project")}
+          {t('Cuéntanos tu reto', 'Tell us your challenge')}
         </Link>
         <Link href="/services" className="btn-ghost">
           {t('Ver servicios', 'Explore services')}
