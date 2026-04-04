@@ -1,8 +1,9 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { marked } from 'marked'
 
-const BLOG_DIR = path.join(process.cwd(), 'content/blog')
+const INSIGHTS_DIR = path.join(process.cwd(), 'content/insights')
 
 export interface PostMeta {
   slug: string
@@ -15,17 +16,20 @@ export interface PostMeta {
 }
 
 export interface Post extends PostMeta {
+  /** Raw markdown body (after frontmatter) */
   content: string
+  /** Server-rendered HTML for `dangerouslySetInnerHTML` */
+  contentHtml: string
 }
 
 export function getAllPosts(): PostMeta[] {
-  if (!fs.existsSync(BLOG_DIR)) return []
-  const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith('.md'))
+  if (!fs.existsSync(INSIGHTS_DIR)) return []
+  const files = fs.readdirSync(INSIGHTS_DIR).filter((f) => f.endsWith('.md'))
 
   return files
     .map((file) => {
       const slug = file.replace(/\.md$/, '')
-      const raw = fs.readFileSync(path.join(BLOG_DIR, file), 'utf8')
+      const raw = fs.readFileSync(path.join(INSIGHTS_DIR, file), 'utf8')
       const { data } = matter(raw)
       return { slug, ...data } as PostMeta
     })
@@ -33,9 +37,11 @@ export function getAllPosts(): PostMeta[] {
 }
 
 export function getPost(slug: string): Post | null {
-  const filePath = path.join(BLOG_DIR, `${slug}.md`)
+  const filePath = path.join(INSIGHTS_DIR, `${slug}.md`)
   if (!fs.existsSync(filePath)) return null
   const raw = fs.readFileSync(filePath, 'utf8')
   const { data, content } = matter(raw)
-  return { slug, content, ...data } as Post
+  const parsed = marked.parse(content, { async: false })
+  const contentHtml = typeof parsed === 'string' ? parsed : ''
+  return { slug, content, contentHtml, ...data } as Post
 }
