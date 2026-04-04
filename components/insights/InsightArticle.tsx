@@ -100,7 +100,7 @@ export function InsightArticle({ post }: { post: Post }) {
         {/* Content */}
         <div
           className="insight-body"
-          dangerouslySetInnerHTML={{ __html: post.content }}
+          dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
 
         {/* Bottom CTA */}
