@@ -181,3 +181,157 @@ body {
     color: var(--dk-dark);
     transition: color 0.2s;
   }
+
+  /* ============================================
+   LAYOUT
+   ============================================ */
+
+.dk-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.dk-section {
+  padding: 7rem 0;
+}
+
+.dk-section-lg {
+  padding: 9rem 0;
+}
+
+/* ============================================
+   SURFACE VARIANTS
+   ============================================ */
+
+.dk-surface-white {
+  background: var(--dk-white);
+}
+
+.dk-surface-dark {
+  background: var(--dk-dark);
+}
+
+.dk-surface-deep {
+  background: var(--dk-deep);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+.dk-display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: var(--dk-dark);
+}
+
+.dk-display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--dk-dark);
+}
+
+.dk-display-md {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--dk-dark);
+}
+
+.dk-display-sm {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--dk-dark);
+}
+
+.dk-body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--dk-mid);
+}
+
+.dk-body-sm {
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--dk-mid);
+}
+
+.dk-meta {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dk-mid);
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.dk-card {
+  background: var(--dk-white);
+  padding: 2.5rem;
+}
+
+.dk-card-dark {
+  background: var(--dk-dark);
+  padding: 3rem;
+  position: relative;
+}
+
+/* ============================================
+   NUMBER DISPLAY
+   ============================================ */
+
+.dk-number {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 5.5vw, 6rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* ============================================
+   INTERACTIVE
+   ============================================ */
+
+.dk-hover-amber {
+  border-top: 3px solid transparent;
+  transition: border-color 0.2s;
+}
+.dk-hover-amber:hover {
+  border-top-color: var(--dk-amber);
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+.dk-italic {
+  font-style: italic;
+  color: var(--dk-mid);
+}
+
+.dk-amber-text {
+  color: var(--dk-amber);
+}
+
+.dk-white-text {
+  color: var(--dk-white);
+}
+
+.dk-muted {
+  color: rgba(255,255,255,0.45);
+}

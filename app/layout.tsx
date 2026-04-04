@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { Fraunces, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
+import { Fraunces, Plus_Jakarta_Sans } from 'next/font/google'
 import { LangProvider } from '@/lib/lang-context'
 import { ThemeProvider } from '@/lib/theme-context'
 import { Nav } from '@/components/layout/Nav'
@@ -22,9 +22,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Studio Deki — Learning experiences that work',
+  title: 'Studio Deki | Learning experiences that work',
   description:
-    'Expert instructional design and AI-powered eLearning production. SCORM, xAPI, LMS. Corporate training for organizations that take learning seriously.',
+    'Expert elearning design and AI-powered production. SCORM, xAPI, LMS Optimization. Corporate training for organizations that take learning seriously.',
   metadataBase: new URL('https://studiodeki.co'),
   openGraph: {
     title: 'Studio Deki',
