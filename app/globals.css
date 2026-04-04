@@ -2,18 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+
 :root {
-  --dk-dark: #1D1C33;
-  --dk-amber: #F8BB15;
+  --dk-dark:    #1D1C33;
+  --dk-amber:   #F8BB15;
   --dk-surface: #F7F6F2;
-  --dk-mid: #6B6A7E;
-  --dk-white: #FFFFFF;
-  --dk-deep: #141324;
-  --dk-border: rgba(29, 28, 51, 0.12);
+  --dk-mid:     #6B6A7E;
+  --dk-white:   #FFFFFF;
+  --dk-deep:    #141324;
+  --dk-border:  rgba(29, 28, 51, 0.12);
 
   --font-display: var(--font-display), Georgia, serif;
-  --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-sans:    var(--font-sans), system-ui, sans-serif;
 }
+
+/* ============================================
+   DARK MODE TOKENS
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --dk-surface: #141324;
+    --dk-white:   #1D1C33;
+    --dk-dark:    #F0EFE9;
+    --dk-mid:     #9B9AAE;
+    --dk-deep:    #0D0C1A;
+    --dk-border:  rgba(240, 239, 233, 0.10);
+  }
+}
+
+[data-theme="dark"] {
+  --dk-surface: #141324;
+  --dk-white:   #1D1C33;
+  --dk-dark:    #F0EFE9;
+  --dk-mid:     #9B9AAE;
+  --dk-deep:    #0D0C1A;
+  --dk-border:  rgba(240, 239, 233, 0.10);
+}
+
+[data-theme="light"] {
+  --dk-surface: #F7F6F2;
+  --dk-white:   #FFFFFF;
+  --dk-dark:    #1D1C33;
+  --dk-mid:     #6B6A7E;
+  --dk-deep:    #141324;
+  --dk-border:  rgba(29, 28, 51, 0.12);
+}
+
+/* ============================================
+   BASE RESET
+   ============================================ */
 
 * {
   box-sizing: border-box;
@@ -33,12 +74,139 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography utilities */
-.font-display {
-  font-family: var(--font-display);
+/* ============================================
+   LAYOUT
+   ============================================ */
+
+.dk-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 3rem;
 }
 
-/* Section label — reusable */
+.dk-section {
+  padding: 7rem 3rem;
+}
+
+.dk-section-lg {
+  padding: 9rem 3rem;
+}
+
+.dk-section-sm {
+  padding: 5rem 3rem;
+}
+
+@media (max-width: 768px) {
+  .dk-container { padding: 0 1.5rem; }
+  .dk-section    { padding: 4rem 1.5rem; }
+  .dk-section-lg { padding: 6rem 1.5rem; }
+  .dk-section-sm { padding: 3rem 1.5rem; }
+}
+
+/* ============================================
+   SURFACE VARIANTS
+   ============================================ */
+
+.dk-surface-default { background: var(--dk-surface); }
+.dk-surface-white   { background: var(--dk-white); }
+.dk-surface-dark    { background: var(--dk-dark); }
+.dk-surface-deep    { background: var(--dk-deep); }
+.dk-surface-amber   { background: var(--dk-amber); }
+
+/* ============================================
+   TYPOGRAPHY — DISPLAY (Fraunces)
+   ============================================ */
+
+.dk-display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: var(--dk-dark);
+}
+
+.dk-display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--dk-dark);
+}
+
+.dk-display-md {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--dk-dark);
+}
+
+.dk-display-sm {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--dk-dark);
+}
+
+.dk-number {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 5.5vw, 6rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* ============================================
+   TYPOGRAPHY — BODY (Plus Jakarta Sans)
+   ============================================ */
+
+.dk-body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--dk-mid);
+}
+
+.dk-body-sm {
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--dk-mid);
+}
+
+.dk-body-xs {
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--dk-mid);
+}
+
+.dk-meta {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dk-mid);
+}
+
+/* ============================================
+   TYPOGRAPHY — COLOUR MODIFIERS
+   ============================================ */
+
+.dk-text-dark   { color: var(--dk-dark); }
+.dk-text-mid    { color: var(--dk-mid); }
+.dk-text-amber  { color: var(--dk-amber); }
+.dk-text-white  { color: var(--dk-white); }
+.dk-text-muted  { color: rgba(255, 255, 255, 0.45); }
+.dk-italic      { font-style: italic; }
+
+/* ============================================
+   SECTION LABEL
+   ============================================ */
+
 .section-label {
   font-size: 0.7rem;
   font-weight: 700;
@@ -58,7 +226,64 @@ body {
   flex-shrink: 0;
 }
 
-/* Buttons */
+/* ============================================
+   CARDS
+   ============================================ */
+
+.dk-card {
+  background: var(--dk-white);
+  padding: 2.5rem;
+}
+
+.dk-card-dark {
+  background: var(--dk-dark);
+  padding: 3rem;
+  position: relative;
+}
+
+/* Amber top border hover — used on service cards,
+   article cards, any card with hover state */
+.dk-card-hover {
+  border-top: 3px solid transparent;
+  transition: border-color 0.2s;
+}
+.dk-card-hover:hover {
+  border-top-color: var(--dk-amber);
+}
+
+/* ============================================
+   AMBER ACCENT SQUARE
+   Used in Statement quote card
+   ============================================ */
+
+.dk-accent-square {
+  position: absolute;
+  top: -1.25rem;
+  left: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--dk-amber);
+}
+
+/* ============================================
+   DIVIDERS
+   ============================================ */
+
+.dk-divider {
+  border: none;
+  border-top: 1px solid var(--dk-border);
+}
+
+.dk-divider-amber {
+  border: none;
+  border-left: 2px solid var(--dk-amber);
+  padding-left: 1.5rem;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
 .btn-primary {
   font-family: var(--font-sans);
   font-size: 0.78rem;
@@ -114,6 +339,10 @@ body {
   opacity: 0.9;
 }
 
+/* ============================================
+   BLOG / INSIGHTS CARDS
+   ============================================ */
+
 .blog-card-link {
   border-top: 3px solid transparent;
   transition: border-color 0.2s;
@@ -122,7 +351,10 @@ body {
   border-top-color: var(--dk-amber);
 }
 
-/* Form elements */
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+
 .dk-input {
   font-family: var(--font-sans);
   font-size: 0.9rem;
@@ -142,196 +374,22 @@ body {
   color: rgba(255, 255, 255, 0.25);
 }
 
-/* ============================================
-   DARK MODE TOKENS
-   Activated by: OS preference (auto)
-   Or: data-theme="dark" on <html> (manual)
-   ============================================ */
-
-   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --dk-surface: #141324;
-      --dk-white:   #1D1C33;
-      --dk-dark:    #F0EFE9;
-      --dk-mid:     #9B9AAE;
-      --dk-deep:    #0D0C1A;
-      --dk-border:  rgba(240, 239, 233, 0.10);
-    }
-  }
-  
-  [data-theme="dark"] {
-    --dk-surface: #141324;
-    --dk-white:   #1D1C33;
-    --dk-dark:    #F0EFE9;
-    --dk-mid:     #9B9AAE;
-    --dk-deep:    #0D0C1A;
-    --dk-border:  rgba(240, 239, 233, 0.10);
-  }
-  
-  [data-theme="light"] {
-    --dk-surface: #F7F6F2;
-    --dk-white:   #FFFFFF;
-    --dk-dark:    #1D1C33;
-    --dk-mid:     #6B6A7E;
-    --dk-deep:    #141324;
-    --dk-border:  rgba(29, 28, 51, 0.12);
-  }
-
-  .dk-logo {
-    color: var(--dk-dark);
-    transition: color 0.2s;
-  }
-
-  /* ============================================
-   LAYOUT
-   ============================================ */
-
-.dk-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 3rem;
-}
-
-.dk-section {
-  padding: 7rem 0;
-}
-
-.dk-section-lg {
-  padding: 9rem 0;
-}
-
-/* ============================================
-   SURFACE VARIANTS
-   ============================================ */
-
-.dk-surface-white {
-  background: var(--dk-white);
-}
-
-.dk-surface-dark {
-  background: var(--dk-dark);
-}
-
-.dk-surface-deep {
-  background: var(--dk-deep);
-}
-
-/* ============================================
-   TYPOGRAPHY
-   ============================================ */
-
-.dk-display-xl {
-  font-family: var(--font-display);
-  font-size: clamp(3.2rem, 6vw, 5.8rem);
-  font-weight: 400;
-  line-height: 1.06;
-  letter-spacing: -0.02em;
-  color: var(--dk-dark);
-}
-
-.dk-display-lg {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 3.5vw, 3rem);
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  color: var(--dk-dark);
-}
-
-.dk-display-md {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 400;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-  color: var(--dk-dark);
-}
-
-.dk-display-sm {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--dk-dark);
-}
-
-.dk-body {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.85;
-  color: var(--dk-mid);
-}
-
-.dk-body-sm {
-  font-size: 0.88rem;
-  font-weight: 400;
-  line-height: 1.8;
-  color: var(--dk-mid);
-}
-
-.dk-meta {
-  font-size: 0.7rem;
+.dk-field-label {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
-  color: var(--dk-mid);
+  color: rgba(255, 255, 255, 0.38);
+  margin-bottom: 0.4rem;
+  display: block;
 }
 
 /* ============================================
-   CARDS
+   LOGO UTILITY
    ============================================ */
 
-.dk-card {
-  background: var(--dk-white);
-  padding: 2.5rem;
-}
-
-.dk-card-dark {
-  background: var(--dk-dark);
-  padding: 3rem;
-  position: relative;
-}
-
-/* ============================================
-   NUMBER DISPLAY
-   ============================================ */
-
-.dk-number {
-  font-family: var(--font-display);
-  font-size: clamp(4rem, 5.5vw, 6rem);
-  font-weight: 400;
-  line-height: 1;
-}
-
-/* ============================================
-   INTERACTIVE
-   ============================================ */
-
-.dk-hover-amber {
-  border-top: 3px solid transparent;
-  transition: border-color 0.2s;
-}
-.dk-hover-amber:hover {
-  border-top-color: var(--dk-amber);
-}
-
-/* ============================================
-   UTILITIES
-   ============================================ */
-
-.dk-italic {
-  font-style: italic;
-  color: var(--dk-mid);
-}
-
-.dk-amber-text {
-  color: var(--dk-amber);
-}
-
-.dk-white-text {
-  color: var(--dk-white);
-}
-
-.dk-muted {
-  color: rgba(255,255,255,0.45);
+.dk-logo {
+  color: var(--dk-dark);
+  transition: color 0.2s;
 }
