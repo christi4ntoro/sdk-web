@@ -68,8 +68,8 @@ export function Hero() {
         }}
       >
         {t(
-          'Producción potenciada por IA, decisiones basadas en datos y contenido que tu organización realmente completa.',
-          'AI-powered production, data-driven decisions and content your organization actually completes.'
+          'Decisiones basadas en datos, producción potenciada por IA y contenido que tu organización realmente finaliza.',
+          'Data-driven decisions, AI-powered production, and content your organization actually completes.'
         )}
       </p>
 
