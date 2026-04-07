@@ -19,17 +19,85 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    const { name, company, email, service, message } = await req.json()
+    const fromEmail = process.env.RESEND_FROM_EMAIL
+    const toEmail = process.env.RESEND_TO_EMAIL
+
+    if (!fromEmail || !toEmail) {
+      return NextResponse.json({ error: 'Email not configured' }, { status: 503 })
+    }
+
+    const body = await req.json()
+    const { formType } = body
+
+    if (formType === 'cta') {
+      const { email, topic, lang } = body
+
+      if (!email) {
+        return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
+      }
+
+      // Notification to Studio Deki
+      await client.emails.send({
+        from: fromEmail,
+        to: [toEmail],
+        replyTo: email,
+        subject: `Nuevo lead CTA — ${topic || 'Sin tema'}`,
+        html: `
+          <div style="font-family: sans-serif; max-width: 600px; color: #1D1C33;">
+            <h2 style="color: #1D1C33; border-bottom: 3px solid #F8BB15; padding-bottom: 0.5rem;">
+              Nuevo lead desde el CTA — studiodeki.co
+            </h2>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem;">
+              <tr>
+                <td style="padding: 0.6rem 0; color: #6B6A7E; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; width: 120px;">Email</td>
+                <td style="padding: 0.6rem 0;"><a href="mailto:${email}" style="color: #F8BB15;">${email}</a></td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem 0; color: #6B6A7E; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;">Tema</td>
+                <td style="padding: 0.6rem 0; font-weight: 600;">${topic || '—'}</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem 0; color: #6B6A7E; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;">Idioma</td>
+                <td style="padding: 0.6rem 0;">${lang || '—'}</td>
+              </tr>
+            </table>
+          </div>
+        `,
+      })
+
+      // Auto-reply to the user
+      const autoreplyText =
+        lang === 'en'
+          ? 'Thanks for reaching out. We\'ll be in touch soon.'
+          : 'Gracias por escribirnos. Te contactamos pronto.'
+
+      await client.emails.send({
+        from: fromEmail,
+        to: [email],
+        subject: lang === 'en' ? 'Studio Deki — We got your message' : 'Studio Deki — Recibimos tu mensaje',
+        html: `
+          <div style="font-family: sans-serif; max-width: 600px; color: #1D1C33;">
+            <p style="font-size: 1rem; line-height: 1.7;">${autoreplyText}</p>
+            <p style="margin-top: 2rem; font-size: 0.85rem; color: #6B6A7E;">Studio Deki · <a href="https://studiodeki.co" style="color: #F8BB15;">studiodeki.co</a></p>
+          </div>
+        `,
+      })
+
+      return NextResponse.json({ ok: true })
+    }
+
+    // Contact form
+    const { name, company, email, size, challenge } = body
 
     if (!name || !email) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
     await client.emails.send({
-      from: 'Studio Deki <noreply@studiodeki.co>',
-      to: ['info@studiodeki.co'],
+      from: fromEmail,
+      to: [toEmail],
       replyTo: email,
-      subject: `Nuevo contacto: ${service || 'General'} — ${name}`,
+      subject: `Nuevo contacto — ${name}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; color: #1D1C33;">
           <h2 style="color: #1D1C33; border-bottom: 3px solid #F8BB15; padding-bottom: 0.5rem;">
@@ -49,13 +117,13 @@ export async function POST(req: NextRequest) {
               <td style="padding: 0.6rem 0;"><a href="mailto:${email}" style="color: #F8BB15;">${email}</a></td>
             </tr>
             <tr>
-              <td style="padding: 0.6rem 0; color: #6B6A7E; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;">Servicio</td>
-              <td style="padding: 0.6rem 0;">${service || '—'}</td>
+              <td style="padding: 0.6rem 0; color: #6B6A7E; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;">Tamaño</td>
+              <td style="padding: 0.6rem 0;">${size || '—'}</td>
             </tr>
           </table>
           <div style="margin-top: 2rem; padding: 1.5rem; background: #F7F6F2; border-radius: 4px;">
-            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #6B6A7E; margin-bottom: 0.75rem;">Mensaje</div>
-            <p style="margin: 0; line-height: 1.7;">${message || '—'}</p>
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #6B6A7E; margin-bottom: 0.75rem;">Desafio</div>
+            <p style="margin: 0; line-height: 1.7;">${challenge || '—'}</p>
           </div>
         </div>
       `,

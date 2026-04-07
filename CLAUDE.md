@@ -123,8 +123,8 @@ locales/
 - Positioning: science/data-backed, AI-accelerated, human-centered
 
 ## Current sprint status
-- Sprints 1-9 complete. Full audit: 8 critical, 15 important, 6 nice-to-have items logged in SPRINTS.md
-- Sprint 10a next: Fix broken items — C1 (form field mismatch), S2 (missing og-image), A4 (form labels), P1 (page client components)
+- Sprints 1-10b complete. Two separate form intents: CTA (email + topic, auto-reply) and Contact (full qualification).
+- Sprint 11 next: Accessibility + SEO fixes — A1, A2, A3, A7, A8, A9, S1, S2, S3, S4
 
 ## Commands
 ```bash

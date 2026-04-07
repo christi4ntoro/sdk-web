@@ -3,39 +3,43 @@
 import { useState } from 'react'
 import { useLang } from '@/lib/lang-context'
 
+type FormState = 'idle' | 'sending' | 'success' | 'error'
+
 export function CTASection() {
-  const { t } = useLang()
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const { t, lang } = useLang()
+  const [state, setState] = useState<FormState>('idle')
+  const [form, setForm] = useState({ email: '', topic: '' })
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setLoading(true)
-    const form = e.currentTarget
-    const data = {
-      challenge: (form.elements.namedItem('challenge') as HTMLTextAreaElement).value,
-      size: (form.elements.namedItem('size') as HTMLSelectElement).value,
-      email: (form.elements.namedItem('email') as HTMLInputElement).value,
-    }
-
+    setState('sending')
     try {
-      await fetch('/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ formType: 'cta', ...form, lang }),
       })
-      setSubmitted(true)
+      if (res.ok) {
+        setState('success')
+        setForm({ email: '', topic: '' })
+      } else {
+        setState('error')
+      }
     } catch {
-      // silent fail for now, form stays open
-    } finally {
-      setLoading(false)
+      setState('error')
     }
   }
 
   return (
     <section className="dk-cta-section">
       <div className="dk-cta-container">
-        {submitted ? (
+        {state === 'success' ? (
           <div className="dk-cta-success">
             <p className="dk-cta-success-heading">
               {t('shared.form_success_heading')}
@@ -58,60 +62,55 @@ export function CTASection() {
 
             <form onSubmit={handleSubmit} className="dk-cta-form">
               <div className="dk-cta-field">
-                <label htmlFor="challenge" className="dk-cta-field-label">
-                  {t('shared.form_challenge_label')}
-                </label>
-                <textarea
-                  id="challenge"
-                  name="challenge"
-                  required
-                  rows={4}
-                  className="dk-input dk-input-textarea"
-                  placeholder={t('shared.form_challenge_placeholder')}
-                />
-              </div>
-
-              <div className="dk-cta-field">
-                <label htmlFor="size" className="dk-cta-field-label">
-                  {t('shared.form_size_label')}
+                <label htmlFor="cta-topic" className="dk-cta-field-label">
+                  {t('cta_section.topic_label')}
                 </label>
                 <select
-                  id="size"
-                  name="size"
+                  id="cta-topic"
+                  name="topic"
                   required
+                  value={form.topic}
+                  onChange={handleChange}
                   className="dk-input dk-input-select"
-                  defaultValue=""
                 >
                   <option value="" disabled>
-                    {t('shared.form_size_placeholder')}
+                    {t('cta_section.topic_placeholder')}
                   </option>
-                  <option value="less-100">{t('shared.form_size_lt100')}</option>
-                  <option value="100-500">100 – 500</option>
-                  <option value="500-2000">500 – 2.000</option>
-                  <option value="more-2000">{t('shared.form_size_2000plus')}</option>
+                  <option value="Curso nuevo">{t('cta_section.topic_new_course')}</option>
+                  <option value="Migración de contenido">{t('cta_section.topic_migration')}</option>
+                  <option value="Consultoría">{t('cta_section.topic_consulting')}</option>
+                  <option value="Otro">{t('cta_section.topic_other')}</option>
                 </select>
               </div>
 
               <div className="dk-cta-field">
-                <label htmlFor="email" className="dk-cta-field-label">
+                <label htmlFor="cta-email" className="dk-cta-field-label">
                   {t('shared.form_email_label')}
                 </label>
                 <input
-                  id="email"
+                  id="cta-email"
                   name="email"
                   type="email"
                   required
+                  value={form.email}
+                  onChange={handleChange}
                   className="dk-input"
                   placeholder="nombre@empresa.com"
                 />
               </div>
 
+              {state === 'error' && (
+                <p className="dk-cta-error">
+                  {t('cta_section.error')}
+                </p>
+              )}
+
               <button
                 type="submit"
-                disabled={loading}
-                className={`btn-amber dk-cta-submit${loading ? ' dk-cta-submit--loading' : ''}`}
+                disabled={state === 'sending'}
+                className={`btn-amber dk-cta-submit${state === 'sending' ? ' dk-cta-submit--loading' : ''}`}
               >
-                {loading ? t('shared.form_sending') : t('shared.cta_find_solution')}
+                {state === 'sending' ? t('shared.form_sending') : t('shared.cta_find_solution')}
               </button>
 
               <p className="dk-cta-disclaimer">

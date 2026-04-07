@@ -68,7 +68,15 @@
     "cta": "Read our manifesto"
   },
   "cta_section": {
-    "body": "Tell us what your team needs. We'll analyze it and propose a path forward."
+    "body": "Tell us what your team needs. We'll analyze it and propose a path forward.",
+    "topic_label": "What are you working on?",
+    "topic_placeholder": "Select a topic",
+    "topic_new_course": "New course",
+    "topic_migration": "Content migration",
+    "topic_consulting": "Consulting",
+    "topic_other": "Other",
+    "autoreply_body": "Thanks for reaching out. We'll be in touch soon.",
+    "error": "Something went wrong. Try again or email us at info@studiodeki.co"
   },
   "insights": {
     "label": "Insights",

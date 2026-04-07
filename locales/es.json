@@ -68,7 +68,15 @@
     "cta": "Leer nuestro manifiesto"
   },
   "cta_section": {
-    "body": "Cuéntanos qué necesita tu equipo. Lo analizamos y te proponemos un camino."
+    "body": "Cuéntanos qué necesita tu equipo. Lo analizamos y te proponemos un camino.",
+    "topic_label": "¿En qué estás trabajando?",
+    "topic_placeholder": "Selecciona un tema",
+    "topic_new_course": "Curso nuevo",
+    "topic_migration": "Migración de contenido",
+    "topic_consulting": "Consultoría",
+    "topic_other": "Otro",
+    "autoreply_body": "Gracias por escribirnos. Te contactamos pronto.",
+    "error": "Algo salió mal. Intenta de nuevo o escríbenos a info@studiodeki.co"
   },
   "insights": {
     "label": "Perspectivas",
