@@ -123,8 +123,8 @@ locales/
 - Positioning: science/data-backed, AI-accelerated, human-centered
 
 ## Current sprint status
-- Sprints 1-7 complete. i18n refactored to JSON locale files in /locales/. All UI strings in namespaces (nav, footer, hero, etc). PT-BR = one new JSON file.
-- Sprint 8 next: Cookie consent + GA4 — GDPR banner, block tracking until accepted
+- Sprints 1-9 complete. Full audit: 8 critical, 15 important, 6 nice-to-have items logged in SPRINTS.md
+- Sprint 10a next: Fix broken items — C1 (form field mismatch), S2 (missing og-image), A4 (form labels), P1 (page client components)
 
 ## Commands
 ```bash
