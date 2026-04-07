@@ -85,50 +85,26 @@ export default function ServicesPage() {
   const { t } = useLang()
 
   return (
-    <div style={{ background: 'var(--dk-surface)' }}>
-
-      {/* Hero */}
-      <section style={{ padding: '8rem 3rem 5rem', maxWidth: '1100px', margin: '0 auto' }}>
-        <div className="section-label" style={{ marginBottom: '2rem' }}>
+    <div className="dk-services-page">
+      <section className="dk-services-hero">
+        <div className="section-label dk-services-hero-label">
           {t('Lo que construimos juntos', 'What we build together')}
         </div>
-        <h1
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(3rem, 5vw, 4.5rem)',
-            fontWeight: 400,
-            lineHeight: 1.1,
-            letterSpacing: '-0.02em',
-            maxWidth: '700px',
-            color: 'var(--dk-dark)',
-          }}
-        >
+        <h1 className="dk-services-heading">
           {t(
             <>
               Construimos lo que tu organización
               <br />
-              <em style={{ color: 'var(--dk-mid)', fontStyle: 'italic' }}>
-                necesita aprender.
-              </em>
+              <em>necesita aprender.</em>
             </>,
             <>
               We build what your organization
               <br />
-              <em style={{ color: 'var(--dk-mid)', fontStyle: 'italic' }}>
-                needs to learn.
-              </em>
+              <em>needs to learn.</em>
             </>
           )}
         </h1>
-        <p
-          style={{
-            fontSize: '1rem',
-            color: 'var(--dk-mid)',
-            lineHeight: 1.8,
-            maxWidth: '480px',
-            marginTop: '1.75rem',
-          }}
-        >
+        <p className="dk-services-lead">
           {t(
             'Tres áreas. Un solo criterio: que funcione de verdad.',
             'Three areas. One single standard: it has to actually work.'
@@ -136,84 +112,22 @@ export default function ServicesPage() {
         </p>
       </section>
 
-      {/* Services list */}
-      <section style={{ padding: '0 3rem 8rem', maxWidth: '1100px', margin: '0 auto' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+      <section className="dk-services-list-section">
+        <div className="dk-services-list">
           {services.map((s) => {
             const content = t(s.es, s.en) as typeof s.es
             return (
-              <div
-                key={s.num}
-                className="service-row"
-                style={{
-                  background: 'var(--dk-white)',
-                  padding: '3rem',
-                }}
-              >
-                {/* Number */}
-                <div
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: '2.5rem',
-                    fontWeight: 400,
-                    color: 'rgba(29,28,51,0.08)',
-                    lineHeight: 1,
-                    marginBottom: '1.5rem',
-                  }}
-                >
-                  {s.num}
-                </div>
-
-                <div className="service-inner">
-                  {/* Title + body */}
+              <div key={s.num} className="dk-service-row">
+                <div className="dk-service-number">{s.num}</div>
+                <div className="dk-service-inner">
                   <div>
-                    <h2
-                      style={{
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: '1.15rem',
-                        fontWeight: 700,
-                        color: 'var(--dk-dark)',
-                        marginBottom: '1rem',
-                        lineHeight: 1.3,
-                      }}
-                    >
-                      {content.title}
-                    </h2>
-                    <p
-                      style={{
-                        fontSize: '0.88rem',
-                        color: 'var(--dk-mid)',
-                        lineHeight: 1.85,
-                      }}
-                    >
-                      {content.body}
-                    </p>
+                    <h2 className="dk-service-title">{content.title}</h2>
+                    <p className="dk-service-desc">{content.body}</p>
                   </div>
-
-                  {/* Bullets */}
-                  <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                  <ul className="dk-service-bullets">
                     {content.bullets.map((b) => (
-                      <li
-                        key={b}
-                        style={{
-                          fontSize: '0.82rem',
-                          color: 'var(--dk-dark)',
-                          lineHeight: 1.5,
-                          display: 'flex',
-                          gap: '0.75rem',
-                          alignItems: 'flex-start',
-                        }}
-                      >
-                        <span
-                          style={{
-                            width: '6px',
-                            height: '6px',
-                            borderRadius: '50%',
-                            background: 'var(--dk-amber)',
-                            flexShrink: 0,
-                            marginTop: '0.45rem',
-                          }}
-                        />
+                      <li key={b} className="dk-service-li">
+                        <span className="dk-service-bullet" />
                         {b}
                       </li>
                     ))}
@@ -225,44 +139,23 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ background: 'var(--dk-dark)', padding: '6rem 3rem' }}>
-        <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
-          <h2
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2rem, 3vw, 2.8rem)',
-              fontWeight: 400,
-              color: 'var(--dk-white)',
-              lineHeight: 1.2,
-              marginBottom: '1.25rem',
-            }}
-          >
+      <section className="dk-services-cta">
+        <div className="dk-services-cta-inner">
+          <h2 className="dk-services-cta-heading">
             {t(
               <>
                 ¿Cuál es el reto de aprendizaje
                 <br />
-                <em style={{ color: 'var(--dk-amber)', fontStyle: 'italic' }}>
-                  de tu organización?
-                </em>
+                <em>de tu organización?</em>
               </>,
               <>
                 What is your organization's
                 <br />
-                <em style={{ color: 'var(--dk-amber)', fontStyle: 'italic' }}>
-                  learning challenge?
-                </em>
+                <em>learning challenge?</em>
               </>
             )}
           </h2>
-          <p
-            style={{
-              fontSize: '0.88rem',
-              color: 'rgba(255,255,255,0.4)',
-              marginBottom: '2.5rem',
-              lineHeight: 1.75,
-            }}
-          >
+          <p className="dk-services-cta-lead">
             {t(
               'Cuéntanos el reto. Te decimos qué tiene más sentido para tu organización.',
               "Tell us the challenge. We'll tell you what makes the most sense for your organization."
@@ -273,25 +166,6 @@ export default function ServicesPage() {
           </Link>
         </div>
       </section>
-
-      {/* Responsive styles */}
-      <style>{`
-        .service-inner {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 3rem;
-          align-items: start;
-        }
-        @media (max-width: 768px) {
-          .service-inner {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-          }
-          .service-row {
-            padding: 2rem !important;
-          }
-        }
-      `}</style>
     </div>
   )
 }

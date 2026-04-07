@@ -95,119 +95,32 @@ const enBlocks: Block[] = [
 
 function renderBlock(block: Block, i: number) {
   if (block.type === 'opening') {
-    return (
-      <p
-        key={i}
-        style={{
-          fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
-          fontWeight: 400,
-          lineHeight: 1.25,
-          color: 'var(--dk-dark)',
-          marginBottom: '2.5rem',
-          letterSpacing: '-0.01em',
-        }}
-      >
-        {block.text}
-      </p>
-    )
+    return <p key={i} className="dk-manifesto-opening">{block.text}</p>
   }
 
   if (block.type === 'anchor') {
-    return (
-      <p
-        key={i}
-        style={{
-          fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(1.2rem, 2vw, 1.5rem)',
-          fontWeight: 400,
-          fontStyle: 'italic',
-          lineHeight: 1.4,
-          color: 'var(--dk-mid)',
-          margin: '3.5rem 0',
-          paddingLeft: '1.5rem',
-          borderLeft: '2px solid var(--dk-amber)',
-        }}
-      >
-        {block.text}
-      </p>
-    )
+    return <p key={i} className="dk-manifesto-anchor">{block.text}</p>
   }
 
   if (block.type === 'highlight') {
-    return (
-      <p
-        key={i}
-        style={{
-          fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(1.15rem, 2vw, 1.4rem)',
-          fontWeight: 400,
-          lineHeight: 1.55,
-          color: 'var(--dk-dark)',
-          margin: '3.5rem 0',
-          letterSpacing: '-0.01em',
-        }}
-      >
-        {block.text}
-      </p>
-    )
+    return <p key={i} className="dk-manifesto-highlight">{block.text}</p>
   }
 
   if (block.type === 'leader') {
-    return (
-      <p
-        key={i}
-        style={{
-          fontSize: '0.9rem',
-          lineHeight: 1.85,
-          color: 'var(--dk-mid)',
-          fontStyle: 'italic',
-          margin: '3.5rem 0 0',
-          paddingTop: '3rem',
-          borderTop: '1px solid var(--dk-border)',
-        }}
-      >
-        {block.text}
-      </p>
-    )
+    return <p key={i} className="dk-manifesto-leader">{block.text}</p>
   }
 
   if (block.type === 'closing') {
     return (
-      <div key={i} style={{ marginTop: '3.5rem' }}>
+      <div key={i} className="dk-manifesto-closing">
         {block.lines.map((line, j) => (
-          <p
-            key={j}
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
-              fontWeight: 400,
-              lineHeight: 1.5,
-              color: 'var(--dk-dark)',
-              marginBottom: '0.25rem',
-            }}
-          >
-            {line}
-          </p>
+          <p key={j} className="dk-manifesto-closing-line">{line}</p>
         ))}
       </div>
     )
   }
 
-  return (
-    <p
-      key={i}
-      style={{
-        fontSize: '1rem',
-        lineHeight: 1.9,
-        color: 'var(--dk-mid)',
-        marginBottom: '1.75rem',
-        fontWeight: 400,
-      }}
-    >
-      {block.text}
-    </p>
-  )
+  return <p key={i} className="dk-manifesto-body">{block.text}</p>
 }
 
 export function ManifestoContent() {
@@ -215,20 +128,14 @@ export function ManifestoContent() {
   const blocks = lang === 'es' ? esBlocks : enBlocks
 
   return (
-    <article
-      style={{
-        maxWidth: '680px',
-        margin: '0 auto',
-        padding: '8rem 3rem 10rem',
-      }}
-    >
-      <div className="section-label" style={{ marginBottom: '4rem' }}>
+    <article className="dk-manifesto-article">
+      <div className="section-label dk-manifesto-label">
         {t('Manifiesto', 'Manifesto')}
       </div>
 
       {blocks.map((block, i) => renderBlock(block, i))}
 
-      <div style={{ marginTop: '5rem' }}>
+      <div className="dk-manifesto-cta">
         <Link href="/contact" className="btn-primary">
           {t('Trabaja con nosotros', 'Work with us')}
         </Link>

@@ -59,6 +59,9 @@ og-image.jpg          Social sharing image (pending)
 - Never add <style></style> tags inside components.
 - Class naming convention: dk-[component]-[element]
 - Tailwind only for responsive grid utilities: grid grid-cols-1 md:grid-cols-3 gap-px
+- No duplicate rules across sections. 
+- Typography for p, h2, h3 etc. uses base tokens only: .dk-body, .dk-body-sm, .dk-display-*, etc.
+- Never redefine paragraph or heading styles per-component.
 
 ### Architecture
 - Pages in app/ are server components. They have metadata exports.
@@ -116,10 +119,8 @@ og-image.jpg          Social sharing image (pending)
 - Positioning: science/data-backed, AI-accelerated, human-centered
 
 ## Current sprint status
-- Sprints 1-4 complete (foundation, homepage, content pages, insights)
-- Sprint 5 in progress: CSS migration (moving all inline styles to globals.css)
-- Remaining to migrate: CTASection, ManifestoContent, InsightArticle, InsightsContent, contact/page, services/page, insights pages
-- After migration: full globals.css audit and dead code removal
+- Sprints 1-5 complete. Zero inline styles. All styles in globals.css.
+- Sprint 6 next: globals.css audit and dead code removal
 
 ## Commands
 ```bash

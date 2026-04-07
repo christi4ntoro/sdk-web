@@ -8,48 +8,26 @@ export function InsightsContent({ posts }: { posts: PostMeta[] }) {
   const { lang, t } = useLang()
 
   return (
-    <div style={{ background: 'var(--dk-surface)', minHeight: '100vh' }}>
-      <section style={{ padding: '8rem 3rem 5rem', maxWidth: '1100px', margin: '0 auto' }}>
-        <div className="section-label" style={{ marginBottom: '2rem' }}>
+    <div className="dk-insights-page">
+      <section className="dk-insights-section">
+        <div className="section-label dk-insights-label">
           {t('Perspectivas', 'Insights')}
         </div>
-        <h1
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(2.8rem, 5vw, 4rem)',
-            fontWeight: 400,
-            lineHeight: 1.1,
-            letterSpacing: '-0.02em',
-            marginBottom: '1rem',
-            color: 'var(--dk-dark)',
-          }}
-        >
+        <h1 className="dk-insights-heading">
           {t(
             <>
               Lo que sabemos,
               <br />
-              <em style={{ color: 'var(--dk-mid)', fontStyle: 'italic' }}>
-                compartido sin filtro.
-              </em>
+              <em>compartido sin filtro.</em>
             </>,
             <>
               What we know,
               <br />
-              <em style={{ color: 'var(--dk-mid)', fontStyle: 'italic' }}>
-                shared without filter.
-              </em>
+              <em>shared without filter.</em>
             </>
           )}
         </h1>
-        <p
-          style={{
-            fontSize: '1rem',
-            color: 'var(--dk-mid)',
-            lineHeight: 1.8,
-            maxWidth: '480px',
-            marginBottom: '5rem',
-          }}
-        >
+        <p className="dk-insights-lead">
           {t(
             'Artículos sobre aprendizaje, diseño y tecnología aplicada a organizaciones.',
             'Articles on learning, design and technology applied to organizations.'
@@ -57,7 +35,7 @@ export function InsightsContent({ posts }: { posts: PostMeta[] }) {
         </p>
 
         {posts.length === 0 ? (
-          <p style={{ color: 'var(--dk-mid)', fontSize: '0.9rem' }}>
+          <p className="dk-insights-empty">
             {t('Próximamente.', 'Coming soon.')}
           </p>
         ) : (
@@ -70,81 +48,21 @@ export function InsightsContent({ posts }: { posts: PostMeta[] }) {
                 <Link
                   key={post.slug}
                   href={`/insights/${post.slug}`}
-                  className="blog-card-link"
-                  style={{
-                    background: 'var(--dk-white)',
-                    padding: '2rem 2rem 1.75rem',
-                    textDecoration: 'none',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0.75rem',
-                  }}
+                  className="blog-card-link dk-blog-card"
                 >
-                  <div
-                    style={{
-                      fontSize: '0.7rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.1em',
-                      textTransform: 'uppercase',
-                      color: 'var(--dk-mid)',
-                    }}
-                  >
-                    {post.date}
-                  </div>
-                  <h2
-                    style={{
-                      fontFamily: 'var(--font-display)',
-                      fontSize: '1.3rem',
-                      fontWeight: 400,
-                      lineHeight: 1.3,
-                      color: 'var(--dk-dark)',
-                      flex: 1,
-                    }}
-                  >
-                    {title}
-                  </h2>
+                  <div className="dk-blog-card-date">{post.date}</div>
+                  <h2 className="dk-blog-card-title">{title}</h2>
                   {excerpt && (
-                    <p
-                      style={{
-                        fontSize: '0.85rem',
-                        color: 'var(--dk-mid)',
-                        lineHeight: 1.7,
-                      }}
-                    >
-                      {excerpt}
-                    </p>
+                    <p className="dk-blog-card-excerpt">{excerpt}</p>
                   )}
                   {post.tags && post.tags.length > 0 && (
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginTop: '0.25rem' }}>
+                    <div className="dk-blog-card-tags">
                       {post.tags.slice(0, 2).map((tag) => (
-                        <span
-                          key={tag}
-                          style={{
-                            fontSize: '0.65rem',
-                            fontWeight: 700,
-                            letterSpacing: '0.06em',
-                            textTransform: 'uppercase',
-                            color: 'var(--dk-mid)',
-                            padding: '0.2rem 0.5rem',
-                            border: '1px solid var(--dk-border)',
-                            borderRadius: '2px',
-                          }}
-                        >
-                          {tag}
-                        </span>
+                        <span key={tag} className="dk-insight-tag">{tag}</span>
                       ))}
                     </div>
                   )}
-                  <div
-                    style={{
-                      fontSize: '0.72rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.07em',
-                      textTransform: 'uppercase',
-                      color: 'var(--dk-amber)',
-                      marginTop: '0.5rem',
-                    }}
-                  >
+                  <div className="dk-blog-card-read">
                     {t('Leer', 'Read')} →
                   </div>
                 </Link>
