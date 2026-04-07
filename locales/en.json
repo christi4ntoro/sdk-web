@@ -97,6 +97,11 @@
     "meta_desc": "We started with a simple idea. That any topic, no matter how complex, can be understood by anyone, if someone takes the time to design it well.",
     "meta_og_desc": "We started with a simple idea."
   },
+  "cookies": {
+    "message": "We use analytics cookies to understand how you browse the site. Your choice is saved and you can change it anytime.",
+    "accept": "Accept",
+    "reject": "Reject"
+  },
   "contact": {
     "label": "Let's talk",
     "field_name": "Your name",

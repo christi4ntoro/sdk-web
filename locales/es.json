@@ -97,6 +97,11 @@
     "meta_desc": "Empezamos con una idea simple. Que cualquier tema, por complejo que sea, puede ser entendido por cualquier persona, si alguien se toma el tiempo de diseñarlo bien.",
     "meta_og_desc": "Empezamos con una idea simple."
   },
+  "cookies": {
+    "message": "Usamos cookies de análisis para entender cómo navegas el sitio. Tu decisión se guarda y puedes cambiarla cuando quieras.",
+    "accept": "Aceptar",
+    "reject": "Rechazar"
+  },
   "contact": {
     "label": "Hablemos",
     "field_name": "Tu nombre",

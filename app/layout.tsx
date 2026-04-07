@@ -6,6 +6,7 @@ import { LangProvider } from '@/lib/lang-context'
 import { ThemeProvider } from '@/lib/theme-context'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
+import { CookieConsent } from '@/components/layout/CookieConsent'
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -177,6 +178,7 @@ export default function RootLayout({
             <Nav />
             <main>{children}</main>
             <Footer />
+            <CookieConsent />
           </LangProvider>
         </ThemeProvider>
       </body>
