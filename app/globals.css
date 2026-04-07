@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 /* ============================================
    DESIGN TOKENS
    ============================================ */
@@ -15,8 +17,8 @@
   --dk-deep:    #141324;
   --dk-border:  rgba(29, 28, 51, 0.12);
 
-  --font-display: var(--font-sans), system-ui, sans-serif;
-  --font-sans:    var(--font-sans), system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans:    'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
 /* ============================================
@@ -393,3 +395,543 @@ body {
   color: var(--dk-dark);
   transition: color 0.2s;
 }
+
+
+/* NAV — add to globals.css */
+
+.dk-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--dk-surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 3rem;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.dk-nav-scrolled {
+  border-bottom: 1px solid var(--dk-border);
+}
+
+.dk-nav-top {
+  border-bottom: 1px solid transparent;
+}
+
+.dk-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dk-nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--dk-mid);
+  transition: color 0.2s;
+}
+.dk-nav-link:hover {
+  color: var(--dk-dark);
+}
+
+.dk-nav-cta {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--dk-surface);
+  background: var(--dk-dark);
+  padding: 0.45rem 1.1rem;
+  border-radius: 3px;
+  transition: opacity 0.2s;
+  display: inline-block;
+}
+.dk-nav-cta:hover {
+  opacity: 0.8;
+}
+
+.dk-nav-desktop {
+  display: flex;
+}
+
+.dk-nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: var(--dk-dark);
+}
+
+.dk-mobile-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: var(--dk-surface);
+  display: flex;
+  flex-direction: column;
+  padding: 6rem 3rem 3rem;
+}
+
+.dk-mobile-link {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--dk-mid);
+  border-bottom: 1px solid var(--dk-border);
+  padding: 1.5rem 0;
+  transition: color 0.2s;
+}
+.dk-mobile-link:hover {
+  color: var(--dk-dark);
+}
+
+.dk-mobile-cta {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--dk-surface);
+  background: var(--dk-dark);
+  padding: 1.25rem 2rem;
+  border-radius: 3px;
+  margin-top: 2rem;
+  text-align: center;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .dk-nav-desktop  { display: none !important; }
+  .dk-nav-hamburger { display: flex !important; }
+  .dk-nav { padding: 1.25rem 1.5rem; }
+}
+
+.dk-nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--dk-dark);
+  transition: color 0.2s;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+   .dk-footer {
+    background: var(--dk-deep);
+    padding: 4rem 3rem 2.5rem;
+  }
+  
+  .dk-footer-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .dk-footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .dk-footer-seed {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.7;
+    max-width: 280px;
+  }
+  
+  .dk-footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .dk-footer-link {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.35);
+    transition: color 0.2s;
+  }
+  .dk-footer-link:hover {
+    color: rgba(255,255,255,0.8);
+  }
+  
+  .dk-footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .dk-footer-email {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    transition: color 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .dk-footer-email:hover {
+    color: rgba(255,255,255,0.8);
+  }
+  
+  .dk-footer-theme-btn {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 3px;
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.5);
+    transition: color 0.2s, border-color 0.2s;
+    width: 100%;
+  }
+  .dk-footer-theme-btn:hover {
+    color: rgba(255,255,255,0.9);
+    border-color: rgba(255,255,255,0.3);
+  }
+  
+  .dk-footer-select {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 3px;
+    padding: 0.4rem 2rem 0.4rem 0.75rem;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(255,255,255,0.3)'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.6rem center;
+  }
+  
+  .dk-footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .dk-footer-legal {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.04em;
+  }
+
+  /* ============================================
+   HERO
+   ============================================ */
+
+.dk-hero {
+  padding: 9rem 3rem 7rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.dk-hero-label {
+  margin-bottom: 2.5rem;
+}
+
+.dk-hero-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: var(--dk-dark);
+  max-width: 860px;
+  margin-bottom: 2.25rem;
+}
+
+.dk-hero-sub {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--dk-mid);
+  max-width: 500px;
+  line-height: 1.8;
+  margin-bottom: 3.25rem;
+}
+
+.dk-hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.dk-em {
+  color: var(--dk-mid);
+  font-style: italic;
+}
+
+/* ============================================
+   NUMBERS BAND
+   ============================================ */
+
+   .dk-numbers-section {
+    background: var(--dk-dark);
+  }
+  
+  .dk-numbers-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .dk-numbers-cell {
+    padding: 3.5rem;
+  }
+  
+  .dk-numbers-cell-highlight {
+    background: var(--dk-amber);
+  }
+  
+  .dk-numbers-cell-dark {
+    background: #242340;
+  }
+  
+  .dk-numbers-value {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 5.5vw, 6rem);
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  
+  .dk-numbers-value-highlight { color: var(--dk-dark); }
+  .dk-numbers-value-dark      { color: var(--dk-white); }
+  
+  .dk-numbers-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+  
+  .dk-numbers-label-highlight { color: rgba(29,28,51,0.55); }
+  .dk-numbers-label-dark      { color: rgba(255,255,255,0.45); }
+  
+  .dk-numbers-sub {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+  
+  .dk-numbers-sub-highlight { color: rgba(29,28,51,0.38); }
+  .dk-numbers-sub-dark      { color: rgba(255,255,255,0.28); }
+
+  /* ============================================
+   SERVICES
+   ============================================ */
+
+.dk-services-section {
+  padding: 7rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.dk-services-label {
+  margin-bottom: 3.5rem;
+}
+
+.dk-service-card {
+  background: var(--dk-white);
+  padding: 2.5rem;
+  border-top: 3px solid transparent;
+  transition: border-color 0.2s;
+  cursor: default;
+}
+.dk-service-card:hover {
+  border-top-color: var(--dk-amber);
+}
+
+.dk-service-num {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: rgba(29,28,51,0.08);
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+
+.dk-service-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dk-dark);
+  margin-bottom: 0.85rem;
+  line-height: 1.35;
+}
+
+.dk-service-desc {
+  font-size: 0.85rem;
+  color: var(--dk-mid);
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* ============================================
+   CLIENT LOGOS
+   ============================================ */
+
+   .dk-clients-section {
+    background: var(--dk-white);
+    padding: 5rem 3rem;
+  }
+  
+  .dk-clients-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .dk-clients-label {
+    margin-bottom: 2.75rem;
+  }
+  
+  .dk-clients-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 0.85rem;
+    align-items: center;
+  }
+  
+  .dk-client-chip {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: rgba(29,28,51,0.28);
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--dk-border);
+    border-radius: 2px;
+    transition: color 0.2s, border-color 0.2s;
+    cursor: default;
+  }
+  .dk-client-chip:hover {
+    color: var(--dk-dark);
+    border-color: rgba(29,28,51,0.25);
+  }
+
+  /* ============================================
+   STATEMENT
+   ============================================ */
+
+.dk-statement-section {
+  padding: 8rem 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.dk-statement-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.75rem;
+  color: var(--dk-dark);
+}
+
+.dk-statement-body {
+  font-size: 0.92rem;
+  color: var(--dk-mid);
+  line-height: 1.9;
+  font-weight: 400;
+}
+
+.dk-quote-card {
+  background: var(--dk-dark);
+  padding: 3rem;
+  position: relative;
+}
+
+.dk-quote-accent {
+  position: absolute;
+  top: -1.25rem;
+  left: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--dk-amber);
+}
+
+.dk-quote-text {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--dk-white);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.dk-quote-author {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ============================================
+   MANIFESTO TEASER
+   ============================================ */
+
+   .dk-manifesto-teaser {
+    padding: 8rem 3rem;
+    background: var(--dk-surface);
+  }
+  
+  .dk-manifesto-teaser-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .dk-manifesto-teaser-label {
+    margin-bottom: 3rem;
+    justify-content: center;
+  }
+  
+  .dk-manifesto-teaser-text {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--dk-dark);
+    margin-bottom: 3rem;
+    letter-spacing: -0.01em;
+  }
