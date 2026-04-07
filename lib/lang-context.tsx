@@ -7,20 +7,41 @@ import {
   useEffect,
   ReactNode,
 } from 'react'
+import esLocale from '@/locales/es.json'
+import enLocale from '@/locales/en.json'
 
 export type Lang = 'es' | 'en' // 'pt' ready, activate when needed
+
+type LocaleData = Record<string, unknown>
+
+function getByPath(obj: LocaleData, path: string): string {
+  const keys = path.split('.')
+  let val: unknown = obj
+  for (const k of keys) {
+    if (typeof val === 'object' && val !== null) {
+      val = (val as LocaleData)[k]
+    } else {
+      return path
+    }
+  }
+  return typeof val === 'string' ? val : path
+}
+
+const locales: Record<Lang, LocaleData> = {
+  es: esLocale as LocaleData,
+  en: enLocale as LocaleData,
+}
 
 interface LangContextType {
   lang: Lang
   setLang: (l: Lang) => void
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  t: <T = any>(es: T, en: T) => T
+  t: (key: string) => string
 }
 
 const LangContext = createContext<LangContextType>({
   lang: 'es',
   setLang: () => {},
-  t: (es) => es,
+  t: (key) => getByPath(locales.es, key),
 })
 
 function detectLang(): Lang {
@@ -57,8 +78,8 @@ export function LangProvider({ children }: { children: ReactNode }) {
     }
   }
 
-  function t<T>(es: T, en: T): T {
-    return lang === 'es' ? es : en
+  function t(key: string): string {
+    return getByPath(locales[lang], key)
   }
 
   return (

@@ -1,0 +1,134 @@
+{
+  "shared": {
+    "cta_primary": "Cuéntanos tu reto",
+    "cta_find_solution": "Quiero una solución",
+    "challenge_heading_pre": "¿Cuál es el reto de aprendizaje",
+    "challenge_heading_em": "de tu organización?",
+    "form_lead": "Cuéntanos qué necesita tu equipo. Lo analizamos y te proponemos un camino.",
+    "form_size_label": "¿Cuántas personas necesitan capacitarse?",
+    "form_size_placeholder": "Selecciona un rango",
+    "form_size_lt100": "Menos de 100",
+    "form_size_2000plus": "Más de 2.000",
+    "form_challenge_label": "¿Qué necesita aprender tu equipo?",
+    "form_challenge_placeholder": "Describe el reto de formación...",
+    "form_success_heading": "Recibido.",
+    "form_success_body": "Vamos a revisar tu reto y te escribimos pronto.",
+    "form_disclaimer": "Tu información es solo para nosotros. Nada de spam, nada de listas. Solo la conversación que necesitas.",
+    "form_email_label": "Tu correo",
+    "form_sending": "Enviando..."
+  },
+  "nav": {
+    "services": "Servicios",
+    "insights": "Perspectivas",
+    "manifesto": "Manifiesto",
+    "contact": "Contacto",
+    "cta": "Hablemos"
+  },
+  "footer": {
+    "seed": "Buscas un socio de aprendizaje para todo el año. Pregúntanos por nuestros programas de acompañamiento continuo.",
+    "theme": "Cambiar tema",
+    "lang": "Idioma"
+  },
+  "hero": {
+    "label": "Formación corporativa · Experiencias que transforman equipos",
+    "h1_pre": "Formación que cambia",
+    "h1_mid": "lo que tu equipo ",
+    "h1_em1": "hace.",
+    "h1_em2": "No solo lo que sabe.",
+    "sub": "Decisiones basadas en datos, producción potenciada por IA y contenido que tu organización realmente finaliza.",
+    "cta_secondary": "Ver servicios"
+  },
+  "numbers": {
+    "stat1": "Tasa de finalización",
+    "stat2": "Profesionales capacitados",
+    "stat3": "Cursos entregados"
+  },
+  "services_home": {
+    "label": "Lo que construimos juntos",
+    "s1_title": "Cursos que tu equipo realmente termina",
+    "s1_desc": "SCORM / xAPI. Narrativa que engancha, estructura definida por datos. Listo para cualquier LMS corporativo.",
+    "s2_title": "Cumplimiento que funciona más allá de la auditoría",
+    "s2_desc": "Contenido técnico y regulatorio convertido en formación que tu equipo comprende, aplica y recuerda.",
+    "s3_title": "Estrategia para sacar el máximo a tu plataforma",
+    "s3_desc": "No necesitas otra plataforma. Necesitas saber cómo hacer que la que tienes trabaje para tu gente. Diseñamos la estrategia, los flujos y la experiencia."
+  },
+  "clients": {
+    "label": "Han confiado en nosotros las organizaciones que tratan la formación como una inversión, no como un gasto."
+  },
+  "statement": {
+    "h2_pre": "No fabricamos contenido.",
+    "h2_em": "Diseñamos lo que tu equipo es capaz de hacer después.",
+    "body": "La mayoría del eLearning corporativo falla por la misma razón: fue diseñado para existir, no para funcionar. Nosotros empezamos por los datos. Qué necesita tu equipo, cómo aprende, qué contexto tiene. Eso define la estructura. El storytelling hace que se complete. Y la IA nos permite producir con una precisión y velocidad que antes era imposible.",
+    "quote": "\"Hemos visto lo que pasa cuando la formación se diseña para cumplir informes. Nosotros la diseñamos para el momento en que alguien aplica lo que aprendió, y lo hace bien.\""
+  },
+  "manifesto_teaser": {
+    "label": "Manifiesto",
+    "p1": "Somos un estudio de estrategia, diseño y tecnología aplicada al aprendizaje.",
+    "p2": "El dato es nuestro punto de partida. El diseño es nuestra forma de pensar. La tecnología es lo que nos permite escalar. Los resultados son nuestra única métrica.",
+    "cta": "Leer nuestro manifiesto"
+  },
+  "cta_section": {
+    "body": "Cuéntanos qué necesita tu equipo. Lo analizamos y te proponemos un camino."
+  },
+  "insights": {
+    "label": "Perspectivas",
+    "h1_pre": "Lo que sabemos,",
+    "h1_em": "compartido sin filtro.",
+    "lead": "Artículos sobre aprendizaje, diseño y tecnología aplicada a organizaciones.",
+    "empty": "Próximamente.",
+    "read": "Leer",
+    "article_footer_lead": "¿Quieres hablar sobre cómo esto aplica a tu organización?"
+  },
+  "manifesto": {
+    "label": "Manifiesto",
+    "cta": "Trabaja con nosotros",
+    "block_opening": "Empezamos con una idea simple.",
+    "block_body1": "Que cualquier tema, por complejo que sea, puede ser entendido por cualquier persona, si alguien se toma el tiempo de diseñarlo bien. No llegamos al aprendizaje corporativo por accidente. Llegamos porque vimos lo que pasa cuando la formación se hace sin ese principio. Presentaciones que nadie completa. Contenido que existe para el informe, no para la persona que lo recibe.",
+    "block_body2": "Diseñamos experiencias para las personas que se sientan frente a la pantalla y necesitan salir sabiendo hacer algo que antes no sabían hacer. Lo hacemos con interacción, con cómics, con infografías, con simulaciones, con narrativas que enganchan desde el primer segundo. La forma cambia. El principio no.",
+    "block_anchor": "Somos un estudio de estrategia, diseño y tecnología aplicada al aprendizaje.",
+    "block_body3": "Los datos nos dicen qué necesita tu equipo. Diseñamos esos datos en algo humano. La tecnología nos permite hacerlo a escala. La creatividad es nuestra alma. Escuchamos, analizamos y comprendemos a las personas antes de proponer cualquier solución. Porque una buena solución solo es posible cuando entiendes de verdad el problema.",
+    "block_highlight": "No fabricamos contenido. Construimos el momento en que alguien entiende algo que antes no entendía. Y lo aplica. Y cambia lo que hace.",
+    "block_body4": "Trabajamos con organizaciones que creen que su gente merece formación bien hecha. No plantillas. No atajos. No contenido diseñado para existir.",
+    "block_body5": "Trabajamos donde está el mejor talento y donde nuestros clientes nos necesitan.",
+    "block_leader": "Si estás leyendo esto, probablemente ya sabes que tu gente no es un número en un reporte de capacitación. Este estudio existe para los líderes que piensan igual.",
+    "block_closing1": "Esto es lo que construimos.",
+    "block_closing2": "Esto es lo que somos.",
+    "meta_title": "Manifiesto — Studio Deki",
+    "meta_desc": "Empezamos con una idea simple. Que cualquier tema, por complejo que sea, puede ser entendido por cualquier persona, si alguien se toma el tiempo de diseñarlo bien.",
+    "meta_og_desc": "Empezamos con una idea simple."
+  },
+  "contact": {
+    "label": "Hablemos",
+    "field_name": "Tu nombre",
+    "field_company": "Tu empresa",
+    "error": "Algo salió mal. Intenta de nuevo o escríbenos a info@studiodeki.co"
+  },
+  "services_page": {
+    "label": "Lo que construimos juntos",
+    "heading_pre": "Construimos lo que tu organización",
+    "heading_em": "necesita aprender.",
+    "lead": "Tres áreas. Un solo criterio: que funcione de verdad.",
+    "s1_title": "Cursos que tu equipo realmente termina",
+    "s1_body": "Desarrollamos contenido interactivo alineado con tu marca, tus procesos y tu audiencia. Cada módulo pasa por análisis de datos, diseño de experiencia y pruebas antes de la entrega. Estándar SCORM 1.2 / xAPI. Compatible con cualquier LMS.",
+    "s1_b1": "Análisis de necesidades y diseño instruccional",
+    "s1_b2": "Narrativa y storytelling que engancha",
+    "s1_b3": "Animación, video e infografías",
+    "s1_b4": "Evaluaciones y trazabilidad de aprendizaje",
+    "s1_b5": "Entrega en SCORM 1.2 o xAPI",
+    "s2_title": "Cumplimiento que funciona más allá de la auditoría",
+    "s2_body": "Convertimos normas complejas en formación que tu equipo comprende, aplica y recuerda. Trabajamos con equipos de RRHH, Legal y Cumplimiento para garantizar precisión técnica y retención real. Especialidad en SGSST, LAFT, PTEP y reformas laborales.",
+    "s2_b1": "Análisis de la norma y brechas de conocimiento",
+    "s2_b2": "Módulos por rol: supervisores, empleados, directivos",
+    "s2_b3": "Registro de evidencias para auditoría",
+    "s2_b4": "Actualizaciones cuando cambia la norma",
+    "s2_b5": "Disponible en español e inglés",
+    "s3_title": "Estrategia para sacar el máximo a tu plataforma",
+    "s3_body": "No necesitas otra plataforma. Necesitas saber cómo hacer que la que tienes trabaje para tu gente. Analizamos tu contexto, diseñamos la estrategia de difusión, los flujos de aprendizaje y la experiencia del usuario dentro de tu LMS.",
+    "s3_b1": "Diagnóstico de tu plataforma actual",
+    "s3_b2": "Estrategia de difusión y adopción",
+    "s3_b3": "Diseño de flujos y currículos",
+    "s3_b4": "Experiencia de usuario para el aprendiz",
+    "s3_b5": "Capacitación a administradores",
+    "cta_lead": "Cuéntanos el reto. Te decimos qué tiene más sentido para tu organización."
+  }
+}

@@ -8,13 +8,12 @@ export function InsightArticle({ post }: { post: Post }) {
   const { lang, t } = useLang()
 
   const title = lang === 'en' && post.titleEn ? post.titleEn : post.title
-  const backLabel = t('Perspectivas', 'Insights')
 
   return (
     <div className="dk-insight-page">
       <article className="dk-insight-article">
         <Link href="/insights" className="dk-insight-back">
-          ← {backLabel}
+          ← {t('insights.label')}
         </Link>
 
         <div className="dk-insight-meta">
@@ -33,13 +32,10 @@ export function InsightArticle({ post }: { post: Post }) {
 
         <div className="dk-insight-footer">
           <p className="dk-insight-footer-lead">
-            {t(
-              '¿Quieres hablar sobre cómo esto aplica a tu organización?',
-              'Want to talk about how this applies to your organization?'
-            )}
+            {t('insights.article_footer_lead')}
           </p>
           <Link href="/contact" className="btn-primary">
-            {t('Cuéntanos tu reto', 'Tell us your challenge')}
+            {t('shared.cta_primary')}
           </Link>
         </div>
       </article>

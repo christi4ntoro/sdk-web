@@ -8,10 +8,10 @@ import { useTheme } from '@/lib/theme-context'
 type LinkHref = ComponentProps<typeof Link>['href']
 
 const navLinks = [
-  { href: '/services',  es: 'Servicios',    en: 'Services'  },
-  { href: '/insights',  es: 'Perspectivas', en: 'Insights'  },
-  { href: '/manifesto', es: 'Manifiesto',   en: 'Manifesto' },
-  { href: '/contact',   es: 'Contacto',     en: 'Contact'   },
+  { href: '/services',  key: 'nav.services'  },
+  { href: '/insights',  key: 'nav.insights'  },
+  { href: '/manifesto', key: 'nav.manifesto' },
+  { href: '/contact',   key: 'nav.contact'   },
 ] as const
 
 export function Footer() {
@@ -34,10 +34,7 @@ export function Footer() {
             <path d="M613.721 233.022C604.355 233.022 596.299 236.389 589.588 243.095C582.871 249.817 579.505 257.861 579.505 267.245C579.505 276.606 582.871 284.656 589.588 291.361C596.299 298.106 604.355 301.456 613.721 301.456C623.105 301.456 631.144 298.106 637.86 291.361C644.588 284.656 647.944 276.606 647.944 267.245C647.944 257.861 644.588 249.817 637.86 243.095C631.144 236.389 623.105 233.022 613.721 233.022Z" />
           </svg>
           <p className="dk-footer-seed">
-            {t(
-              'Buscas un socio de aprendizaje para todo el año. Pregúntanos por nuestros programas de acompañamiento continuo.',
-              'Looking for a learning partner year-round. Ask us about our continuous partnership programs.'
-            )}
+            {t('footer.seed')}
           </p>
         </div>
 
@@ -45,7 +42,7 @@ export function Footer() {
         <nav className="dk-footer-nav">
           {navLinks.map((item) => (
             <Link key={item.href} href={item.href as LinkHref} className="dk-footer-link">
-              {t(item.es, item.en)}
+              {t(item.key)}
             </Link>
           ))}
         </nav>
@@ -56,7 +53,7 @@ export function Footer() {
             info@studiodeki.co
           </a>
           <button onClick={toggleTheme} className="dk-footer-theme-btn"
-            aria-label={t('Cambiar tema', 'Toggle theme')}>
+            aria-label={t('footer.theme')}>
             {theme === 'light' ? (
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
@@ -76,7 +73,7 @@ export function Footer() {
             )}
           </button>
           <select value={lang} onChange={(e) => setLang(e.target.value as Lang)}
-            className="dk-footer-select" aria-label={t('Idioma', 'Language')}>
+            className="dk-footer-select" aria-label={t('footer.lang')}>
             <option value="es">ES — Español</option>
             <option value="en">EN — English</option>
             {/* PT: <option value="pt">PT — Português</option> */}

@@ -1,0 +1,134 @@
+{
+  "shared": {
+    "cta_primary": "Tell us your challenge",
+    "cta_find_solution": "Find my solution",
+    "challenge_heading_pre": "What is your organization's",
+    "challenge_heading_em": "learning challenge?",
+    "form_lead": "Tell us what your team needs. We'll analyze it and propose a path forward.",
+    "form_size_label": "How many people need training?",
+    "form_size_placeholder": "Select a range",
+    "form_size_lt100": "Fewer than 100",
+    "form_size_2000plus": "More than 2,000",
+    "form_challenge_label": "What does your team need to learn?",
+    "form_challenge_placeholder": "Describe your training challenge...",
+    "form_success_heading": "Got it.",
+    "form_success_body": "We'll review your challenge and be in touch soon.",
+    "form_disclaimer": "Your information stays with us. No spam, no lists. Just the conversation you need.",
+    "form_email_label": "Your email",
+    "form_sending": "Sending..."
+  },
+  "nav": {
+    "services": "Services",
+    "insights": "Insights",
+    "manifesto": "Manifesto",
+    "contact": "Contact",
+    "cta": "Start here"
+  },
+  "footer": {
+    "seed": "Looking for a learning partner year-round. Ask us about our continuous partnership programs.",
+    "theme": "Toggle theme",
+    "lang": "Language"
+  },
+  "hero": {
+    "label": "Corporate training · Experiences that transform teams",
+    "h1_pre": "Training that changes",
+    "h1_mid": "what your team ",
+    "h1_em1": "does.",
+    "h1_em2": "Not just what they know.",
+    "sub": "Data-driven decisions, AI-powered production, and content your organization actually completes.",
+    "cta_secondary": "Explore services"
+  },
+  "numbers": {
+    "stat1": "Completion rate",
+    "stat2": "Professionals trained",
+    "stat3": "Courses delivered"
+  },
+  "services_home": {
+    "label": "What we build together",
+    "s1_title": "Courses your team actually completes",
+    "s1_desc": "SCORM / xAPI. Narrative that hooks, structure defined by data. Ready for any corporate LMS.",
+    "s2_title": "Compliance that works beyond the audit",
+    "s2_desc": "Technical and regulatory content turned into training your team understands, applies and remembers.",
+    "s3_title": "Strategy to maximize your learning platform",
+    "s3_desc": "You don't need another platform. You need to know how to make the one you have work for your people. We design the strategy, the flows and the experience."
+  },
+  "clients": {
+    "label": "Trusted by organizations that treat training as an investment, not a cost."
+  },
+  "statement": {
+    "h2_pre": "We don't manufacture content.",
+    "h2_em": "We design what your team can do afterwards.",
+    "body": "Most corporate eLearning fails for the same reason: it was designed to exist, not to work. We start with data. What your team needs, how they learn, what context they have. That defines the structure. Storytelling makes it stick. And AI lets us produce with a precision and speed that wasn't possible before.",
+    "quote": "\"We've seen what happens when training is built to fill reports. We build it for the moment someone applies what they learned, and gets it right.\""
+  },
+  "manifesto_teaser": {
+    "label": "Manifesto",
+    "p1": "We are a strategy, design and technology studio applied to learning.",
+    "p2": "Data is our starting point. Design is how we think. Technology is what lets us scale. Results are our only metric.",
+    "cta": "Read our manifesto"
+  },
+  "cta_section": {
+    "body": "Tell us what your team needs. We'll analyze it and propose a path forward."
+  },
+  "insights": {
+    "label": "Insights",
+    "h1_pre": "What we know,",
+    "h1_em": "shared without filter.",
+    "lead": "Articles on learning, design and technology applied to organizations.",
+    "empty": "Coming soon.",
+    "read": "Read",
+    "article_footer_lead": "Want to talk about how this applies to your organization?"
+  },
+  "manifesto": {
+    "label": "Manifesto",
+    "cta": "Work with us",
+    "block_opening": "We started with a simple idea.",
+    "block_body1": "That any topic, no matter how complex, can be understood by anyone, if someone takes the time to design it well. We didn't arrive at corporate learning by accident. We arrived because we saw what happens when training is built without that principle. Presentations nobody completes. Content that exists for the report, not for the person receiving it.",
+    "block_body2": "We design experiences for the people sitting in front of a screen who need to leave knowing how to do something they couldn't do before. We've done it with interaction, with comics, with infographics, with simulations, with narratives that hook from the first second. The form changes. The principle doesn't.",
+    "block_anchor": "We are a strategy, design and technology studio applied to learning.",
+    "block_body3": "Data tells us what your team needs. We design that data into something human. Technology lets us do it at scale. Creativity is our soul. We listen, analyze and understand people before proposing any solution. Because a good solution is only possible when you truly understand the problem.",
+    "block_highlight": "We don't manufacture content. We build the moment when someone understands something they didn't before. And applies it. And changes what they do.",
+    "block_body4": "We work with organizations that believe their people deserve training done right. No templates. No shortcuts. No content designed just to exist.",
+    "block_body5": "We work where the best talent is and where our clients need us.",
+    "block_leader": "If you're reading this, you probably already know your people are not a number in a training report. This studio exists for the leaders who think the same.",
+    "block_closing1": "This is what we build.",
+    "block_closing2": "This is who we are.",
+    "meta_title": "Manifesto — Studio Deki",
+    "meta_desc": "We started with a simple idea. That any topic, no matter how complex, can be understood by anyone, if someone takes the time to design it well.",
+    "meta_og_desc": "We started with a simple idea."
+  },
+  "contact": {
+    "label": "Let's talk",
+    "field_name": "Your name",
+    "field_company": "Your company",
+    "error": "Something went wrong. Try again or email us at info@studiodeki.co"
+  },
+  "services_page": {
+    "label": "What we build together",
+    "heading_pre": "We build what your organization",
+    "heading_em": "needs to learn.",
+    "lead": "Three areas. One single standard: it has to actually work.",
+    "s1_title": "Courses your team actually completes",
+    "s1_body": "We develop interactive content aligned with your brand, processes, and audience. Every module goes through data analysis, experience design, and testing before delivery. SCORM 1.2 / xAPI standard. Compatible with any LMS.",
+    "s1_b1": "Needs analysis and instructional design",
+    "s1_b2": "Narrative and storytelling that hooks",
+    "s1_b3": "Animation, video, and infographics",
+    "s1_b4": "Assessments and learning tracking",
+    "s1_b5": "Delivery in SCORM 1.2 or xAPI",
+    "s2_title": "Compliance that works beyond the audit",
+    "s2_body": "We turn complex regulations into training your team understands, applies and remembers. We work with HR, Legal, and Compliance teams to ensure technical accuracy and real retention. Specializing in Colombian labor reform, SGSST, and AML/LAFT.",
+    "s2_b1": "Regulatory analysis and knowledge gap mapping",
+    "s2_b2": "Role-specific modules: supervisors, employees, executives",
+    "s2_b3": "Audit-ready evidence records",
+    "s2_b4": "Updates when regulations change",
+    "s2_b5": "Available in Spanish and English",
+    "s3_title": "Strategy to maximize your learning platform",
+    "s3_body": "You don't need another platform. You need to know how to make the one you have work for your people. We analyze your context, design the diffusion strategy, learning flows and user experience inside your LMS.",
+    "s3_b1": "Diagnosis of your current platform",
+    "s3_b2": "Diffusion and adoption strategy",
+    "s3_b3": "Flow and curriculum design",
+    "s3_b4": "Learner user experience",
+    "s3_b5": "Admin training",
+    "cta_lead": "Tell us the challenge. We'll tell you what makes the most sense for your organization."
+  }
+}

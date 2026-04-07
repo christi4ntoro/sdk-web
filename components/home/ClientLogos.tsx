@@ -21,10 +21,7 @@ export function ClientLogos() {
     <section className="dk-clients-section">
       <div className="dk-clients-inner">
         <div className="section-label dk-clients-label">
-          {t(
-            'Han confiado en nosotros las organizaciones que tratan la formación como una inversión, no como un gasto.',
-            'Trusted by organizations that treat training as an investment, not a cost.'
-          )}
+          {t('clients.label')}
         </div>
         <div className="dk-clients-grid">
           {clients.map((name) => (

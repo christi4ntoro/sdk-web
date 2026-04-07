@@ -13,6 +13,7 @@ eLearning studio website. Next.js 15 App Router, TypeScript, Tailwind CSS + cust
 - Email: Resend via /api/contact
 - Blog/Insights: MDX files in content/blog/, read via lib/blog.ts
 - Deploy: Vercel, domain studiodeki.co
+- i18n: JSON locale files in /locales/, useLang() loads from there, t('key') API in components
 
 ## Folder structure
 app/                    Pages and API routes
@@ -51,6 +52,9 @@ public/
 shared/deki-logo.svg  NOT used in components. Logo is inline SVG.
 logos/                Client SVG logos (pending)
 og-image.jpg          Social sharing image (pending)
+locales/
+  es.json               All Spanish UI strings
+  en.json               All English UI strings
 ## Critical rules — always follow these
 
 ### CSS
@@ -119,8 +123,8 @@ og-image.jpg          Social sharing image (pending)
 - Positioning: science/data-backed, AI-accelerated, human-centered
 
 ## Current sprint status
-- Sprints 1-5 complete. Zero inline styles. All styles in globals.css.
-- Sprint 6 next: globals.css audit and dead code removal
+- Sprints 1-7 complete. i18n refactored to JSON locale files in /locales/. All UI strings in namespaces (nav, footer, hero, etc). PT-BR = one new JSON file.
+- Sprint 8 next: Cookie consent + GA4 — GDPR banner, block tracking until accepted
 
 ## Commands
 ```bash

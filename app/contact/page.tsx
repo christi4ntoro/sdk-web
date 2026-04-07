@@ -45,49 +45,34 @@ export default function ContactPage() {
   return (
     <div className="dk-contact-page">
       <div className="dk-contact-container">
-        <div className={`section-label dk-contact-label`}>
-          {t('Hablemos', "Let's talk")}
+        <div className="section-label dk-contact-label">
+          {t('contact.label')}
         </div>
 
         <h1 className="dk-contact-heading">
-          {t(
-            <>
-              ¿Cuál es el reto de aprendizaje
-              <br />
-              <em>de tu organización?</em>
-            </>,
-            <>
-              What is your organization's
-              <br />
-              <em>learning challenge?</em>
-            </>
-          )}
+          {t('shared.challenge_heading_pre')}
+          <br />
+          <em>{t('shared.challenge_heading_em')}</em>
         </h1>
 
         <p className="dk-contact-lead">
-          {t(
-            'Cuéntanos qué necesita tu equipo. Lo analizamos y te proponemos un camino.',
-            "Tell us what your team needs. We'll analyze it and propose a path forward."
-          )}
+          {t('shared.form_lead')}
         </p>
 
         {state === 'success' ? (
           <div className="dk-contact-success">
             <p className="dk-contact-success-heading">
-              {t('Recibido.', 'Got it.')}
+              {t('shared.form_success_heading')}
             </p>
             <p className="dk-contact-success-body">
-              {t(
-                'Vamos a revisar tu reto y te escribimos pronto.',
-                "We'll review your challenge and be in touch soon."
-              )}
+              {t('shared.form_success_body')}
             </p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="dk-contact-form">
             <div className="dk-contact-row">
               <div>
-                <label className="dk-field-label">{t('Tu nombre', 'Your name')}</label>
+                <label className="dk-field-label">{t('contact.field_name')}</label>
                 <input
                   required
                   name="name"
@@ -98,7 +83,7 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label className="dk-field-label">{t('Tu empresa', 'Your company')}</label>
+                <label className="dk-field-label">{t('contact.field_company')}</label>
                 <input
                   name="company"
                   value={form.company}
@@ -124,7 +109,7 @@ export default function ContactPage() {
 
             <div>
               <label className="dk-field-label">
-                {t('¿Cuántas personas necesitan capacitarse?', 'How many people need training?')}
+                {t('shared.form_size_label')}
               </label>
               <select
                 name="size"
@@ -133,18 +118,18 @@ export default function ContactPage() {
                 className="dk-input dk-input-select"
               >
                 <option value="" disabled>
-                  {t('Selecciona un rango', 'Select a range')}
+                  {t('shared.form_size_placeholder')}
                 </option>
-                <option value="less-100">{t('Menos de 100', 'Fewer than 100')}</option>
+                <option value="less-100">{t('shared.form_size_lt100')}</option>
                 <option value="100-500">100 – 500</option>
                 <option value="500-2000">500 – 2.000</option>
-                <option value="more-2000">{t('Más de 2.000', 'More than 2,000')}</option>
+                <option value="more-2000">{t('shared.form_size_2000plus')}</option>
               </select>
             </div>
 
             <div>
               <label className="dk-field-label">
-                {t('¿Qué necesita aprender tu equipo?', 'What does your team need to learn?')}
+                {t('shared.form_challenge_label')}
               </label>
               <textarea
                 name="challenge"
@@ -153,19 +138,13 @@ export default function ContactPage() {
                 required
                 rows={5}
                 className="dk-input dk-input-textarea"
-                placeholder={t(
-                  'Describe el reto de formación...',
-                  'Describe your training challenge...'
-                )}
+                placeholder={t('shared.form_challenge_placeholder')}
               />
             </div>
 
             {state === 'error' && (
               <p className="dk-contact-error">
-                {t(
-                  'Algo salió mal. Intenta de nuevo o escríbenos a info@studiodeki.co',
-                  'Something went wrong. Try again or email us at info@studiodeki.co'
-                )}
+                {t('contact.error')}
               </p>
             )}
 
@@ -175,15 +154,12 @@ export default function ContactPage() {
               className={`btn-amber dk-contact-submit${state === 'sending' ? ' dk-contact-submit--sending' : ''}`}
             >
               {state === 'sending'
-                ? t('Enviando...', 'Sending...')
-                : t('Quiero una solución', 'Find my solution')}
+                ? t('shared.form_sending')
+                : t('shared.cta_find_solution')}
             </button>
 
             <p className="dk-contact-disclaimer">
-              {t(
-                'Tu información es solo para nosotros. Nada de spam, nada de listas. Solo la conversación que necesitas.',
-                'Your information stays with us. No spam, no lists. Just the conversation you need.'
-              )}
+              {t('shared.form_disclaimer')}
             </p>
           </form>
         )}

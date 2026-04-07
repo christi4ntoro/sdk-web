@@ -11,32 +11,20 @@ export function InsightsContent({ posts }: { posts: PostMeta[] }) {
     <div className="dk-insights-page">
       <section className="dk-insights-section">
         <div className="section-label dk-insights-label">
-          {t('Perspectivas', 'Insights')}
+          {t('insights.label')}
         </div>
         <h1 className="dk-insights-heading">
-          {t(
-            <>
-              Lo que sabemos,
-              <br />
-              <em>compartido sin filtro.</em>
-            </>,
-            <>
-              What we know,
-              <br />
-              <em>shared without filter.</em>
-            </>
-          )}
+          {t('insights.h1_pre')}
+          <br />
+          <em>{t('insights.h1_em')}</em>
         </h1>
         <p className="dk-body dk-insights-lead">
-          {t(
-            'Artículos sobre aprendizaje, diseño y tecnología aplicada a organizaciones.',
-            'Articles on learning, design and technology applied to organizations.'
-          )}
+          {t('insights.lead')}
         </p>
 
         {posts.length === 0 ? (
           <p className="dk-insights-empty">
-            {t('Próximamente.', 'Coming soon.')}
+            {t('insights.empty')}
           </p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px">
@@ -63,7 +51,7 @@ export function InsightsContent({ posts }: { posts: PostMeta[] }) {
                     </div>
                   )}
                   <div className="dk-blog-card-read">
-                    {t('Leer', 'Read')} →
+                    {t('insights.read')} →
                   </div>
                 </Link>
               )

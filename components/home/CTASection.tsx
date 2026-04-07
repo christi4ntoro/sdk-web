@@ -38,43 +38,28 @@ export function CTASection() {
         {submitted ? (
           <div className="dk-cta-success">
             <p className="dk-cta-success-heading">
-              {t('Recibido.', 'Got it.')}
+              {t('shared.form_success_heading')}
             </p>
             <p className="dk-cta-success-body">
-              {t(
-                'Vamos a revisar tu reto y te escribimos pronto.',
-                "We'll review your challenge and be in touch soon."
-              )}
+              {t('shared.form_success_body')}
             </p>
           </div>
         ) : (
           <>
             <h2 className="dk-cta-heading">
-              {t(
-                <>
-                  ¿Cuál es el reto de aprendizaje
-                  <br />
-                  <em>de tu organización?</em>
-                </>,
-                <>
-                  What is your organization's
-                  <br />
-                  <em>learning challenge?</em>
-                </>
-              )}
+              {t('shared.challenge_heading_pre')}
+              <br />
+              <em>{t('shared.challenge_heading_em')}</em>
             </h2>
 
             <p className="dk-cta-body">
-              {t(
-                'Cuéntanos qué necesita tu equipo. Lo analizamos y te proponemos un camino.',
-                "Tell us what your team needs. We'll analyze it and propose a path forward."
-              )}
+              {t('cta_section.body')}
             </p>
 
             <form onSubmit={handleSubmit} className="dk-cta-form">
               <div className="dk-cta-field">
                 <label htmlFor="challenge" className="dk-cta-field-label">
-                  {t('¿Qué necesita aprender tu equipo?', 'What does your team need to learn?')}
+                  {t('shared.form_challenge_label')}
                 </label>
                 <textarea
                   id="challenge"
@@ -82,16 +67,13 @@ export function CTASection() {
                   required
                   rows={4}
                   className="dk-input dk-input-textarea"
-                  placeholder={t(
-                    'Describe el reto de formación...',
-                    'Describe your training challenge...'
-                  )}
+                  placeholder={t('shared.form_challenge_placeholder')}
                 />
               </div>
 
               <div className="dk-cta-field">
                 <label htmlFor="size" className="dk-cta-field-label">
-                  {t('¿Cuántas personas necesitan capacitarse?', 'How many people need training?')}
+                  {t('shared.form_size_label')}
                 </label>
                 <select
                   id="size"
@@ -101,18 +83,18 @@ export function CTASection() {
                   defaultValue=""
                 >
                   <option value="" disabled>
-                    {t('Selecciona un rango', 'Select a range')}
+                    {t('shared.form_size_placeholder')}
                   </option>
-                  <option value="less-100">{t('Menos de 100', 'Fewer than 100')}</option>
+                  <option value="less-100">{t('shared.form_size_lt100')}</option>
                   <option value="100-500">100 – 500</option>
                   <option value="500-2000">500 – 2.000</option>
-                  <option value="more-2000">{t('Más de 2.000', 'More than 2,000')}</option>
+                  <option value="more-2000">{t('shared.form_size_2000plus')}</option>
                 </select>
               </div>
 
               <div className="dk-cta-field">
                 <label htmlFor="email" className="dk-cta-field-label">
-                  {t('Tu correo', 'Your email')}
+                  {t('shared.form_email_label')}
                 </label>
                 <input
                   id="email"
@@ -129,16 +111,11 @@ export function CTASection() {
                 disabled={loading}
                 className={`btn-amber dk-cta-submit${loading ? ' dk-cta-submit--loading' : ''}`}
               >
-                {loading
-                  ? t('Enviando...', 'Sending...')
-                  : t('Quiero una solución', 'Find my solution')}
+                {loading ? t('shared.form_sending') : t('shared.cta_find_solution')}
               </button>
 
               <p className="dk-cta-disclaimer">
-                {t(
-                  'Tu información es solo para nosotros. Nada de spam, nada de listas. Solo la conversación que necesitas.',
-                  'Your information stays with us. No spam, no lists. Just the conversation you need.'
-                )}
+                {t('shared.form_disclaimer')}
               </p>
             </form>
           </>

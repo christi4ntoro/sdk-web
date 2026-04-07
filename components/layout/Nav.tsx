@@ -8,9 +8,9 @@ import { useLang } from '@/lib/lang-context'
 type LinkHref = ComponentProps<typeof Link>['href']
 
 const navLinks = [
-  { href: '/services',  es: 'Servicios',    en: 'Services'  },
-  { href: '/insights',  es: 'Perspectivas', en: 'Insights'  },
-  { href: '/manifesto', es: 'Manifiesto',   en: 'Manifesto' },
+  { href: '/services',  key: 'nav.services'  },
+  { href: '/insights',  key: 'nav.insights'  },
+  { href: '/manifesto', key: 'nav.manifesto' },
 ] as const
 
 export function Nav() {
@@ -55,13 +55,13 @@ export function Nav() {
           {navLinks.map((item) => (
             <li key={item.href}>
               <Link href={item.href as LinkHref} className="dk-nav-link">
-                {t(item.es, item.en)}
+                {t(item.key)}
               </Link>
             </li>
           ))}
           <li>
             <Link href="/contact" className="dk-nav-cta">
-              {t('Hablemos', 'Start here')}
+              {t('nav.cta')}
             </Link>
           </li>
         </ul>
@@ -98,11 +98,11 @@ export function Nav() {
               className="dk-mobile-link"
               onClick={() => setMenuOpen(false)}
             >
-              {t(item.es, item.en)}
+              {t(item.key)}
             </Link>
           ))}
           <Link href="/contact" className="dk-mobile-cta" onClick={() => setMenuOpen(false)}>
-            {t('Hablemos', 'Start here')}
+            {t('nav.cta')}
           </Link>
         </div>
       )}

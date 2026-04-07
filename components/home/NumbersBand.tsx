@@ -3,9 +3,9 @@
 import { useLang } from '@/lib/lang-context'
 
 const numbers = [
-  { value: '92%',  es: 'Tasa de finalización',     en: 'Completion rate',      sub: 'Copa Airlines', highlight: true  },
-  { value: '+32K', es: 'Profesionales capacitados', en: 'Professionals trained', sub: null,            highlight: false },
-  { value: '+150', es: 'Cursos entregados',          en: 'Courses delivered',    sub: null,            highlight: false },
+  { value: '92%',  statKey: 'numbers.stat1', sub: 'Copa Airlines', highlight: true  },
+  { value: '+32K', statKey: 'numbers.stat2', sub: null,            highlight: false },
+  { value: '+150', statKey: 'numbers.stat3', sub: null,            highlight: false },
 ]
 
 export function NumbersBand() {
@@ -23,7 +23,7 @@ export function NumbersBand() {
               {n.value}
             </div>
             <div className={`dk-numbers-label ${n.highlight ? 'dk-numbers-label-highlight' : 'dk-numbers-label-dark'}`}>
-              {t(n.es, n.en)}
+              {t(n.statKey)}
               {n.sub && (
                 <span className={`dk-numbers-sub ${n.highlight ? 'dk-numbers-sub-highlight' : 'dk-numbers-sub-dark'}`}>
                   {n.sub}
