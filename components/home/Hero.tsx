@@ -30,7 +30,7 @@ export function Hero() {
         )}
       </h1>
 
-      <p className="dk-hero-sub">
+      <p className="dk-body dk-hero-sub">
         {t(
           'Decisiones basadas en datos, producción potenciada por IA y contenido que tu organización realmente finaliza.',
           'Data-driven decisions, AI-powered production, and content your organization actually completes.'

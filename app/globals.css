@@ -77,91 +77,6 @@ body {
 }
 
 /* ============================================
-   LAYOUT
-   ============================================ */
-
-.dk-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 3rem;
-}
-
-.dk-section {
-  padding: 7rem 3rem;
-}
-
-.dk-section-lg {
-  padding: 9rem 3rem;
-}
-
-.dk-section-sm {
-  padding: 5rem 3rem;
-}
-
-@media (max-width: 768px) {
-  .dk-container { padding: 0 1.5rem; }
-  .dk-section    { padding: 4rem 1.5rem; }
-  .dk-section-lg { padding: 6rem 1.5rem; }
-  .dk-section-sm { padding: 3rem 1.5rem; }
-}
-
-/* ============================================
-   SURFACE VARIANTS
-   ============================================ */
-
-.dk-surface-default { background: var(--dk-surface); }
-.dk-surface-white   { background: var(--dk-white); }
-.dk-surface-dark    { background: var(--dk-dark); }
-.dk-surface-deep    { background: var(--dk-deep); }
-.dk-surface-amber   { background: var(--dk-amber); }
-
-/* ============================================
-   TYPOGRAPHY — DISPLAY (Fraunces)
-   ============================================ */
-
-.dk-display-xl {
-  font-family: var(--font-display);
-  font-size: clamp(3.2rem, 6vw, 5.8rem);
-  font-weight: 400;
-  line-height: 1.06;
-  letter-spacing: -0.02em;
-  color: var(--dk-dark);
-}
-
-.dk-display-lg {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 3.5vw, 3rem);
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  color: var(--dk-dark);
-}
-
-.dk-display-md {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 400;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-  color: var(--dk-dark);
-}
-
-.dk-display-sm {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--dk-dark);
-}
-
-.dk-number {
-  font-family: var(--font-display);
-  font-size: clamp(4rem, 5.5vw, 6rem);
-  font-weight: 400;
-  line-height: 1;
-}
-
-/* ============================================
    TYPOGRAPHY — BODY (Plus Jakarta Sans)
    ============================================ */
 
@@ -186,24 +101,7 @@ body {
   color: var(--dk-mid);
 }
 
-.dk-meta {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--dk-mid);
-}
-
-/* ============================================
-   TYPOGRAPHY — COLOUR MODIFIERS
-   ============================================ */
-
-.dk-text-dark   { color: var(--dk-dark); }
-.dk-text-mid    { color: var(--dk-mid); }
-.dk-text-amber  { color: var(--dk-amber); }
-.dk-text-white  { color: var(--dk-white); }
-.dk-text-muted  { color: rgba(255, 255, 255, 0.45); }
-.dk-italic      { font-style: italic; }
+.dk-text-mid { color: var(--dk-mid); }
 
 /* ============================================
    SECTION LABEL
@@ -226,60 +124,6 @@ body {
   background: var(--dk-amber);
   display: block;
   flex-shrink: 0;
-}
-
-/* ============================================
-   CARDS
-   ============================================ */
-
-.dk-card {
-  background: var(--dk-white);
-  padding: 2.5rem;
-}
-
-.dk-card-dark {
-  background: var(--dk-dark);
-  padding: 3rem;
-  position: relative;
-}
-
-/* Amber top border hover — used on service cards,
-   article cards, any card with hover state */
-.dk-card-hover {
-  border-top: 3px solid transparent;
-  transition: border-color 0.2s;
-}
-.dk-card-hover:hover {
-  border-top-color: var(--dk-amber);
-}
-
-/* ============================================
-   AMBER ACCENT SQUARE
-   Used in Statement quote card
-   ============================================ */
-
-.dk-accent-square {
-  position: absolute;
-  top: -1.25rem;
-  left: 1.25rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  background: var(--dk-amber);
-}
-
-/* ============================================
-   DIVIDERS
-   ============================================ */
-
-.dk-divider {
-  border: none;
-  border-top: 1px solid var(--dk-border);
-}
-
-.dk-divider-amber {
-  border: none;
-  border-left: 2px solid var(--dk-amber);
-  padding-left: 1.5rem;
 }
 
 /* ============================================
@@ -396,16 +240,8 @@ body {
 }
 
 /* ============================================
-   LOGO UTILITY
+   NAV
    ============================================ */
-
-.dk-logo {
-  color: var(--dk-dark);
-  transition: color 0.2s;
-}
-
-
-/* NAV — add to globals.css */
 
 .dk-nav {
   position: sticky;
@@ -686,8 +522,6 @@ body {
 
 .dk-hero-sub {
   font-size: 1.05rem;
-  font-weight: 400;
-  color: var(--dk-mid);
   max-width: 500px;
   line-height: 1.8;
   margin-bottom: 3.25rem;
@@ -797,7 +631,7 @@ body {
   line-height: 1;
 }
 
-.dk-service-title {
+.dk-service-card-title {
   font-size: 1rem;
   font-weight: 700;
   color: var(--dk-dark);
@@ -805,11 +639,9 @@ body {
   line-height: 1.35;
 }
 
-.dk-service-desc {
+.dk-service-card-desc {
   font-size: 0.85rem;
-  color: var(--dk-mid);
   line-height: 1.8;
-  font-weight: 400;
 }
 
 /* ============================================
@@ -877,9 +709,7 @@ body {
 
 .dk-statement-body {
   font-size: 0.92rem;
-  color: var(--dk-mid);
   line-height: 1.9;
-  font-weight: 400;
 }
 
 .dk-quote-card {
@@ -1178,8 +1008,6 @@ body {
 }
 
 .dk-services-lead {
-  font-size: 1rem;
-  color: var(--dk-mid);
   line-height: 1.8;
   max-width: 480px;
   margin-top: 1.75rem;
@@ -1240,7 +1068,6 @@ body {
 
 .dk-service-desc {
   font-size: 0.88rem;
-  color: var(--dk-mid);
   line-height: 1.85;
 }
 
@@ -1371,11 +1198,8 @@ body {
 }
 
 .dk-manifesto-body {
-  font-size: 1rem;
   line-height: 1.9;
-  color: var(--dk-mid);
   margin-bottom: 1.75rem;
-  font-weight: 400;
 }
 
 .dk-manifesto-cta {
@@ -1586,8 +1410,6 @@ body {
 }
 
 .dk-insights-lead {
-  font-size: 1rem;
-  color: var(--dk-mid);
   line-height: 1.8;
   max-width: 480px;
   margin-bottom: 5rem;

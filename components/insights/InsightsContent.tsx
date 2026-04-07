@@ -27,7 +27,7 @@ export function InsightsContent({ posts }: { posts: PostMeta[] }) {
             </>
           )}
         </h1>
-        <p className="dk-insights-lead">
+        <p className="dk-body dk-insights-lead">
           {t(
             'Artículos sobre aprendizaje, diseño y tecnología aplicada a organizaciones.',
             'Articles on learning, design and technology applied to organizations.'

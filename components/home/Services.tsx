@@ -44,8 +44,8 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
   return (
     <div className="dk-service-card">
       <div className="dk-service-num">{service.num}</div>
-      <h3 className="dk-service-title">{content.title}</h3>
-      <p className="dk-service-desc">{content.desc}</p>
+      <h3 className="dk-service-card-title">{content.title}</h3>
+      <p className="dk-body dk-service-card-desc">{content.desc}</p>
     </div>
   )
 }

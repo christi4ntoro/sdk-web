@@ -120,7 +120,7 @@ function renderBlock(block: Block, i: number) {
     )
   }
 
-  return <p key={i} className="dk-manifesto-body">{block.text}</p>
+  return <p key={i} className="dk-body dk-manifesto-body">{block.text}</p>
 }
 
 export function ManifestoContent() {

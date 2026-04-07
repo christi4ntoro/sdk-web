@@ -104,7 +104,7 @@ export default function ServicesPage() {
             </>
           )}
         </h1>
-        <p className="dk-services-lead">
+        <p className="dk-body dk-services-lead">
           {t(
             'Tres áreas. Un solo criterio: que funcione de verdad.',
             'Three areas. One single standard: it has to actually work.'
@@ -122,7 +122,7 @@ export default function ServicesPage() {
                 <div className="dk-service-inner">
                   <div>
                     <h2 className="dk-service-title">{content.title}</h2>
-                    <p className="dk-service-desc">{content.body}</p>
+                    <p className="dk-body dk-service-desc">{content.body}</p>
                   </div>
                   <ul className="dk-service-bullets">
                     {content.bullets.map((b) => (
