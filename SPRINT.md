@@ -12,6 +12,6 @@
 - Sprint 10a: Fix broken items — C1 form field mismatch, A4 form labels, P1 server components
 - Sprint 10b: Separate form intents — CTA reduced to email + topic with auto-reply, Contact kept as full qualification
 - Sprint 11: Accessibility + SEO fixes — A1, A2, A3, A7, A8, A9, S1, S2, S3, S4
-- Sprint 12: Security + Performance — C2, C3, C4, P2, P4
-- Sprint 13: OG image — design and add public/og-image.jpg (1200x630px JPG)
-- Sprint 14: PT-BR — add third locale (one new JSON file after Sprint 7 refactor)
+- Sprint 12: Security + Performance — C2, C3, C4, P2, P4. OG image added.
+- Sprint 13: Favicon — app/icon.png + app/apple-icon.png
+- Sprint 14: PT-BR — add third locale
