@@ -1,0 +1,155 @@
+{
+  "shared": {
+    "cta_primary": "Conte-nos seu desafio",
+    "cta_find_solution": "Quero uma solução",
+    "challenge_heading_pre": "Qual é o desafio de aprendizagem",
+    "challenge_heading_em": "da sua organização?",
+    "form_lead": "Conte-nos o que sua equipe precisa. Analisamos e propomos um caminho.",
+    "form_size_label": "Quantas pessoas precisam de treinamento?",
+    "form_size_placeholder": "Selecione um intervalo",
+    "form_size_lt100": "Menos de 100",
+    "form_size_2000plus": "Mais de 2.000",
+    "form_challenge_label": "O que sua equipe precisa aprender?",
+    "form_challenge_placeholder": "Descreva o desafio de treinamento...",
+    "form_success_heading": "Recebido.",
+    "form_success_body": "Vamos analisar seu desafio e entrar em contato em breve.",
+    "form_disclaimer": "Suas informações são só para nós. Sem spam, sem listas. Só a conversa que você precisa.",
+    "form_email_label": "Seu e-mail",
+    "form_email_placeholder": "nome@empresa.com",
+    "form_size_100_500": "100 – 500",
+    "form_size_500_2000": "500 – 2.000",
+    "form_sending": "Enviando..."
+  },
+  "nav": {
+    "skip": "Pular para o conteúdo principal",
+    "services": "Serviços",
+    "insights": "Perspectivas",
+    "manifesto": "Manifesto",
+    "contact": "Contato",
+    "cta": "Fale conosco"
+  },
+  "footer": {
+    "seed": "Procura um parceiro de aprendizagem para o ano todo. Pergunte sobre nossos programas de acompanhamento contínuo.",
+    "theme": "Alternar tema",
+    "lang": "Idioma"
+  },
+  "hero": {
+    "label": "Treinamento corporativo · Experiências que transformam equipes",
+    "h1_pre": "Treinamento que muda",
+    "h1_mid": "o que sua equipe ",
+    "h1_em1": "faz.",
+    "h1_em2": "Não só o que sabe.",
+    "sub": "Decisões baseadas em dados, produção potencializada por IA e conteúdo que sua organização realmente conclui.",
+    "cta_secondary": "Ver serviços"
+  },
+  "numbers": {
+    "stat1": "Taxa de conclusão",
+    "stat2": "Profissionais treinados",
+    "stat3": "Cursos entregues"
+  },
+  "services_home": {
+    "label": "O que construímos juntos",
+    "s1_title": "Cursos que sua equipe realmente conclui",
+    "s1_desc": "SCORM / xAPI. Narrativa que prende, estrutura definida por dados. Pronto para qualquer LMS corporativo.",
+    "s2_title": "Conformidade que funciona além da auditoria",
+    "s2_desc": "Conteúdo técnico e regulatório transformado em treinamento que sua equipe entende, aplica e lembra.",
+    "s3_title": "Estratégia para extrair o máximo da sua plataforma",
+    "s3_desc": "Você não precisa de outra plataforma. Precisa saber como fazer a que você tem trabalhar para as suas pessoas. Desenhamos a estratégia, os fluxos e a experiência."
+  },
+  "clients": {
+    "label": "Confiam em nós as organizações que tratam o treinamento como investimento, não como custo."
+  },
+  "statement": {
+    "h2_pre": "Não fabricamos conteúdo.",
+    "h2_em": "Desenhamos o que sua equipe é capaz de fazer depois.",
+    "body": "A maioria do eLearning corporativo falha pelo mesmo motivo: foi desenhado para existir, não para funcionar. Começamos pelos dados. O que sua equipe precisa, como aprende, que contexto tem. Isso define a estrutura. O storytelling faz com que seja concluído. E a IA nos permite produzir com uma precisão e velocidade que antes era impossível.",
+    "quote": "\"Vimos o que acontece quando o treinamento é desenhado para preencher relatórios. Nós o desenhamos para o momento em que alguém aplica o que aprendeu, e faz certo.\"",
+    "quote_author": "Studio Deki"
+  },
+  "manifesto_teaser": {
+    "label": "Manifesto",
+    "p1": "Somos um estúdio de estratégia, design e tecnologia aplicada ao aprendizado.",
+    "p2": "O dado é nosso ponto de partida. O design é nossa forma de pensar. A tecnologia é o que nos permite escalar. Os resultados são nossa única métrica.",
+    "cta": "Ler nosso manifesto"
+  },
+  "cta_section": {
+    "body": "Conte-nos o que sua equipe precisa. Analisamos e propomos um caminho.",
+    "topic_label": "No que você está trabalhando?",
+    "topic_placeholder": "Selecione um tema",
+    "topic_new_course": "Curso novo",
+    "topic_migration": "Migração de conteúdo",
+    "topic_consulting": "Consultoria",
+    "topic_other": "Outro",
+    "autoreply_body": "Obrigado por entrar em contato. Retornaremos em breve.",
+    "error": "Algo deu errado. Tente novamente ou escreva para info@studiodeki.co"
+  },
+  "insights": {
+    "label": "Perspectivas",
+    "h1_pre": "O que sabemos,",
+    "h1_em": "compartilhado sem filtro.",
+    "lead": "Artigos sobre aprendizado, design e tecnologia aplicada a organizações.",
+    "empty": "Em breve.",
+    "read": "Ler →",
+    "back": "← Perspectivas",
+    "article_footer_lead": "Quer conversar sobre como isso se aplica à sua organização?"
+  },
+  "manifesto": {
+    "label": "Manifesto",
+    "cta": "Trabalhe conosco",
+    "block_opening": "Começamos com uma ideia simples.",
+    "block_body1": "Que qualquer tema, por mais complexo que seja, pode ser entendido por qualquer pessoa, se alguém se der ao trabalho de desenhá-lo bem. Não chegamos ao aprendizado corporativo por acaso. Chegamos porque vimos o que acontece quando o treinamento é feito sem esse princípio. Apresentações que ninguém conclui. Conteúdo que existe para o relatório, não para a pessoa que o recebe.",
+    "block_body2": "Desenhamos experiências para as pessoas que se sentam diante da tela e precisam sair sabendo fazer algo que antes não sabiam fazer. Fazemos isso com interação, com quadrinhos, com infográficos, com simulações, com narrativas que prendem desde o primeiro segundo. A forma muda. O princípio não.",
+    "block_anchor": "Somos um estúdio de estratégia, design e tecnologia aplicada ao aprendizado.",
+    "block_body3": "Os dados nos dizem o que sua equipe precisa. Desenhamos esses dados em algo humano. A tecnologia nos permite fazer isso em escala. A criatividade é nossa alma. Ouvimos, analisamos e compreendemos as pessoas antes de propor qualquer solução. Porque uma boa solução só é possível quando você entende de verdade o problema.",
+    "block_highlight": "Não fabricamos conteúdo. Construímos o momento em que alguém entende algo que antes não entendia. E aplica. E muda o que faz.",
+    "block_body4": "Trabalhamos com organizações que acreditam que suas pessoas merecem um treinamento bem feito. Sem templates. Sem atalhos. Sem conteúdo desenhado para existir.",
+    "block_body5": "Trabalhamos onde está o melhor talento e onde nossos clientes precisam de nós.",
+    "block_leader": "Se você está lendo isso, provavelmente já sabe que suas pessoas não são um número em um relatório de treinamento. Este estúdio existe para os líderes que pensam da mesma forma.",
+    "block_closing1": "Isso é o que construímos.",
+    "block_closing2": "Isso é o que somos.",
+    "meta_title": "Manifesto — Studio Deki",
+    "meta_desc": "Começamos com uma ideia simples. Que qualquer tema, por mais complexo que seja, pode ser entendido por qualquer pessoa, se alguém se der ao trabalho de desenhá-lo bem.",
+    "meta_og_desc": "Começamos com uma ideia simples."
+  },
+  "cookies": {
+    "message": "Usamos cookies de análise para entender como você navega pelo site. Sua escolha é salva e pode ser alterada quando quiser.",
+    "accept": "Aceitar",
+    "reject": "Recusar"
+  },
+  "contact": {
+    "label": "Fale conosco",
+    "field_name": "Seu nome",
+    "field_name_placeholder": "Ana Martins",
+    "field_company": "Sua empresa",
+    "field_company_placeholder": "Empresa Ltda.",
+    "error": "Algo deu errado. Tente novamente ou escreva para info@studiodeki.co"
+  },
+  "services_page": {
+    "label": "O que construímos juntos",
+    "heading_pre": "Construímos o que sua organização",
+    "heading_em": "precisa aprender.",
+    "lead": "Três áreas. Um único critério: que funcione de verdade.",
+    "s1_title": "Cursos que sua equipe realmente conclui",
+    "s1_body": "Desenvolvemos conteúdo interativo alinhado com sua marca, seus processos e seu público. Cada módulo passa por análise de dados, design de experiência e testes antes da entrega. Padrão SCORM 1.2 / xAPI. Compatível com qualquer LMS.",
+    "s1_b1": "Análise de necessidades e design instrucional",
+    "s1_b2": "Narrativa e storytelling que prende",
+    "s1_b3": "Animação, vídeo e infográficos",
+    "s1_b4": "Avaliações e rastreamento de aprendizado",
+    "s1_b5": "Entrega em SCORM 1.2 ou xAPI",
+    "s2_title": "Conformidade que funciona além da auditoria",
+    "s2_body": "Transformamos normas complexas em treinamento que sua equipe entende, aplica e lembra. Trabalhamos com equipes de RH, Jurídico e Conformidade para garantir precisão técnica e retenção real. Especialidade em SGSST, LAFT, PTEP e reformas trabalhistas.",
+    "s2_b1": "Análise da norma e lacunas de conhecimento",
+    "s2_b2": "Módulos por função: supervisores, colaboradores, diretores",
+    "s2_b3": "Registro de evidências para auditoria",
+    "s2_b4": "Atualizações quando a norma muda",
+    "s2_b5": "Disponível em português e inglês",
+    "s3_title": "Estratégia para extrair o máximo da sua plataforma",
+    "s3_body": "Você não precisa de outra plataforma. Precisa saber como fazer a que você tem trabalhar para as suas pessoas. Analisamos seu contexto, desenhamos a estratégia de difusão, os fluxos de aprendizado e a experiência do usuário dentro do seu LMS.",
+    "s3_b1": "Diagnóstico da sua plataforma atual",
+    "s3_b2": "Estratégia de difusão e adoção",
+    "s3_b3": "Design de fluxos e currículos",
+    "s3_b4": "Experiência do usuário para o aprendiz",
+    "s3_b5": "Capacitação de administradores",
+    "cta_lead": "Conte-nos o desafio. Dizemos o que faz mais sentido para sua organização."
+  }
+}

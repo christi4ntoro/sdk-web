@@ -9,8 +9,9 @@ import {
 } from 'react'
 import esLocale from '@/locales/es.json'
 import enLocale from '@/locales/en.json'
+import ptLocale from '@/locales/pt.json'
 
-export type Lang = 'es' | 'en' // 'pt' ready, activate when needed
+export type Lang = 'es' | 'en' | 'pt'
 
 type LocaleData = Record<string, unknown>
 
@@ -30,6 +31,7 @@ function getByPath(obj: LocaleData, path: string): string {
 const locales: Record<Lang, LocaleData> = {
   es: esLocale as LocaleData,
   en: enLocale as LocaleData,
+  pt: ptLocale as LocaleData,
 }
 
 interface LangContextType {
@@ -48,15 +50,14 @@ function detectLang(): Lang {
   // 1. User override stored in localStorage
   if (typeof window !== 'undefined') {
     const stored = localStorage.getItem('sdk-lang') as Lang | null
-    if (stored === 'es' || stored === 'en') return stored
+    if (stored === 'es' || stored === 'en' || stored === 'pt') return stored
   }
 
   // 2. Browser preference
   if (typeof navigator !== 'undefined') {
     const browser = navigator.language?.toLowerCase() ?? ''
     if (browser.startsWith('es')) return 'es'
-    // PT hook: when ready, uncomment below and add 'pt' to Lang type
-    // if (browser.startsWith('pt')) return 'pt'
+    if (browser.startsWith('pt')) return 'pt'
   }
 
   // 3. Default

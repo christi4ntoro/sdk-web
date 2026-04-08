@@ -162,7 +162,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={plusJakarta.variable}>
+    <html lang="es" className={plusJakarta.variable} suppressHydrationWarning>
       <head>
         {/* Theme init — blocks paint to prevent flash of wrong theme */}
         <script

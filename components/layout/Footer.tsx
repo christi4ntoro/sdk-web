@@ -76,7 +76,7 @@ export function Footer() {
             className="dk-footer-select" aria-label={t('footer.lang')}>
             <option value="es">ES — Español</option>
             <option value="en">EN — English</option>
-            {/* PT: <option value="pt">PT — Português</option> */}
+            <option value="pt">PT — Português</option>
           </select>
         </div>
       </div>
