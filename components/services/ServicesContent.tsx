@@ -95,7 +95,7 @@ export default function ServicesContent() {
           <p className="dk-services-cta-lead">
             {t('services_page.cta_lead')}
           </p>
-          <Link href="/contact" className="btn-amber">
+          <Link href="/contact" className="btn-accent">
             {t('shared.cta_find_solution')}
           </Link>
         </div>

@@ -156,7 +156,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={state === 'sending'}
-              className={`btn-amber dk-contact-submit${state === 'sending' ? ' dk-contact-submit--sending' : ''}`}
+              className={`btn-accent dk-contact-submit${state === 'sending' ? ' dk-contact-submit--sending' : ''}`}
             >
               {state === 'sending'
                 ? t('shared.form_sending')

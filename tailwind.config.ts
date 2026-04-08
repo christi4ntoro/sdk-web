@@ -9,12 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'dk-dark': '#1D1C33',
-        'dk-amber': '#F8BB15',
-        'dk-surface': '#F7F6F2',
-        'dk-mid': '#6B6A7E',
+        'dk-dark': '#0C0C15',
+        'dk-accent': '#7349FF',
+        'dk-surface': '#F9FAFC',
+        'dk-secondary': '#4628AA',
         'dk-white': '#FFFFFF',
-        'dk-deep': '#141324',
+        'dk-deep': '#F9FAFC',
+        'dk-error': '#ff6b6b',
       },
       fontFamily: {
         display: ['var(--font-instrument)', 'Georgia', 'serif'],

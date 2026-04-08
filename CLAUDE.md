@@ -107,13 +107,14 @@ locales/
 - key: sdk-lang
 
 ## Design tokens (globals.css :root)
---dk-dark:    #1D1C33   primary text, nav bg
---dk-amber:   #F8BB15   accent, never changes in dark mode
---dk-surface: #F7F6F2   page background
---dk-mid:     #6B6A7E   secondary text
---dk-white:   #FFFFFF   card backgrounds
---dk-deep:    #141324   footer background
---dk-border:  rgba(29,28,51,0.12)
+--dk-dark:      #0C0C15   primary text, nav bg
+--dk-accent:    #7349FF   accent, never changes in dark mode
+--dk-surface:   #F9FAFC   page background
+--dk-secondary: #4628AA   secondary text
+--dk-white:     #FFFFFF   card backgrounds
+--dk-deep:      matches --dk-surface   footer background
+--dk-border:    #E6E7FD
+--dk-error:     #ff6b6b
 
 ## Brand voice
 - tutear (tú) in all Spanish copy

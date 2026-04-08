@@ -108,7 +108,7 @@ export function CTASection() {
               <button
                 type="submit"
                 disabled={state === 'sending'}
-                className={`btn-amber dk-cta-submit${state === 'sending' ? ' dk-cta-submit--loading' : ''}`}
+                className={`btn-accent dk-cta-submit${state === 'sending' ? ' dk-cta-submit--loading' : ''}`}
               >
                 {state === 'sending' ? t('shared.form_sending') : t('shared.cta_find_solution')}
               </button>
