@@ -15,9 +15,13 @@
     "form_success_body": "We'll review your challenge and be in touch soon.",
     "form_disclaimer": "Your information stays with us. No spam, no lists. Just the conversation you need.",
     "form_email_label": "Your email",
+    "form_email_placeholder": "name@company.com",
+    "form_size_100_500": "100 – 500",
+    "form_size_500_2000": "500 – 2,000",
     "form_sending": "Sending..."
   },
   "nav": {
+    "skip": "Skip to main content",
     "services": "Services",
     "insights": "Insights",
     "manifesto": "Manifesto",
@@ -59,7 +63,8 @@
     "h2_pre": "We don't manufacture content.",
     "h2_em": "We design what your team can do afterwards.",
     "body": "Most corporate eLearning fails for the same reason: it was designed to exist, not to work. We start with data. What your team needs, how they learn, what context they have. That defines the structure. Storytelling makes it stick. And AI lets us produce with a precision and speed that wasn't possible before.",
-    "quote": "\"We've seen what happens when training is built to fill reports. We build it for the moment someone applies what they learned, and gets it right.\""
+    "quote": "\"We've seen what happens when training is built to fill reports. We build it for the moment someone applies what they learned, and gets it right.\"",
+    "quote_author": "Studio Deki"
   },
   "manifesto_teaser": {
     "label": "Manifesto",
@@ -84,7 +89,8 @@
     "h1_em": "shared without filter.",
     "lead": "Articles on learning, design and technology applied to organizations.",
     "empty": "Coming soon.",
-    "read": "Read",
+    "read": "Read →",
+    "back": "← Insights",
     "article_footer_lead": "Want to talk about how this applies to your organization?"
   },
   "manifesto": {
@@ -113,7 +119,9 @@
   "contact": {
     "label": "Let's talk",
     "field_name": "Your name",
+    "field_name_placeholder": "Johanna Doe",
     "field_company": "Your company",
+    "field_company_placeholder": "Company Inc.",
     "error": "Something went wrong. Try again or email us at info@studiodeki.co"
   },
   "services_page": {

@@ -5,6 +5,32 @@
 
 
 /* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.dk-skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.6rem 1.25rem;
+  background: var(--dk-amber);
+  color: var(--dk-dark);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: top 0.1s;
+}
+
+.dk-skip-link:focus {
+  top: 1rem;
+  outline: 2px solid var(--dk-dark);
+  outline-offset: 2px;
+}
+
+/* ============================================
    DESIGN TOKENS
    ============================================ */
 
@@ -215,6 +241,8 @@ body {
 }
 .dk-input:focus {
   border-color: var(--dk-amber);
+  outline: 2px solid var(--dk-amber);
+  outline-offset: 2px;
 }
 .dk-input::placeholder {
   color: rgba(255, 255, 255, 0.25);
@@ -477,6 +505,11 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(255,255,255,0.3)'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 0.6rem center;
+  }
+
+  .dk-footer-select:focus {
+    outline: 2px solid var(--dk-amber);
+    outline-offset: 2px;
   }
   
   .dk-footer-bottom {

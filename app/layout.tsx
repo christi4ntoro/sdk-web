@@ -164,6 +164,12 @@ export default function RootLayout({
   return (
     <html lang="es" className={plusJakarta.variable}>
       <head>
+        {/* Theme init — blocks paint to prevent flash of wrong theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('sdk-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}else if(window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();`,
+          }}
+        />
         {/* Structured data — JSON-LD */}
         <Script
           id="json-ld"
@@ -176,7 +182,7 @@ export default function RootLayout({
         <ThemeProvider>
           <LangProvider>
             <Nav />
-            <main>{children}</main>
+            <main id="main-content">{children}</main>
             <Footer />
             <CookieConsent />
           </LangProvider>

@@ -68,11 +68,14 @@ export function LangProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Runs only on client, after hydration
-    setLangState(detectLang())
+    const detected = detectLang()
+    setLangState(detected)
+    document.documentElement.lang = detected
   }, [])
 
   function setLang(l: Lang) {
     setLangState(l)
+    document.documentElement.lang = l
     if (typeof window !== 'undefined') {
       localStorage.setItem('sdk-lang', l)
     }

@@ -31,6 +31,9 @@ export function Nav() {
 
   return (
     <>
+      <a href="#main-content" className="dk-skip-link">
+        {t('nav.skip')}
+      </a>
       <nav className={`dk-nav ${scrolled ? 'dk-nav-scrolled' : 'dk-nav-top'}`}>
 
         {/* Logo */}

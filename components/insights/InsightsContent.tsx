@@ -51,7 +51,7 @@ export function InsightsContent({ posts }: { posts: PostMeta[] }) {
                     </div>
                   )}
                   <div className="dk-blog-card-read">
-                    {t('insights.read')} →
+                    {t('insights.read')}
                   </div>
                 </Link>
               )

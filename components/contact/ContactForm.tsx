@@ -79,7 +79,7 @@ export default function ContactForm() {
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  placeholder="Ana Martínez"
+                  placeholder={t('contact.field_name_placeholder')}
                   className="dk-input"
                 />
               </div>
@@ -90,14 +90,14 @@ export default function ContactForm() {
                   name="company"
                   value={form.company}
                   onChange={handleChange}
-                  placeholder="Empresa S.A.S."
+                  placeholder={t('contact.field_company_placeholder')}
                   className="dk-input"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="email" className="dk-field-label">Email</label>
+              <label htmlFor="email" className="dk-field-label">{t('shared.form_email_label')}</label>
               <input
                 id="email"
                 required
@@ -105,7 +105,7 @@ export default function ContactForm() {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="ana@empresa.com"
+                placeholder={t('shared.form_email_placeholder')}
                 className="dk-input"
               />
             </div>
@@ -125,8 +125,8 @@ export default function ContactForm() {
                   {t('shared.form_size_placeholder')}
                 </option>
                 <option value="less-100">{t('shared.form_size_lt100')}</option>
-                <option value="100-500">100 – 500</option>
-                <option value="500-2000">500 – 2.000</option>
+                <option value="100-500">{t('shared.form_size_100_500')}</option>
+                <option value="500-2000">{t('shared.form_size_500_2000')}</option>
                 <option value="more-2000">{t('shared.form_size_2000plus')}</option>
               </select>
             </div>

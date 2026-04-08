@@ -25,9 +25,9 @@ export function ManifestoContent() {
 
   return (
     <article className="dk-manifesto-article">
-      <div className="section-label dk-manifesto-label">
+      <h1 className="section-label dk-manifesto-label">
         {t('manifesto.label')}
-      </div>
+      </h1>
 
       {blocks.map((block, i) => {
         if (block.type === 'opening') {

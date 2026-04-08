@@ -1,5 +1,31 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import sanitizeHtml from 'sanitize-html'
+
+// Strip all HTML — keeps plain text only
+function sanitize(value: unknown): string {
+  if (typeof value !== 'string') return ''
+  return sanitizeHtml(value, { allowedTags: [], allowedAttributes: {} })
+}
+
+// In-memory rate limiter: max 5 requests per IP per 10 minutes.
+// NOTE: This resets on cold start. For production-grade persistence, replace
+// with @upstash/ratelimit backed by Vercel KV.
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>()
+const RATE_LIMIT_MAX = 5
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now()
+  const entry = rateLimitMap.get(ip)
+  if (!entry || now >= entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS })
+    return true
+  }
+  if (entry.count >= RATE_LIMIT_MAX) return false
+  entry.count++
+  return true
+}
 
 let resend: Resend | null = null
 function getResend() {
@@ -10,6 +36,15 @@ function getResend() {
 }
 
 export async function POST(req: NextRequest) {
+  const ip =
+    req.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? 'unknown'
+  if (!checkRateLimit(ip)) {
+    return NextResponse.json(
+      { error: 'Too many requests. Try again later.' },
+      { status: 429 }
+    )
+  }
+
   try {
     const client = getResend()
     if (!client) {
@@ -30,7 +65,9 @@ export async function POST(req: NextRequest) {
     const { formType } = body
 
     if (formType === 'cta') {
-      const { email, topic, lang } = body
+      const email = sanitize(body.email)
+      const topic = sanitize(body.topic)
+      const lang = sanitize(body.lang)
 
       if (!email) {
         return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
@@ -87,7 +124,11 @@ export async function POST(req: NextRequest) {
     }
 
     // Contact form
-    const { name, company, email, size, challenge } = body
+    const name = sanitize(body.name)
+    const company = sanitize(body.company)
+    const email = sanitize(body.email)
+    const size = sanitize(body.size)
+    const challenge = sanitize(body.challenge)
 
     if (!name || !email) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })

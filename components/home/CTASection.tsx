@@ -95,7 +95,7 @@ export function CTASection() {
                   value={form.email}
                   onChange={handleChange}
                   className="dk-input"
-                  placeholder="nombre@empresa.com"
+                  placeholder={t('shared.form_email_placeholder')}
                 />
               </div>
 

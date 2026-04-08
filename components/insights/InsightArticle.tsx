@@ -13,7 +13,7 @@ export function InsightArticle({ post }: { post: Post }) {
     <div className="dk-insight-page">
       <article className="dk-insight-article">
         <Link href="/insights" className="dk-insight-back">
-          ← {t('insights.label')}
+          {t('insights.back')}
         </Link>
 
         <div className="dk-insight-meta">

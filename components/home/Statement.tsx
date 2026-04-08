@@ -25,7 +25,7 @@ export function Statement() {
         <p className="dk-quote-text">
           {t('statement.quote')}
         </p>
-        <div className="dk-quote-author">Studio Deki</div>
+        <div className="dk-quote-author">{t('statement.quote_author')}</div>
       </div>
     </section>
   )

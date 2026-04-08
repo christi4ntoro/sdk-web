@@ -15,9 +15,13 @@
     "form_success_body": "Vamos a revisar tu reto y te escribimos pronto.",
     "form_disclaimer": "Tu información es solo para nosotros. Nada de spam, nada de listas. Solo la conversación que necesitas.",
     "form_email_label": "Tu correo",
+    "form_email_placeholder": "nombre@empresa.com",
+    "form_size_100_500": "100 – 500",
+    "form_size_500_2000": "500 – 2.000",
     "form_sending": "Enviando..."
   },
   "nav": {
+    "skip": "Saltar al contenido principal",
     "services": "Servicios",
     "insights": "Perspectivas",
     "manifesto": "Manifiesto",
@@ -59,7 +63,8 @@
     "h2_pre": "No fabricamos contenido.",
     "h2_em": "Diseñamos lo que tu equipo es capaz de hacer después.",
     "body": "La mayoría del eLearning corporativo falla por la misma razón: fue diseñado para existir, no para funcionar. Nosotros empezamos por los datos. Qué necesita tu equipo, cómo aprende, qué contexto tiene. Eso define la estructura. El storytelling hace que se complete. Y la IA nos permite producir con una precisión y velocidad que antes era imposible.",
-    "quote": "\"Hemos visto lo que pasa cuando la formación se diseña para cumplir informes. Nosotros la diseñamos para el momento en que alguien aplica lo que aprendió, y lo hace bien.\""
+    "quote": "\"Hemos visto lo que pasa cuando la formación se diseña para cumplir informes. Nosotros la diseñamos para el momento en que alguien aplica lo que aprendió, y lo hace bien.\"",
+    "quote_author": "Studio Deki"
   },
   "manifesto_teaser": {
     "label": "Manifiesto",
@@ -84,7 +89,8 @@
     "h1_em": "compartido sin filtro.",
     "lead": "Artículos sobre aprendizaje, diseño y tecnología aplicada a organizaciones.",
     "empty": "Próximamente.",
-    "read": "Leer",
+    "read": "Leer →",
+    "back": "← Perspectivas",
     "article_footer_lead": "¿Quieres hablar sobre cómo esto aplica a tu organización?"
   },
   "manifesto": {
@@ -113,7 +119,9 @@
   "contact": {
     "label": "Hablemos",
     "field_name": "Tu nombre",
+    "field_name_placeholder": "Ana Martínez",
     "field_company": "Tu empresa",
+    "field_company_placeholder": "Empresa S.A.S.",
     "error": "Algo salió mal. Intenta de nuevo o escríbenos a info@studiodeki.co"
   },
   "services_page": {
