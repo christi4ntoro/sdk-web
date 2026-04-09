@@ -334,8 +334,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 3rem;
+  padding: 1.25rem 1.5rem;
   transition: border-color 0.3s, background-color 0.3s;
+}
+
+@media (min-width: 769px) {
+  .dk-nav { padding: 1.25rem 3rem; }
 }
 
 .dk-nav-scrolled {
@@ -388,11 +392,11 @@ body {
 }
 
 .dk-nav-desktop {
-  display: flex;
+  display: none;
 }
 
 .dk-nav-hamburger {
-  display: none;
+  display: flex;
   background: none;
   border: none;
   cursor: pointer;
@@ -442,10 +446,9 @@ body {
   display: block;
 }
 
-@media (max-width: 768px) {
-  .dk-nav-desktop  { display: none !important; }
-  .dk-nav-hamburger { display: flex !important; }
-  .dk-nav { padding: 1.25rem 1.5rem; }
+@media (min-width: 769px) {
+  .dk-nav-desktop   { display: flex; }
+  .dk-nav-hamburger { display: none; }
 }
 
 .dk-nav-logo {
@@ -462,7 +465,11 @@ body {
 
    .dk-footer {
     background: var(--dk-deep);
-    padding: 0 3rem 2.5rem;
+    padding: 0 1.25rem 2.5rem;
+  }
+
+  @media (min-width: 769px) {
+    .dk-footer { padding: 0 3rem 2.5rem; }
   }
 
   .dk-footer-top {
@@ -593,9 +600,13 @@ body {
    ============================================ */
 
 .dk-hero {
-  padding: 9rem 3rem 7rem;
+  padding: 9rem 1.25rem 7rem;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+@media (min-width: 769px) {
+  .dk-hero { padding: 9rem 3rem 7rem; }
 }
 
 .dk-hero-label {
@@ -695,9 +706,13 @@ body {
    ============================================ */
 
 .dk-services-section {
-  padding: 7rem 3rem;
+  padding: 7rem 1.25rem;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+@media (min-width: 769px) {
+  .dk-services-section { padding: 7rem 3rem; }
 }
 
 .dk-services-label {
@@ -743,7 +758,11 @@ body {
 
    .dk-clients-section {
     background: var(--dk-white);
-    padding: 5rem 3rem;
+    padding: 5rem 1.25rem;
+  }
+
+  @media (min-width: 769px) {
+    .dk-clients-section { padding: 5rem 3rem; }
   }
   
   .dk-clients-inner {
@@ -785,9 +804,13 @@ body {
    ============================================ */
 
 .dk-statement-section {
-  padding: 8rem 3rem;
+  padding: 8rem 1.25rem;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+@media (min-width: 769px) {
+  .dk-statement-section { padding: 8rem 3rem; }
 }
 
 .dk-statement-h2 {
@@ -842,8 +865,12 @@ body {
    ============================================ */
 
    .dk-manifesto-teaser {
-    padding: 8rem 3rem;
+    padding: 8rem 1.25rem;
     background: var(--dk-surface);
+  }
+
+  @media (min-width: 769px) {
+    .dk-manifesto-teaser { padding: 8rem 3rem; }
   }
   
   .dk-manifesto-teaser-inner {
@@ -873,7 +900,11 @@ body {
 
 .dk-cta-section {
   background: var(--dk-dark);
-  padding: 7rem 3rem;
+  padding: 7rem 1.25rem;
+}
+
+@media (min-width: 769px) {
+  .dk-cta-section { padding: 7rem 3rem; }
 }
 
 .dk-cta-container {
@@ -1036,13 +1067,13 @@ body {
 
 .dk-contact-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 601px) {
   .dk-contact-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -1081,9 +1112,13 @@ body {
 }
 
 .dk-services-hero {
-  padding: 8rem 3rem 5rem;
+  padding: 8rem 1.25rem 5rem;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+@media (min-width: 769px) {
+  .dk-services-hero { padding: 8rem 3rem 5rem; }
 }
 
 .dk-services-hero-label {
@@ -1125,7 +1160,7 @@ body {
 
 .dk-service-row {
   background: var(--dk-white);
-  padding: 3rem;
+  padding: 2rem;
 }
 
 .dk-service-number {
@@ -1139,19 +1174,19 @@ body {
 
 .dk-service-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
   align-items: start;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   .dk-service-inner {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
   }
 
   .dk-service-row {
-    padding: 2rem;
+    padding: 3rem;
   }
 }
 
@@ -1233,7 +1268,11 @@ body {
 .dk-manifesto-article {
   max-width: 680px;
   margin: 0 auto;
-  padding: 8rem 3rem 10rem;
+  padding: 8rem 1.25rem 10rem;
+}
+
+@media (min-width: 769px) {
+  .dk-manifesto-article { padding: 8rem 3rem 10rem; }
 }
 
 .dk-manifesto-label {
@@ -1582,17 +1621,18 @@ body {
   border-radius: 6px;
   padding: 1.25rem 1.5rem;
   display: flex;
-  align-items: center;
-  gap: 1.25rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
   z-index: 9999;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
 }
 
-@media (max-width: 600px) {
+@media (min-width: 601px) {
   .dk-cookie-banner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
   }
 }
 
