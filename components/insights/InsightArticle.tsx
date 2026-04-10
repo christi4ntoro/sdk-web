@@ -91,28 +91,37 @@ export function InsightArticle({ post, relatedPosts }: InsightArticleProps) {
   // Scroll spy: highlight active TOC heading
   useEffect(() => {
     if (headings.length === 0) return
-    const container = articleRef.current
-    if (!container) return
 
-    const h2Elements = Array.from(container.querySelectorAll('h2[id]'))
-    if (h2Elements.length === 0) return
+    const handleScroll = () => {
+      const h2Elements = Array.from(
+        document.querySelectorAll('h2[id]')
+      )
+      if (h2Elements.length === 0) return
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const intersecting = entries.filter((e) => e.isIntersecting)
-        if (intersecting.length > 0) {
-          const topmost = intersecting.reduce((a, b) =>
-            a.boundingClientRect.top < b.boundingClientRect.top ? a : b
-          )
-          setActiveId((topmost.target as HTMLElement).id)
+      const scrollY = window.scrollY + window.innerHeight * 0.35
+
+      let current = h2Elements[0].id
+      for (const el of h2Elements) {
+        const rect = el.getBoundingClientRect()
+        const absTop = rect.top + window.scrollY
+        if (scrollY >= absTop) {
+          current = el.id
         }
-        // If none are intersecting, keep the last active heading highlighted
-      },
-      { rootMargin: '-20% 0px -70% 0px', threshold: 0 }
-    )
+      }
+      const lastH2 = h2Elements[h2Elements.length - 1]
+      const lastRect = lastH2.getBoundingClientRect()
+      const lastAbsBottom = lastRect.bottom + window.scrollY
+      if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 200) {
+        current = lastH2.id
+      }
+      setActiveId(current)
+    }
 
-    h2Elements.forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
+    window.addEventListener('scroll', handleScroll,
+      { passive: true })
+    handleScroll()
+
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [headings])
 
   // Hide TOC when user scrolls past body
