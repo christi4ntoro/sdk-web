@@ -20,7 +20,7 @@
 - Sprint 17: MD schema refactor — nested lang frontmatter, :::lang body separators, lib/blog.ts parser updated
 - Sprint 18: Article page — breadcrumbs, TOC, progress bar, key takeaways box, related articles, final CTA
 - Sprint 19: Homepage latest insights — 3 latest cards, view all button
-- Sprint 20: Article processing script — single CLI command per article: generates takeaways, translates ES to EN+PT, adds internal links. Review before publishing always.
+- Sprint 20: Article processing — manual workflow via Claude.ai chat. Prompt covers takeaways, translation, internal links, image suggestions. ARTICLES.md maintains  current article index for link suggestions.
 - Sprint 21: Global search in Nav — client-side, full-screen overlay
 - Sprint 22: Accessibility + SEO — A1-A9, S1-S4
 - Sprint 23: URL-based language routing — /es/ /en/ /pt/ URL prefixes, per-language OG meta tags, server-side locale detection. 

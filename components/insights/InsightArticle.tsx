@@ -90,13 +90,23 @@ export function InsightArticle({ post, relatedPosts }: InsightArticleProps) {
   // Scroll spy: highlight active TOC heading
   useEffect(() => {
     if (headings.length === 0) return
+    // Track intersection state per heading so we can always resolve
+    // the first currently-visible heading in document order.
+    const visibilityMap = new Map<string, boolean>()
     const observer = new IntersectionObserver(
       (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) setActiveId(entry.target.id)
-        }
+        entries.forEach((entry) => {
+          visibilityMap.set(entry.target.id, entry.isIntersecting)
+        })
+        // First visible heading in DOM order = the one the reader is under.
+        // If none are visible (gap between sections), don't update so the
+        // last active heading stays highlighted.
+        const first = headings.find(({ id }) => visibilityMap.get(id))
+        if (first) setActiveId(first.id)
       },
-      { rootMargin: '-10% 0% -80% 0%' }
+      // Observe the top 40 % of the viewport — wide enough to catch headings
+      // even on fast scroll, without activating headings the user hasn't reached.
+      { rootMargin: '0px 0px -60% 0px' }
     )
     headings.forEach(({ id }) => {
       const el = document.getElementById(id)

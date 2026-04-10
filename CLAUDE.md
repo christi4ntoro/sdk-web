@@ -139,8 +139,8 @@ locales/
 ## Known limitations (future sprints)
 - OG meta tags serve Spanish by default regardless of 
   user language. Fix requires Sprint 23 (URL routing).
-- Slugs are in English. Proper nouns stay as-is 
-  (copa-airlines, ley-2466).
+- Slugs are in English by convention. Proper nouns 
+  stay as-is (copa-airlines, ley-2466).
 
 ## Commands
 ```bash
