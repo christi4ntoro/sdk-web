@@ -5,7 +5,7 @@ Update every time a new article is published.
 
 ## Published articles
 
-- /insights/bomb-threat-course-case
+- /insights/aviation-safety-elearning-case-study
   Copa Airlines case study, completion rates, protocol training, aviation eLearning
 
 - /insights/designing-for-people

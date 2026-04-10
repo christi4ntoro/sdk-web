@@ -63,6 +63,7 @@ export function InsightArticle({ post, relatedPosts }: InsightArticleProps) {
   const [activeId, setActiveId] = useState<string | null>(null)
   const [tocVisible, setTocVisible] = useState(true)
   const endSentinelRef = useRef<HTMLDivElement>(null)
+  const articleRef = useRef<HTMLDivElement>(null)
 
   const activeLang = lang === 'en' ? 'en' : lang === 'pt' ? 'pt' : 'es'
   const langData = post[activeLang]
@@ -90,28 +91,27 @@ export function InsightArticle({ post, relatedPosts }: InsightArticleProps) {
   // Scroll spy: highlight active TOC heading
   useEffect(() => {
     if (headings.length === 0) return
-    // Track intersection state per heading so we can always resolve
-    // the first currently-visible heading in document order.
-    const visibilityMap = new Map<string, boolean>()
+    const container = articleRef.current
+    if (!container) return
+
+    const h2Elements = Array.from(container.querySelectorAll('h2[id]'))
+    if (h2Elements.length === 0) return
+
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          visibilityMap.set(entry.target.id, entry.isIntersecting)
-        })
-        // First visible heading in DOM order = the one the reader is under.
-        // If none are visible (gap between sections), don't update so the
-        // last active heading stays highlighted.
-        const first = headings.find(({ id }) => visibilityMap.get(id))
-        if (first) setActiveId(first.id)
+        const intersecting = entries.filter((e) => e.isIntersecting)
+        if (intersecting.length > 0) {
+          const topmost = intersecting.reduce((a, b) =>
+            a.boundingClientRect.top < b.boundingClientRect.top ? a : b
+          )
+          setActiveId((topmost.target as HTMLElement).id)
+        }
+        // If none are intersecting, keep the last active heading highlighted
       },
-      // Observe the top 40 % of the viewport — wide enough to catch headings
-      // even on fast scroll, without activating headings the user hasn't reached.
-      { rootMargin: '0px 0px -60% 0px' }
+      { rootMargin: '-20% 0px -70% 0px', threshold: 0 }
     )
-    headings.forEach(({ id }) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
+
+    h2Elements.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
   }, [headings])
 
@@ -189,7 +189,7 @@ export function InsightArticle({ post, relatedPosts }: InsightArticleProps) {
 
         {/* Body + TOC layout */}
         <div className="dk-article-layout">
-          <div className="dk-article-main">
+          <div className="dk-article-main" ref={articleRef}>
             {!bodyAvailable && activeLang !== 'es' && (
               <p className="dk-insight-lang-note">
                 {t('insights.only_in_spanish')}
