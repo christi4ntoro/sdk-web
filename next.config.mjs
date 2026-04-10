@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 
+const devUnsafeEval = process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''
+
 const cspDirectives = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
+  `script-src 'self' 'unsafe-inline'${devUnsafeEval} https://www.googletagmanager.com https://www.google-analytics.com`,
   "style-src 'self' 'unsafe-inline'",
   "font-src 'self'",
   "img-src 'self' data: https://www.google-analytics.com",
