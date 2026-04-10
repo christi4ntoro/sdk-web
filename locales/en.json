@@ -130,6 +130,13 @@
     "meta_desc": "We started with a simple idea. That any topic, no matter how complex, can be understood by anyone, if someone takes the time to design it well.",
     "meta_og_desc": "We started with a simple idea."
   },
+  "search": {
+    "placeholder": "Search articles...",
+    "no_results": "Nothing found",
+    "suggestions_label": "Recent articles",
+    "close": "Close search",
+    "open": "Search"
+  },
   "cookies": {
     "message": "We use analytics cookies to understand how you browse the site. Your choice is saved and you can change it anytime.",
     "accept": "Accept",

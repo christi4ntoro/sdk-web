@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import type { ComponentProps } from 'react'
 import { useLang } from '@/lib/lang-context'
+import { SearchOverlay } from '@/components/layout/SearchOverlay'
+import type { PostMeta } from '@/lib/blog'
 
 type LinkHref = ComponentProps<typeof Link>['href']
 
@@ -13,10 +15,15 @@ const navLinks = [
   { href: '/manifesto', key: 'nav.manifesto' },
 ] as const
 
-export function Nav() {
+interface NavProps {
+  posts: PostMeta[]
+}
+
+export function Nav({ posts }: NavProps) {
   const { t } = useLang()
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -63,6 +70,18 @@ export function Nav() {
             </li>
           ))}
           <li>
+            <button
+              className="dk-search-btn"
+              onClick={() => setSearchOpen(true)}
+              aria-label={t('search.open')}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+          </li>
+          <li>
             <Link href="/contact" className="dk-nav-cta">
               {t('nav.cta')}
             </Link>
@@ -104,10 +123,26 @@ export function Nav() {
               {t(item.key)}
             </Link>
           ))}
+          <button
+            className="dk-mobile-search-btn"
+            onClick={() => { setMenuOpen(false); setSearchOpen(true) }}
+            aria-label={t('search.open')}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            {t('search.open')}
+          </button>
           <Link href="/contact" className="dk-mobile-cta" onClick={() => setMenuOpen(false)}>
             {t('nav.cta')}
           </Link>
         </div>
+      )}
+
+      {/* Search overlay */}
+      {searchOpen && (
+        <SearchOverlay posts={posts} onClose={() => setSearchOpen(false)} />
       )}
     </>
   )

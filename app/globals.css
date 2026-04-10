@@ -2098,3 +2098,203 @@ body {
   color: rgba(240, 239, 233, 0.9);
   border-color: rgba(240, 239, 233, 0.4);
 }
+
+/* ============================================
+   SEARCH
+   ============================================ */
+
+.dk-search-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: var(--dk-secondary);
+  transition: color 0.2s;
+}
+.dk-search-btn:hover {
+  color: var(--dk-dark);
+}
+
+.dk-mobile-search-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--dk-secondary);
+  border: none;
+  border-bottom: 1px solid var(--dk-border);
+  background: none;
+  cursor: pointer;
+  padding: 1.5rem 0;
+  text-align: left;
+  width: 100%;
+  transition: color 0.2s;
+}
+.dk-mobile-search-btn:hover {
+  color: var(--dk-dark);
+}
+
+@keyframes dk-search-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes dk-search-slide {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dk-search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(12, 12, 21, 0.72);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 5rem;
+  animation: dk-search-fade 0.15s ease;
+}
+
+.dk-search-box {
+  background: var(--dk-white);
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 1.25rem;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  animation: dk-search-slide 0.15s ease;
+}
+
+.dk-search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--dk-border);
+}
+
+.dk-search-icon {
+  color: var(--dk-secondary);
+  flex-shrink: 0;
+}
+
+.dk-search-input {
+  flex: 1;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--dk-dark);
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+.dk-search-input::placeholder {
+  color: var(--dk-secondary);
+  opacity: 0.6;
+}
+.dk-search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.dk-search-close-btn {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: var(--dk-secondary);
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+.dk-search-close-btn:hover {
+  color: var(--dk-dark);
+}
+
+.dk-search-results {
+  padding: 0.5rem 0;
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.dk-search-suggestions-label {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--dk-secondary);
+  padding: 0.75rem 1.25rem 0.25rem;
+}
+
+.dk-search-result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  transition: background 0.1s;
+}
+.dk-search-result:hover,
+.dk-search-result--active {
+  background: var(--dk-surface);
+}
+
+.dk-search-result-tag {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--dk-accent);
+}
+
+.dk-search-result-title {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dk-dark);
+  line-height: 1.3;
+}
+
+.dk-search-result-excerpt {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--dk-secondary);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dk-search-empty {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--dk-secondary);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+}
+
+[data-theme="dark"] .dk-search-box {
+  background: #16162a;
+  border: 1px solid var(--dk-border);
+}
+[data-theme="dark"] .dk-search-result:hover,
+[data-theme="dark"] .dk-search-result--active {
+  background: rgba(255, 255, 255, 0.05);
+}

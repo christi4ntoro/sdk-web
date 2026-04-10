@@ -7,6 +7,7 @@ import { ThemeProvider } from '@/lib/theme-context'
 import { Nav } from '@/components/layout/Nav'
 import { Footer } from '@/components/layout/Footer'
 import { CookieConsent } from '@/components/layout/CookieConsent'
+import { getAllPosts } from '@/lib/blog'
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -161,6 +162,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const posts = getAllPosts()
+
   return (
     <html lang="es" className={plusJakarta.variable} suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
@@ -181,7 +184,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <LangProvider>
-            <Nav />
+            <Nav posts={posts} />
             <main id="main-content">{children}</main>
             <Footer />
             <CookieConsent />

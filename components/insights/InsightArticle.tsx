@@ -109,8 +109,6 @@ export function InsightArticle({ post, relatedPosts }: InsightArticleProps) {
         }
       }
       const lastH2 = h2Elements[h2Elements.length - 1]
-      const lastRect = lastH2.getBoundingClientRect()
-      const lastAbsBottom = lastRect.bottom + window.scrollY
       if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 200) {
         current = lastH2.id
       }
