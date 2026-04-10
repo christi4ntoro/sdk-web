@@ -1,12 +1,35 @@
 ---
-title: "Diseñamos para personas, no para plataformas"
-titleEn: "We design for people, not platforms"
 date: "2026-04-04"
-excerpt: "La pregunta equivocada en formación corporativa es '¿qué plataforma usamos?'. La pregunta correcta es mucho más simple y mucho más difícil."
-excerptEn: "The wrong question in corporate training is 'which platform do we use?'. The right question is much simpler and much harder."
-tags: ["diseño instruccional", "filosofía", "formación corporativa", "experiencia de aprendizaje"]
+author: "Studio Deki"
+featuredImage: ""
+readingTime: ""
+bodyES: true
+bodyEN: false
+bodyPT: false
+es:
+  title: "Diseñamos para personas, no para plataformas"
+  excerpt: "La pregunta equivocada en formación corporativa es '¿qué plataforma usamos?'. La pregunta correcta es mucho más simple y mucho más difícil."
+  category: "filosofía"
+  tags: ["diseño instruccional", "filosofía", "formación corporativa", "experiencia de aprendizaje"]
+  featuredImageAlt: ""
+  keyTakeaways: ["", "", ""]
+en:
+  title: "We design for people, not platforms"
+  excerpt: "The wrong question in corporate training is 'which platform do we use?'. The right question is much simpler and much harder."
+  category: ""
+  tags: []
+  featuredImageAlt: ""
+  keyTakeaways: ["", "", ""]
+pt:
+  title: ""
+  excerpt: ""
+  category: ""
+  tags: []
+  featuredImageAlt: ""
+  keyTakeaways: ["", "", ""]
 ---
 
+:::es
 ## La pregunta equivocada
 
 Cuando una organización decide mejorar su formación, la primera pregunta suele ser sobre herramientas. ¿Qué LMS implementamos? ¿Usamos video o slides interactivos? ¿Cuántos módulos necesitamos?
@@ -60,3 +83,10 @@ Cuando la respuesta es sí, hicimos nuestro trabajo.
 ---
 
 *Si quieres formación que cambie lo que tu equipo hace, no solo lo que sabe, [cuéntanos tu reto](/contact).*
+:::
+
+:::en
+:::
+
+:::pt
+:::

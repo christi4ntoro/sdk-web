@@ -29,8 +29,11 @@ export function InsightsContent({ posts }: { posts: PostMeta[] }) {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px">
             {posts.map((post) => {
-              const title = lang === 'en' && post.titleEn ? post.titleEn : post.title
-              const excerpt = lang === 'en' && post.excerptEn ? post.excerptEn : post.excerpt
+              const activeLang = lang === 'en' ? 'en' : lang === 'pt' ? 'pt' : 'es'
+              const langData = post[activeLang]
+              const title = langData.title || post.es.title
+              const excerpt = langData.excerpt || post.es.excerpt
+              const tags = langData.tags.length > 0 ? langData.tags : post.es.tags
 
               return (
                 <Link
@@ -43,9 +46,9 @@ export function InsightsContent({ posts }: { posts: PostMeta[] }) {
                   {excerpt && (
                     <p className="dk-blog-card-excerpt">{excerpt}</p>
                   )}
-                  {post.tags && post.tags.length > 0 && (
+                  {tags.length > 0 && (
                     <div className="dk-blog-card-tags">
-                      {post.tags.slice(0, 2).map((tag) => (
+                      {tags.slice(0, 2).map((tag) => (
                         <span key={tag} className="dk-insight-tag">{tag}</span>
                       ))}
                     </div>

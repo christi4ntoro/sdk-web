@@ -15,3 +15,11 @@
 - Sprint 12: Security + Performance — C2, C3, C4, P2, P4. OG image added.
 - Sprint 13: Favicon — app/icon.png + app/apple-icon.png
 - Sprint 14: PT-BR — add third locale
+- Sprint 15: OK
+- Sprint 16: OK
+- Sprint 17: MD schema refactor — nested lang frontmatter, :::lang body separators, lib/blog.ts parser updated
+- Sprint 18: Article page — breadcrumbs, TOC, progress bar, key takeaways box, related articles, final CTA
+- Sprint 19: Homepage latest insights — 3 latest cards, view all button
+- Sprint 20: Key takeaways script — CLI tool generates 3 bullets per language via Claude API, writes to MD
+- Sprint 21: Global search in Nav — client-side, full-screen overlay
+- Sprint 22: Accessibility + SEO — A1-A9, S1-S4

@@ -83,6 +83,17 @@
     "autoreply_body": "Obrigado por entrar em contato. Retornaremos em breve.",
     "error": "Algo deu errado. Tente novamente ou escreva para info@studiodeki.co"
   },
+  "article": {
+    "breadcrumb_home": "Início",
+    "breadcrumb_insights": "Perspectivas",
+    "key_takeaways": "Pontos principais",
+    "toc_label": "Neste artigo",
+    "cta_heading": "Quer aplicar isso?",
+    "cta_body": "Vamos conversar sobre como isso se aplica à sua organização.",
+    "related": "Artigos relacionados",
+    "by": "Por",
+    "min_read": "min de leitura"
+  },
   "insights": {
     "label": "Perspectivas",
     "h1_pre": "O que sabemos,",
@@ -91,7 +102,8 @@
     "empty": "Em breve.",
     "read": "Ler →",
     "back": "← Perspectivas",
-    "article_footer_lead": "Quer conversar sobre como isso se aplica à sua organização?"
+    "article_footer_lead": "Quer conversar sobre como isso se aplica à sua organização?",
+    "only_in_spanish": "Este artigo está disponível apenas em espanhol por enquanto."
   },
   "manifesto": {
     "label": "Manifesto",

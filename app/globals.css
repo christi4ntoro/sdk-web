@@ -1415,6 +1415,14 @@ body {
   border-bottom: 1px solid var(--dk-border);
 }
 
+.dk-insight-lang-note {
+  font-size: 0.85rem;
+  color: var(--dk-secondary);
+  opacity: 0.7;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
 .dk-insight-footer {
   margin-top: 5rem;
   padding-top: 3rem;
@@ -1510,6 +1518,302 @@ body {
 
 .insight-body em {
   font-style: italic;
+}
+
+/* ============================================
+   ARTICLE PAGE ENHANCEMENTS (Sprint 18)
+   ============================================ */
+
+/* Reading progress bar */
+.dk-article-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: var(--progress, 0%);
+  background: var(--dk-accent);
+  z-index: 101;
+  pointer-events: none;
+  transition: width 0.08s linear;
+}
+
+/* Outer wrapper — widens on lg to accommodate TOC */
+.dk-article-outer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 6rem 2rem 8rem;
+}
+
+@media (min-width: 1024px) {
+  .dk-article-outer {
+    max-width: 1080px;
+    padding: 7rem 3rem 8rem;
+  }
+}
+
+/* Override title border when featured image follows */
+.dk-article-outer .dk-insight-title {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Breadcrumbs */
+.dk-article-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.dk-article-breadcrumb-link {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dk-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.dk-article-breadcrumb-link:hover {
+  color: var(--dk-dark);
+}
+
+.dk-article-breadcrumb-sep {
+  font-size: 0.72rem;
+  color: var(--dk-secondary);
+  opacity: 0.4;
+}
+
+.dk-article-breadcrumb-current {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dk-dark);
+  opacity: 0.5;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Featured image */
+.dk-article-featured {
+  margin-bottom: 3rem;
+}
+
+.dk-article-featured-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+.dk-article-featured-placeholder {
+  width: 100%;
+  height: 280px;
+  background: var(--dk-border);
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .dk-article-featured-placeholder {
+    height: 380px;
+  }
+}
+
+/* Key Takeaways */
+.dk-article-takeaways {
+  background: var(--dk-white);
+  border: 1px solid var(--dk-border);
+  border-left: 3px solid var(--dk-accent);
+  border-radius: 4px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 3rem;
+}
+
+.dk-article-takeaways-title {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dk-accent);
+  margin-bottom: 0.75rem;
+}
+
+.dk-article-takeaways-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.dk-article-takeaways-item {
+  font-size: 0.9rem;
+  color: var(--dk-secondary);
+  line-height: 1.6;
+}
+
+/* Body + TOC flex layout */
+.dk-article-layout {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.dk-article-main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Tags below body */
+.dk-article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--dk-border);
+}
+
+/* TOC sidebar — hidden by default (mobile first) */
+.dk-article-toc-sidebar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .dk-article-toc-sidebar {
+    display: block;
+    width: 220px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 6rem;
+    transition: opacity 0.25s;
+  }
+
+  .dk-article-toc-sidebar--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.dk-article-toc-title {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dk-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.dk-article-toc-link {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--dk-secondary);
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border-left: 2px solid var(--dk-border);
+  margin-bottom: 0.2rem;
+  line-height: 1.4;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.dk-article-toc-link:hover {
+  color: var(--dk-dark);
+  border-left-color: var(--dk-secondary);
+}
+
+.dk-article-toc-link--active {
+  color: var(--dk-accent);
+  border-left-color: var(--dk-accent);
+  font-weight: 700;
+}
+
+/* Final CTA */
+.dk-article-cta {
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--dk-border);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.dk-article-cta-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  color: var(--dk-dark);
+  line-height: 1.2;
+}
+
+.dk-article-cta-body {
+  font-size: 0.9rem;
+  color: var(--dk-secondary);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+/* Related articles */
+.dk-article-related {
+  padding-top: 2rem;
+  border-top: 1px solid var(--dk-border);
+}
+
+.dk-article-related-title {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dk-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.dk-article-related-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .dk-article-related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.dk-article-related-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: var(--dk-white);
+  border: 1px solid var(--dk-border);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.dk-article-related-card:hover {
+  border-color: var(--dk-accent);
+}
+
+.dk-article-related-card-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--dk-dark);
+  line-height: 1.35;
+}
+
+.dk-article-related-card-excerpt {
+  font-size: 0.82rem;
+  color: var(--dk-secondary);
+  line-height: 1.6;
 }
 
 /* ============================================

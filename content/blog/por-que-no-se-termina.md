@@ -1,12 +1,35 @@
 ---
-title: "Por qué el 80% del eLearning corporativo no se termina, y qué hacer al respecto"
-titleEn: "Why 80% of corporate eLearning goes unfinished, and what to do about it"
 date: "2026-03-15"
-excerpt: "La tasa de finalización promedio del eLearning corporativo ronda el 20%. No es un problema de plataforma. Es un problema de diseño."
-excerptEn: "The average completion rate for corporate eLearning hovers around 20%. It's not a platform problem. It's a design problem."
-tags: ["elearning", "diseño instruccional", "completion rate", "formación corporativa"]
+author: "Studio Deki"
+featuredImage: ""
+readingTime: ""
+bodyES: true
+bodyEN: false
+bodyPT: false
+es:
+  title: "Por qué el 80% del eLearning corporativo no se termina, y qué hacer al respecto"
+  excerpt: "La tasa de finalización promedio del eLearning corporativo ronda el 20%. No es un problema de plataforma. Es un problema de diseño."
+  category: "estrategia"
+  tags: ["elearning", "diseño instruccional", "completion rate", "formación corporativa"]
+  featuredImageAlt: ""
+  keyTakeaways: ["", "", ""]
+en:
+  title: "Why 80% of corporate eLearning goes unfinished, and what to do about it"
+  excerpt: "The average completion rate for corporate eLearning hovers around 20%. It's not a platform problem. It's a design problem."
+  category: ""
+  tags: []
+  featuredImageAlt: ""
+  keyTakeaways: ["", "", ""]
+pt:
+  title: ""
+  excerpt: ""
+  category: ""
+  tags: []
+  featuredImageAlt: ""
+  keyTakeaways: ["", "", ""]
 ---
 
+:::es
 ## El número que nadie quiere ver
 
 La tasa de finalización promedio del eLearning corporativo está entre el 15% y el 20%. Esto significa que por cada 100 personas que empiezan un curso, entre 80 y 85 lo abandonan antes de terminar.
@@ -48,3 +71,10 @@ Si tu organización tiene cursos con tasas de finalización bajas, el problema c
 ---
 
 *¿Quieres saber cómo mejorar la tasa de finalización de tus cursos actuales? [Cuéntanos tu reto](/contact).*
+:::
+
+:::en
+:::
+
+:::pt
+:::

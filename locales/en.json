@@ -83,6 +83,17 @@
     "autoreply_body": "Thanks for reaching out. We'll be in touch soon.",
     "error": "Something went wrong. Try again or email us at info@studiodeki.co"
   },
+  "article": {
+    "breadcrumb_home": "Home",
+    "breadcrumb_insights": "Insights",
+    "key_takeaways": "Key takeaways",
+    "toc_label": "In this article",
+    "cta_heading": "Want to apply this?",
+    "cta_body": "Let's talk about how this applies to your organization.",
+    "related": "Related articles",
+    "by": "By",
+    "min_read": "min read"
+  },
   "insights": {
     "label": "Insights",
     "h1_pre": "What we know,",
@@ -91,7 +102,8 @@
     "empty": "Coming soon.",
     "read": "Read →",
     "back": "← Insights",
-    "article_footer_lead": "Want to talk about how this applies to your organization?"
+    "article_footer_lead": "Want to talk about how this applies to your organization?",
+    "only_in_spanish": "This article is only available in Spanish for now."
   },
   "manifesto": {
     "label": "Manifesto",

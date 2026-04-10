@@ -1,12 +1,35 @@
 ---
-title: "Ley 2466 de 2025: lo que tu equipo de RRHH necesita saber"
-titleEn: "Law 2466 of 2025: what your HR team needs to know"
 date: "2026-03-01"
-excerpt: "Colombia reformó su Código Laboral. Cada empresa grande tiene un reloj corriendo. Aquí está lo que importa."
-excerptEn: "Colombia reformed its Labor Code. Every large company has a clock running. Here is what matters."
-tags: ["compliance", "colombia", "ley2466", "rrhh"]
+author: "Studio Deki"
+featuredImage: ""
+readingTime: ""
+bodyES: true
+bodyEN: false
+bodyPT: false
+es:
+  title: "Ley 2466 de 2025: lo que tu equipo de RRHH necesita saber"
+  excerpt: "Colombia reformó su Código Laboral. Cada empresa grande tiene un reloj corriendo. Aquí está lo que importa."
+  category: "compliance"
+  tags: ["compliance", "colombia", "ley2466", "rrhh"]
+  featuredImageAlt: ""
+  keyTakeaways: ["", "", ""]
+en:
+  title: "Law 2466 of 2025: what your HR team needs to know"
+  excerpt: "Colombia reformed its Labor Code. Every large company has a clock running. Here is what matters."
+  category: ""
+  tags: []
+  featuredImageAlt: ""
+  keyTakeaways: ["", "", ""]
+pt:
+  title: ""
+  excerpt: ""
+  category: ""
+  tags: []
+  featuredImageAlt: ""
+  keyTakeaways: ["", "", ""]
 ---
 
+:::es
 ## ¿Qué cambió?
 
 La Ley 2466 de 2025 modifica el Código Sustantivo del Trabajo en siete puntos clave. No es una reforma cosmética. Es un cambio estructural que afecta directamente la forma en que las empresas gestionan jornadas, pagos y relaciones laborales.
@@ -49,3 +72,10 @@ Eso es exactamente lo que construimos en Studio Deki.
 ---
 
 *¿Necesitas formación sobre Ley 2466 para tu organización? [Cuéntanos tu reto](/contact).*
+:::
+
+:::en
+:::
+
+:::pt
+:::

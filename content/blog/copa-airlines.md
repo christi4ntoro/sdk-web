@@ -1,12 +1,35 @@
 ---
-title: "Cómo diseñamos un curso sobre amenaza de bomba que el 92% de Copa Airlines completó"
-titleEn: "How we designed a bomb threat course that 92% of Copa Airlines completed"
 date: "2026-04-01"
-excerpt: "El primer slide simula una llamada telefónica. Una voz distorsionada dice: 'Tenemos una bomba en uno de sus vuelos.' Así empieza el curso más importante que hemos construido."
-excerptEn: "The first slide simulates a phone call. A distorted voice says: 'We have a bomb on one of your flights.' That's how the most important course we've ever built begins."
-tags: ["caso de estudio", "copa airlines", "elearning", "diseño de experiencia"]
+author: "Studio Deki"
+featuredImage: ""
+readingTime: ""
+bodyES: true
+bodyEN: false
+bodyPT: false
+es:
+  title: "Cómo diseñamos un curso sobre amenaza de bomba que el 92% de Copa Airlines completó"
+  excerpt: "El primer slide simula una llamada telefónica. Una voz distorsionada dice: 'Tenemos una bomba en uno de sus vuelos.' Así empieza el curso más importante que hemos construido."
+  category: "caso de estudio"
+  tags: ["caso de estudio", "copa airlines", "elearning", "diseño de experiencia"]
+  featuredImageAlt: ""
+  keyTakeaways: ["", "", ""]
+en:
+  title: "How we designed a bomb threat course that 92% of Copa Airlines completed"
+  excerpt: "The first slide simulates a phone call. A distorted voice says: 'We have a bomb on one of your flights.' That's how the most important course we've ever built begins."
+  category: ""
+  tags: []
+  featuredImageAlt: ""
+  keyTakeaways: ["", "", ""]
+pt:
+  title: ""
+  excerpt: ""
+  category: ""
+  tags: []
+  featuredImageAlt: ""
+  keyTakeaways: ["", "", ""]
 ---
 
+:::es
 ## El problema
 
 Copa Airlines tiene un protocolo llamado Tarjeta Verde. Es una herramienta crítica: define exactamente cómo debe actuar cualquier empleado de la aerolínea ante una amenaza de bomba.
@@ -66,3 +89,10 @@ El diseño instruccional no es hacer slides bonitos. Es entender qué necesita s
 ---
 
 *¿Tu organización tiene protocolos críticos que la gente no conoce o no aplica? [Cuéntanos tu reto](/contact).*
+:::
+
+:::en
+:::
+
+:::pt
+:::

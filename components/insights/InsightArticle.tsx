@@ -1,44 +1,271 @@
 'use client'
 
+import { useEffect, useRef, useState, useMemo } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLang } from '@/lib/lang-context'
-import type { Post } from '@/lib/blog'
+import type { Post, PostMeta } from '@/lib/blog'
 
-export function InsightArticle({ post }: { post: Post }) {
+interface Heading {
+  id: string
+  text: string
+}
+
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+}
+
+function processBodyHtml(html: string): { processedHtml: string; headings: Heading[] } {
+  const headings: Heading[] = []
+  const processedHtml = html.replace(
+    /<h2([^>]*)>([\s\S]*?)<\/h2>/gi,
+    (_, attrs, inner) => {
+      const text = inner.replace(/<[^>]+>/g, '').trim()
+      const id = slugify(text)
+      headings.push({ id, text })
+      return `<h2${attrs} id="${id}">${inner}</h2>`
+    }
+  )
+  return { processedHtml, headings }
+}
+
+function ReadingProgressBar() {
+  const barRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function update() {
+      const scrollTop = window.scrollY
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
+      barRef.current?.style.setProperty('--progress', `${pct}%`)
+    }
+    window.addEventListener('scroll', update, { passive: true })
+    update()
+    return () => window.removeEventListener('scroll', update)
+  }, [])
+
+  return <div ref={barRef} className="dk-article-progress-bar" aria-hidden="true" />
+}
+
+interface InsightArticleProps {
+  post: Post
+  relatedPosts: PostMeta[]
+}
+
+export function InsightArticle({ post, relatedPosts }: InsightArticleProps) {
   const { lang, t } = useLang()
+  const [activeId, setActiveId] = useState<string | null>(null)
+  const [tocVisible, setTocVisible] = useState(true)
+  const endSentinelRef = useRef<HTMLDivElement>(null)
 
-  const title = lang === 'en' && post.titleEn ? post.titleEn : post.title
+  const activeLang = lang === 'en' ? 'en' : lang === 'pt' ? 'pt' : 'es'
+  const langData = post[activeLang]
+  const title = langData.title || post.es.title
+  const tags = langData.tags.length > 0 ? langData.tags : post.es.tags
+  const keyTakeaways = langData.keyTakeaways.filter(Boolean)
+  const hasKeyTakeaways = keyTakeaways.length > 0
+  const featuredImageAlt = langData.featuredImageAlt || post.es.featuredImageAlt || title
+
+  const bodyAvailable =
+    activeLang === 'es' ? post.bodyES :
+    activeLang === 'en' ? post.bodyEN :
+    post.bodyPT
+
+  const rawContentHtml =
+    activeLang === 'en' && post.bodyEN ? post.contentHtmlEN :
+    activeLang === 'pt' && post.bodyPT ? post.contentHtmlPT :
+    post.contentHtmlES
+
+  const { processedHtml, headings } = useMemo(
+    () => processBodyHtml(rawContentHtml),
+    [rawContentHtml]
+  )
+
+  // Scroll spy: highlight active TOC heading
+  useEffect(() => {
+    if (headings.length === 0) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActiveId(entry.target.id)
+        }
+      },
+      { rootMargin: '-10% 0% -80% 0%' }
+    )
+    headings.forEach(({ id }) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+    return () => observer.disconnect()
+  }, [headings])
+
+  // Hide TOC when user scrolls past body
+  useEffect(() => {
+    const sentinel = endSentinelRef.current
+    if (!sentinel) return
+    const observer = new IntersectionObserver(([entry]) => {
+      setTocVisible(!entry.isIntersecting)
+    })
+    observer.observe(sentinel)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <div className="dk-insight-page">
-      <article className="dk-insight-article">
-        <Link href="/insights" className="dk-insight-back">
-          {t('insights.back')}
-        </Link>
+      <ReadingProgressBar />
 
+      <div className="dk-article-outer">
+
+        {/* Breadcrumbs */}
+        <nav className="dk-article-breadcrumbs" aria-label="breadcrumb">
+          <Link href="/" className="dk-article-breadcrumb-link">
+            {t('article.breadcrumb_home')}
+          </Link>
+          <span className="dk-article-breadcrumb-sep" aria-hidden="true">/</span>
+          <Link href="/insights" className="dk-article-breadcrumb-link">
+            {t('article.breadcrumb_insights')}
+          </Link>
+          <span className="dk-article-breadcrumb-sep" aria-hidden="true">/</span>
+          <span className="dk-article-breadcrumb-current">{title}</span>
+        </nav>
+
+        {/* Header: meta + title */}
         <div className="dk-insight-meta">
           <span className="dk-insight-date">{post.date}</span>
-          {post.tags && post.tags.slice(0, 2).map((tag) => (
-            <span key={tag} className="dk-insight-tag">{tag}</span>
-          ))}
+          {post.readingTime && (
+            <span className="dk-insight-date">
+              {post.readingTime} {t('article.min_read')}
+            </span>
+          )}
+          <span className="dk-insight-date">
+            {t('article.by')} {post.author}
+          </span>
         </div>
-
         <h1 className="dk-insight-title">{title}</h1>
 
-        <div
-          className="insight-body"
-          dangerouslySetInnerHTML={{ __html: post.contentHtml }}
-        />
+        {/* Featured image */}
+        <div className="dk-article-featured">
+          {post.featuredImage ? (
+            <Image
+              src={post.featuredImage}
+              alt={featuredImageAlt}
+              width={1200}
+              height={630}
+              className="dk-article-featured-img"
+              priority
+            />
+          ) : (
+            <div className="dk-article-featured-placeholder" aria-hidden="true" />
+          )}
+        </div>
 
-        <div className="dk-insight-footer">
-          <p className="dk-insight-footer-lead">
-            {t('insights.article_footer_lead')}
-          </p>
+        {/* Key Takeaways */}
+        {hasKeyTakeaways && (
+          <div className="dk-article-takeaways">
+            <p className="dk-article-takeaways-title">{t('article.key_takeaways')}</p>
+            <ul className="dk-article-takeaways-list">
+              {keyTakeaways.map((point, i) => (
+                <li key={i} className="dk-article-takeaways-item">{point}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Body + TOC layout */}
+        <div className="dk-article-layout">
+          <div className="dk-article-main">
+            {!bodyAvailable && activeLang !== 'es' && (
+              <p className="dk-insight-lang-note">
+                {t('insights.only_in_spanish')}
+              </p>
+            )}
+
+            <div
+              className="insight-body"
+              dangerouslySetInnerHTML={{ __html: processedHtml }}
+            />
+
+            {/* Sentinel: TOC hides when this enters viewport */}
+            <div ref={endSentinelRef} aria-hidden="true" />
+
+            {/* Tags */}
+            {tags.length > 0 && (
+              <div className="dk-article-tags">
+                {tags.map((tag) => (
+                  <span key={tag} className="dk-insight-tag">{tag}</span>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* TOC sidebar */}
+          {headings.length > 0 && (
+            <aside
+              className={`dk-article-toc-sidebar${tocVisible ? '' : ' dk-article-toc-sidebar--hidden'}`}
+              aria-label={t('article.toc_label')}
+            >
+              <p className="dk-article-toc-title">{t('article.toc_label')}</p>
+              <nav>
+                {headings.map(({ id, text }) => (
+                  <a
+                    key={id}
+                    href={`#${id}`}
+                    className={`dk-article-toc-link${activeId === id ? ' dk-article-toc-link--active' : ''}`}
+                  >
+                    {text}
+                  </a>
+                ))}
+              </nav>
+            </aside>
+          )}
+        </div>
+
+        {/* Final CTA */}
+        <div className="dk-article-cta">
+          <p className="dk-article-cta-heading">{t('article.cta_heading')}</p>
+          <p className="dk-article-cta-body">{t('article.cta_body')}</p>
           <Link href="/contact" className="btn-primary">
             {t('shared.cta_primary')}
           </Link>
         </div>
-      </article>
+
+        {/* Related articles */}
+        {relatedPosts.length > 0 && (
+          <div className="dk-article-related">
+            <p className="dk-article-related-title">{t('article.related')}</p>
+            <div className="dk-article-related-grid">
+              {relatedPosts.map((p) => {
+                const pLang = p[activeLang]
+                const pTitle = pLang.title || p.es.title
+                const pExcerpt = pLang.excerpt || p.es.excerpt
+                const pCategory = pLang.category || p.es.category
+                return (
+                  <Link
+                    key={p.slug}
+                    href={`/insights/${p.slug}`}
+                    className="dk-article-related-card"
+                  >
+                    {pCategory && (
+                      <span className="dk-insight-tag">{pCategory}</span>
+                    )}
+                    <h3 className="dk-article-related-card-title">{pTitle}</h3>
+                    {pExcerpt && (
+                      <p className="dk-article-related-card-excerpt">{pExcerpt}</p>
+                    )}
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        )}
+
+      </div>
     </div>
   )
 }
