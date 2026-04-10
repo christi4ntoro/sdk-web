@@ -123,9 +123,24 @@ locales/
 - Key proof point: 92% completion rate at Copa Airlines
 - Positioning: science/data-backed, AI-accelerated, human-centered
 
+## Content structure
+- Articles in content/blog/[slug].md
+- Frontmatter: nested es/en/pt blocks with title, excerpt, 
+  category, tags, featuredImageAlt, keyTakeaways
+- Body: separated by :::es ::: :::en ::: :::pt ::: markers
+- Images in public/blog/[slug]/featured.jpg and supporting
+- Fallback: missing EN/PT body shows ES with language note
+- Author: 'Studio Deki' default, supports named authors
+
 ## Current sprint status
-- Sprints 1-10b complete. Two separate form intents: CTA (email + topic, auto-reply) and Contact (full qualification).
-- Sprint 11 next: Accessibility + SEO fixes — A1, A2, A3, A7, A8, A9, S1, S2, S3, S4
+- Sprints 1-19 complete.
+- Sprint 20 next
+
+## Known limitations (future sprints)
+- OG meta tags serve Spanish by default regardless of 
+  user language. Fix requires Sprint 23 (URL routing).
+- Slugs are in English. Proper nouns stay as-is 
+  (copa-airlines, ley-2466).
 
 ## Commands
 ```bash

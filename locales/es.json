@@ -83,6 +83,13 @@
     "autoreply_body": "Gracias por escribirnos. Te contactamos pronto.",
     "error": "Algo salió mal. Intenta de nuevo o escríbenos a info@studiodeki.co"
   },
+  "latest_insights": {
+    "label": "Lo más reciente",
+    "heading_pre": "Ideas que",
+    "heading_em": "vale la pena leer.",
+    "read": "Leer →",
+    "view_all": "Ver todos los artículos"
+  },
   "article": {
     "breadcrumb_home": "Inicio",
     "breadcrumb_insights": "Perspectivas",
