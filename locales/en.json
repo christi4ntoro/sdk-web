@@ -58,6 +58,14 @@
     "s3_title": "Strategy to maximize your learning platform",
     "s3_desc": "You don't need another platform. You need to know how to make the one you have work for your people. We design the strategy, the flows and the experience."
   },
+  "article_card": {
+    "read_more_case_study": "See what worked",
+    "read_more_learning": "See how",
+    "read_more_technology": "See what's shifting",
+    "read_more_strategy": "See the full picture",
+    "read_more_compliance": "See what you need",
+    "read_more_default": "See what worked"
+  },
   "clients": {
     "label": "Trusted by organizations that treat training as an investment, not a cost."
   },
@@ -72,7 +80,7 @@
     "label": "Manifesto",
     "p1": "We are a strategy, design and technology studio applied to learning.",
     "p2": "Data is our starting point. Design is how we think. Technology is what lets us scale. Results are our only metric.",
-    "cta": "Read our manifesto"
+    "cta": "See what we believe"
   },
   "cta_section": {
     "body": "Tell us what your team needs. We'll analyze it and propose a path forward.",
@@ -87,10 +95,11 @@
   },
   "latest_insights": {
     "label": "Latest",
+    "heading": "What we're thinking",
     "heading_pre": "Ideas that",
     "heading_em": "are worth reading.",
     "read": "Read →",
-    "view_all": "View all articles"
+    "view_all": "See all insights"
   },
   "article": {
     "breadcrumb_home": "Home",

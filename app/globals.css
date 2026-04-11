@@ -214,10 +214,18 @@ body {
   border-bottom: 1px solid var(--dk-border);
   padding-bottom: 2px;
   transition: color 0.2s;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 .btn-ghost:hover {
   color: var(--dk-dark);
+}
+.btn-ghost svg {
+  transition: transform 0.2s ease;
+}
+.btn-ghost:hover svg {
+  transform: translateX(4px);
 }
 
 .btn-accent {
@@ -1955,6 +1963,15 @@ body {
   text-transform: uppercase;
   color: var(--dk-accent);
   margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.dk-blog-card-read svg {
+  transition: transform 0.2s ease;
+}
+.dk-blog-card:hover .dk-blog-card-read svg {
+  transform: translateX(4px);
 }
 
 /* ============================================
@@ -2055,6 +2072,15 @@ body {
   text-transform: uppercase;
   color: var(--dk-accent);
   margin-top: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.dk-latest-card-read svg {
+  transition: transform 0.2s ease;
+}
+.dk-latest-card:hover .dk-latest-card-read svg {
+  transform: translateX(4px);
 }
 
 .dk-latest-cta {

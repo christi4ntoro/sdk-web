@@ -58,6 +58,14 @@
     "s3_title": "Estratégia para extrair o máximo da sua plataforma",
     "s3_desc": "Você não precisa de outra plataforma. Precisa saber como fazer a que você tem trabalhar para as suas pessoas. Desenhamos a estratégia, os fluxos e a experiência."
   },
+  "article_card": {
+    "read_more_case_study": "Ver o que funcionou",
+    "read_more_learning": "Descubra como",
+    "read_more_technology": "Ver o que está mudando",
+    "read_more_strategy": "Ver o panorama completo",
+    "read_more_compliance": "Ver o que você precisa",
+    "read_more_default": "Ver o que funcionou"
+  },
   "clients": {
     "label": "Confiam em nós as organizações que tratam o treinamento como investimento, não como custo."
   },
@@ -72,7 +80,7 @@
     "label": "Manifesto",
     "p1": "Somos um estúdio de estratégia, design e tecnologia aplicada ao aprendizado.",
     "p2": "O dado é nosso ponto de partida. O design é nossa forma de pensar. A tecnologia é o que nos permite escalar. Os resultados são nossa única métrica.",
-    "cta": "Ler nosso manifesto"
+    "cta": "Descubra no que acreditamos"
   },
   "cta_section": {
     "body": "Conte-nos o que sua equipe precisa. Analisamos e propomos um caminho.",
@@ -87,10 +95,11 @@
   },
   "latest_insights": {
     "label": "Mais recentes",
+    "heading": "O que estamos pensando",
     "heading_pre": "Ideias que",
     "heading_em": "valem a pena ler.",
     "read": "Ler →",
-    "view_all": "Ver todos os artigos"
+    "view_all": "Ver todas as perspectivas"
   },
   "article": {
     "breadcrumb_home": "Início",

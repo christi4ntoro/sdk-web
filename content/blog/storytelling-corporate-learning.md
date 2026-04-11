@@ -1,5 +1,5 @@
 ---
-date: '2026-04-11'
+date: '2026-04-13'
 author: 'Studio Deki'
 featuredImage: '/blog/storytelling-aprendizaje/featured.jpg'
 readingTime: 6

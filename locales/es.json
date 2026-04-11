@@ -58,6 +58,14 @@
     "s3_title": "Estrategia para sacar el máximo a tu plataforma",
     "s3_desc": "No necesitas otra plataforma. Necesitas saber cómo hacer que la que tienes trabaje para tu gente. Diseñamos la estrategia, los flujos y la experiencia."
   },
+  "article_card": {
+    "read_more_case_study": "Ver qué funcionó",
+    "read_more_learning": "Descubre cómo",
+    "read_more_technology": "Ver qué está cambiando",
+    "read_more_strategy": "Ver el panorama completo",
+    "read_more_compliance": "Ver qué necesitas saber",
+    "read_more_default": "Ver qué funcionó"
+  },
   "clients": {
     "label": "Han confiado en nosotros las organizaciones que tratan la formación como una inversión, no como un gasto."
   },
@@ -72,7 +80,7 @@
     "label": "Manifiesto",
     "p1": "Somos un estudio de estrategia, diseño y tecnología aplicada al aprendizaje.",
     "p2": "El dato es nuestro punto de partida. El diseño es nuestra forma de pensar. La tecnología es lo que nos permite escalar. Los resultados son nuestra única métrica.",
-    "cta": "Leer nuestro manifiesto"
+    "cta": "Descubre en qué creemos"
   },
   "cta_section": {
     "body": "Cuéntanos qué necesita tu equipo. Lo analizamos y te proponemos un camino.",
@@ -87,10 +95,11 @@
   },
   "latest_insights": {
     "label": "Lo más reciente",
+    "heading": "Lo que estamos pensando",
     "heading_pre": "Ideas que",
     "heading_em": "vale la pena leer.",
     "read": "Leer →",
-    "view_all": "Ver todos los artículos"
+    "view_all": "Ver todas las perspectivas"
   },
   "article": {
     "breadcrumb_home": "Inicio",

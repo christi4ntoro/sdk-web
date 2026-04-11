@@ -5,6 +5,23 @@ import Image from 'next/image'
 import { useLang } from '@/lib/lang-context'
 import type { PostMeta } from '@/lib/blog'
 
+function readMoreKey(category: string): string {
+  switch (category) {
+    case 'Caso de estudio': case 'Case Study': case 'Caso de estudo':
+      return 'article_card.read_more_case_study'
+    case 'Diseño de aprendizaje': case 'Learning Design': case 'Design de aprendizagem':
+      return 'article_card.read_more_learning'
+    case 'Tecnología': case 'Technology': case 'Tecnologia':
+      return 'article_card.read_more_technology'
+    case 'Estrategia': case 'Strategy': case 'Estratégia':
+      return 'article_card.read_more_strategy'
+    case 'Compliance':
+      return 'article_card.read_more_compliance'
+    default:
+      return 'article_card.read_more_default'
+  }
+}
+
 export function LatestInsights({ posts }: { posts: PostMeta[] }) {
   const { lang, t } = useLang()
 
@@ -61,7 +78,8 @@ export function LatestInsights({ posts }: { posts: PostMeta[] }) {
                 )}
 
                 <span className="dk-latest-card-read">
-                  {t('latest_insights.read')}
+                  {t(readMoreKey(category))}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </span>
               </Link>
             )
@@ -71,6 +89,7 @@ export function LatestInsights({ posts }: { posts: PostMeta[] }) {
         <div className="dk-latest-cta">
           <Link href="/insights" className="btn-ghost">
             {t('latest_insights.view_all')}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </Link>
         </div>
       </div>
