@@ -2,16 +2,20 @@
 
 import { useLang } from '@/lib/lang-context'
 
-// When SVG logos are ready:
-// Replace chip divs with <Image src={`/logos/${slug}.svg`} alt={name}
-// width={120} height={40} className="dk-client-logo" />
-// Add .dk-client-logo to globals: filter grayscale(1) opacity 0.35,
-// hover: filter none opacity 1
-
-const clients = [
-  'Copa Airlines', 'Avianca', 'Honda', 'DHL',
-  'Grupo Energía Bogotá', 'Wingo', 'DANE', 'Cámara de Comercio',
-  'Konrad Adenauer', 'Morgan & Morgan', 'Harinera del Valle', 'Tribunal Electoral',
+const clients: { name: string; slug: string }[] = [
+  { name: 'Copa Airlines',         slug: 'copa-airlines' },
+  { name: 'Avianca',               slug: 'avianca' },
+  { name: 'Honda',                 slug: 'honda' },
+  { name: 'DHL',                   slug: 'dhl' },
+  { name: 'Grupo Energía Bogotá',  slug: 'grupo-energia-bogota' },
+  { name: 'Wingo',                 slug: 'wingo' },
+  { name: 'DANE',                  slug: 'dane' },
+  { name: 'Cámara de Comercio',    slug: 'camara-comercio' },
+  { name: 'Konrad Adenauer',       slug: 'konrad-adenauer-stiftung' },
+  { name: 'Morgan & Morgan',       slug: 'morgan-and-morgan' },
+  { name: 'Harinera del Valle',    slug: 'harinera-del-valle' },
+  { name: 'Tribunal Electoral',    slug: 'tribunal-electoral-panama' },
+  { name: 'DNP',                   slug: 'dnp' },
 ]
 
 export function ClientLogos() {
@@ -23,9 +27,17 @@ export function ClientLogos() {
         <div className="section-label dk-clients-label">
           {t('clients.label')}
         </div>
-        <div className="dk-clients-grid">
-          {clients.map((name) => (
-            <div key={name} className="dk-client-chip">{name}</div>
+      </div>
+      <div className="dk-marquee-wrapper" aria-label={t('clients.label')}>
+        <div className="dk-marquee-track">
+          {[...clients, ...clients].map((client, i) => (
+            <div
+              key={`${client.slug}-${i}`}
+              className="dk-marquee-logo"
+              data-logo={client.slug}
+              role="img"
+              aria-label={client.name}
+            />
           ))}
         </div>
       </div>

@@ -31,7 +31,9 @@
   "footer": {
     "seed": "Looking for a learning partner year-round. Ask us about our continuous partnership programs.",
     "theme": "Toggle theme",
-    "lang": "Language"
+    "lang": "Language",
+    "social_linkedin": "Follow us on LinkedIn",
+    "social_instagram": "Follow us on Instagram"
   },
   "hero": {
     "label": "Corporate training · Experiences that transform teams",

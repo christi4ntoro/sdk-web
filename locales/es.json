@@ -31,7 +31,9 @@
   "footer": {
     "seed": "Buscas un socio de aprendizaje para todo el año. Pregúntanos por nuestros programas de acompañamiento continuo.",
     "theme": "Cambiar tema",
-    "lang": "Idioma"
+    "lang": "Idioma",
+    "social_linkedin": "Síguenos en LinkedIn",
+    "social_instagram": "Síguenos en Instagram"
   },
   "hero": {
     "label": "Formación corporativa · Experiencias que transforman equipos",

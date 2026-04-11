@@ -31,7 +31,9 @@
   "footer": {
     "seed": "Procura um parceiro de aprendizagem para o ano todo. Pergunte sobre nossos programas de acompanhamento contínuo.",
     "theme": "Alternar tema",
-    "lang": "Idioma"
+    "lang": "Idioma",
+    "social_linkedin": "Siga-nos no LinkedIn",
+    "social_instagram": "Siga-nos no Instagram"
   },
   "hero": {
     "label": "Treinamento corporativo · Experiências que transformam equipes",

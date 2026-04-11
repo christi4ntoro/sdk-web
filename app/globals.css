@@ -532,7 +532,19 @@ body {
   .dk-footer-email:hover {
     color: var(--dk-footer-text-hi);
   }
-  
+
+  .dk-footer-social-link {
+    display: flex;
+    align-items: center;
+    color: var(--dk-footer-ctrl-text);
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    text-decoration: none;
+  }
+  .dk-footer-social-link:hover {
+    opacity: 1;
+  }
+
   .dk-footer-theme-btn {
     background: none;
     border: 1px solid var(--dk-footer-ctrl-border);
@@ -774,30 +786,66 @@ body {
     margin-bottom: 2.75rem;
   }
   
-  .dk-clients-grid {
+  .dk-marquee-wrapper {
+    width: 100vw;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+
+  .dk-marquee-wrapper:hover .dk-marquee-track {
+    animation-play-state: paused;
+  }
+
+  .dk-marquee-track {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem 0.85rem;
     align-items: center;
+    width: max-content;
+    animation: dk-marquee-scroll 40s linear infinite;
   }
-  
-  .dk-client-chip {
-    font-family: var(--font-sans);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    color: rgba(29,28,51,0.28);
-    text-transform: uppercase;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--dk-border);
-    border-radius: 2px;
-    transition: color 0.2s, border-color 0.2s;
-    cursor: default;
+
+  @keyframes dk-marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
   }
-  .dk-client-chip:hover {
-    color: var(--dk-dark);
-    border-color: rgba(29,28,51,0.25);
+
+  .dk-marquee-logo {
+    flex-shrink: 0;
+    width: 160px;
+    height: 48px;
+    margin: 0 2.5rem;
+    background-color: var(--dk-dark);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    opacity: 0.5;
+    transition: opacity 0.2s;
   }
+
+  .dk-marquee-logo:hover {
+    opacity: 1;
+  }
+
+  [data-theme="dark"] .dk-marquee-logo {
+    background-color: #FFFFFF;
+  }
+
+  .dk-marquee-logo[data-logo="copa-airlines"]          { mask-image: url('/logos/copa-airlines.svg');          -webkit-mask-image: url('/logos/copa-airlines.svg'); }
+  .dk-marquee-logo[data-logo="avianca"]                { mask-image: url('/logos/avianca.svg');                -webkit-mask-image: url('/logos/avianca.svg'); }
+  .dk-marquee-logo[data-logo="honda"]                  { mask-image: url('/logos/honda.svg');                  -webkit-mask-image: url('/logos/honda.svg'); }
+  .dk-marquee-logo[data-logo="dhl"]                    { mask-image: url('/logos/dhl.svg');                    -webkit-mask-image: url('/logos/dhl.svg'); }
+  .dk-marquee-logo[data-logo="grupo-energia-bogota"]   { mask-image: url('/logos/grupo-energia-bogota.svg');   -webkit-mask-image: url('/logos/grupo-energia-bogota.svg'); }
+  .dk-marquee-logo[data-logo="wingo"]                  { mask-image: url('/logos/wingo.svg');                  -webkit-mask-image: url('/logos/wingo.svg'); }
+  .dk-marquee-logo[data-logo="dane"]                   { mask-image: url('/logos/dane.svg');                   -webkit-mask-image: url('/logos/dane.svg'); }
+  .dk-marquee-logo[data-logo="camara-comercio"]        { mask-image: url('/logos/camara-comercio.svg');        -webkit-mask-image: url('/logos/camara-comercio.svg'); }
+  .dk-marquee-logo[data-logo="konrad-adenauer-stiftung"] { mask-image: url('/logos/konrad-adenauer-stiftung.svg'); -webkit-mask-image: url('/logos/konrad-adenauer-stiftung.svg'); }
+  .dk-marquee-logo[data-logo="morgan-and-morgan"]      { mask-image: url('/logos/morgan-and-morgan.svg');      -webkit-mask-image: url('/logos/morgan-and-morgan.svg'); }
+  .dk-marquee-logo[data-logo="harinera-del-valle"]     { mask-image: url('/logos/harinera-del-valle.svg');     -webkit-mask-image: url('/logos/harinera-del-valle.svg'); }
+  .dk-marquee-logo[data-logo="tribunal-electoral-panama"] { mask-image: url('/logos/tribunal-electoral-panama.svg'); -webkit-mask-image: url('/logos/tribunal-electoral-panama.svg'); }
+  .dk-marquee-logo[data-logo="dnp"]                    { mask-image: url('/logos/dnp.svg');                    -webkit-mask-image: url('/logos/dnp.svg'); }
 
   /* ============================================
    STATEMENT
