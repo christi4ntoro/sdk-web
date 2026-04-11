@@ -130,6 +130,13 @@
     "meta_desc": "Começamos com uma ideia simples. Que qualquer tema, por mais complexo que seja, pode ser entendido por qualquer pessoa, se alguém se der ao trabalho de desenhá-lo bem.",
     "meta_og_desc": "Começamos com uma ideia simples."
   },
+  "search": {
+    "placeholder": "Pesquisar artigos...",
+    "no_results": "Nenhum resultado encontrado",
+    "suggestions_label": "Artigos recentes",
+    "close": "Fechar pesquisa",
+    "open": "Pesquisar"
+  },
   "cookies": {
     "message": "Usamos cookies de análise para entender como você navega pelo site. Sua escolha é salva e pode ser alterada quando quiser.",
     "accept": "Aceitar",
