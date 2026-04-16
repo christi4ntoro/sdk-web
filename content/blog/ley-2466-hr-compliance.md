@@ -1,8 +1,8 @@
 ---
 date: "2026-03-23"
 author: "Studio Deki"
-featuredImage: ""
-readingTime: ""
+featuredImage: '/blog/ley-2466-hr-compliance/featured.jpg'
+readingTime: 3
 bodyES: true
 bodyEN: true
 bodyPT: true

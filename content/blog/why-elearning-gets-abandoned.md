@@ -1,8 +1,8 @@
 ---
 date: "2026-03-30"
 author: "Studio Deki"
-featuredImage: ""
-readingTime: ""
+featuredImage: '/blog/why-elearning-gets-abandoned/featured.jpg'
+readingTime: 4
 bodyES: true
 bodyEN: true
 bodyPT: true

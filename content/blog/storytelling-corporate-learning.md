@@ -1,7 +1,7 @@
 ---
 date: '2026-04-13'
 author: 'Studio Deki'
-featuredImage: '/blog/storytelling-aprendizaje/featured.jpg'
+featuredImage: '/blog/storytelling-corporate-learning/featured.jpg'
 readingTime: 6
 bodyES: true
 bodyEN: true

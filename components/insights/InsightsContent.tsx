@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLang } from '@/lib/lang-context'
 import type { PostMeta } from '@/lib/blog'
 
@@ -59,17 +60,27 @@ export function InsightsContent({ posts }: { posts: PostMeta[] }) {
                   href={`/insights/${post.slug}`}
                   className="blog-card-link dk-blog-card"
                 >
-                  <div className="dk-blog-card-date">{post.date}</div>
+                  {post.featuredImage && (
+                    <div className="dk-blog-card-image">
+                      <Image
+                        src={post.featuredImage}
+                        alt={langData.featuredImageAlt || title}
+                        width={600}
+                        height={340}
+                        className="dk-blog-card-img"
+                      />
+                    </div>
+                  )}
+                  {category && (
+                    <div className="dk-blog-card-meta">
+                      <span className="dk-blog-card-category">{category}</span>
+                    </div>
+                  )}
                   <h2 className="dk-blog-card-title">{title}</h2>
                   {excerpt && (
-                    <p className="dk-blog-card-excerpt">{excerpt}</p>
-                  )}
-                  {tags.length > 0 && (
-                    <div className="dk-blog-card-tags">
-                      {tags.slice(0, 2).map((tag) => (
-                        <span key={tag} className="dk-insight-tag">{tag}</span>
-                      ))}
-                    </div>
+                    <p className="dk-blog-card-excerpt">
+                      {excerpt.length > 120 ? excerpt.slice(0, 120).trimEnd() + '…' : excerpt}
+                    </p>
                   )}
                   <div className="dk-blog-card-read">
                     {t(readMoreKey(category))}

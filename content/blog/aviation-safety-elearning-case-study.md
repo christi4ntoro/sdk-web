@@ -1,8 +1,8 @@
 ---
 date: "2026-03-16"
 author: "Studio Deki"
-featuredImage: ""
-readingTime: ""
+featuredImage: '/blog/aviation-safety-elearning-case-study/featured.jpg'
+readingTime: 4
 bodyES: true
 bodyEN: true
 bodyPT: true

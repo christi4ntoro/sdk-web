@@ -53,8 +53,8 @@ export function LatestInsights({ posts }: { posts: PostMeta[] }) {
                 href={`/insights/${post.slug}`}
                 className="dk-latest-card"
               >
-                <div className="dk-latest-card-image">
-                  {post.featuredImage ? (
+                {post.featuredImage && (
+                  <div className="dk-latest-card-image">
                     <Image
                       src={post.featuredImage}
                       alt={imageAlt}
@@ -62,19 +62,21 @@ export function LatestInsights({ posts }: { posts: PostMeta[] }) {
                       height={338}
                       className="dk-latest-card-img"
                     />
-                  ) : (
-                    <div className="dk-latest-card-placeholder" aria-hidden="true" />
-                  )}
-                </div>
+                  </div>
+                )}
 
                 {category && (
-                  <span className="dk-insight-tag">{category}</span>
+                  <div className="dk-latest-card-meta">
+                    <span className="dk-blog-card-category">{category}</span>
+                  </div>
                 )}
 
                 <h3 className="dk-latest-card-title">{title}</h3>
 
                 {excerpt && (
-                  <p className="dk-latest-card-excerpt">{excerpt}</p>
+                  <p className="dk-latest-card-excerpt">
+                    {excerpt.length > 120 ? excerpt.slice(0, 120).trimEnd() + '…' : excerpt}
+                  </p>
                 )}
 
                 <span className="dk-latest-card-read">

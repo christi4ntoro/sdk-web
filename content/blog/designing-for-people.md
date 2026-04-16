@@ -1,8 +1,8 @@
 ---
 date: "2026-04-06"
 author: "Studio Deki"
-featuredImage: ""
-readingTime: ""
+featuredImage: '/blog/designing-for-people/featured.jpg'
+readingTime: '5'
 bodyES: true
 bodyEN: true
 bodyPT: true
