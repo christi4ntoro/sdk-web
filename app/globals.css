@@ -35,15 +35,6 @@
    ============================================ */
 
 :root {
-  --dk-dark:      #1E293B;
-  --dk-accent:    #7349FF;
-  --dk-surface:   #F9FAFC;
-  --dk-secondary: #1E293B;
-  --dk-white:     #FFFFFF;
-  --dk-deep:      #F9FAFC;
-  --dk-border:    #E6E7FD;
-  --dk-error:     #ff6b6b;
-
   /* Footer-specific tokens (light mode: footer bg is light) */
   --dk-footer-text:        rgba(12,12,21,0.55);
   --dk-footer-text-hi:     rgba(12,12,21,0.9);
@@ -56,20 +47,20 @@
   --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-sans:    'Plus Jakarta Sans', system-ui, sans-serif;
 
-  /* ---- Refined Fluid Type Scale (17px → 20px) ---- */
-  --dk-fs-body: clamp(1.0625rem, 0.98rem + 0.4vw, 1.25rem);
+  /* ---- Refined Fluid Type Scale (17px → 18px) ---- */
+  --dk-fs-body: clamp(1.0625rem, 0.98rem + 0.2vw, 1.125rem);
   --dk-fs-h1:   clamp(2.25rem, 1.8rem + 2vw, 3.5rem);
   --dk-fs-h2:   clamp(1.75rem, 1.5rem + 1vw, 2.25rem);
   --dk-fs-h3:   clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
 
   /* ---- Readability Calibration ---- */
-  --dk-lh-body:    1.65;    /* Optimized for Plus Jakarta Sans @20px */
-  --dk-lh-heading: 1.15;    /* Tighter for premium B2B look */
-  --dk-ls-body:    -0.011em; 
-  --dk-ls-heading: -0.025em; /* Framer-inspired "tight" headers */
+  --dk-lh-body: 1.6;    
+  --dk-lh-heading: 1.15;
+  --dk-ls-body: -0.01em; 
+  --dk-ls-heading: -0.025em;
   
   /* ---- Rhythmic Spacing ---- */
-  --dk-para-spacing: 2rem;
+  --dk-para-spacing: 1.75rem;
 }
 
 /* ============================================
@@ -158,34 +149,25 @@ p {
 h1 {
   font-family: var(--font-display);
   font-size: var(--dk-fs-h1);
-  font-weight: 700;
   line-height: var(--dk-lh-heading);
   letter-spacing: var(--dk-ls-heading);
   color: var(--dk-dark);
-  margin-top: 3.5rem;
-  margin-bottom: 1.25rem;
 }
 
 h2 {
   font-family: var(--font-display);
   font-size: var(--dk-fs-h2);
-  font-weight: 600;
   line-height: var(--dk-lh-heading);
   letter-spacing: var(--dk-ls-heading);
   color: var(--dk-dark);
-  margin-top: 3.5rem;
-  margin-bottom: 1.25rem;
 }
 
 h3 {
   font-family: var(--font-display);
   font-size: var(--dk-fs-h3);
-  font-weight: 600;
   line-height: var(--dk-lh-heading);
   letter-spacing: var(--dk-ls-heading);
   color: var(--dk-dark);
-  margin-top: 3.5rem;
-  margin-bottom: 1.25rem;
 }
 
 li {
@@ -228,7 +210,7 @@ li {
 
 .section-label {
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--dk-secondary);
@@ -252,7 +234,7 @@ li {
 .btn-primary {
   font-family: var(--font-sans);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   background: var(--dk-dark);
@@ -296,7 +278,7 @@ li {
 .btn-accent {
   font-family: var(--font-sans);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   background: var(--dk-accent);
@@ -360,7 +342,7 @@ li {
 .dk-field-label {
   font-family: var(--font-sans);
   font-size: 0.68rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.38);
@@ -449,7 +431,7 @@ li {
 .dk-nav-cta {
   font-family: var(--font-sans);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   text-decoration: none;
@@ -701,7 +683,7 @@ li {
 .dk-hero-h1 {
   font-family: var(--font-display);
   font-size: clamp(3.2rem, 6vw, 5.8rem);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.06;
   letter-spacing: -0.02em;
   color: var(--dk-dark);
@@ -726,7 +708,6 @@ li {
 .dk-em {
   color: var(--dk-secondary);
   font-style: italic;
-  font-weight: 400;
 }
 
 /* ============================================
@@ -1508,7 +1489,7 @@ li {
 
 .dk-insight-date {
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--dk-secondary);
@@ -1516,7 +1497,7 @@ li {
 
 .dk-insight-tag {
   font-size: 0.65rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--dk-secondary);
@@ -1571,12 +1552,12 @@ li {
 .insight-body h2 {
   font-family: var(--font-display);
   font-size: var(--dk-fs-h2);
-  font-weight: 600;
+  font-weight: 700;
   line-height: var(--dk-lh-heading);
   letter-spacing: var(--dk-ls-heading);
   color: var(--dk-dark);
-  margin-top: 4rem;
-  margin-bottom: 1.25rem;
+  margin-top: 2.5em;
+  margin-bottom: 0.6em;
 }
 
 .insight-body h3 {
@@ -1586,18 +1567,18 @@ li {
   line-height: var(--dk-lh-heading);
   letter-spacing: var(--dk-ls-heading);
   color: var(--dk-dark);
-  margin-top: 3.5rem;
-  margin-bottom: 1.25rem;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
 }
 
 .insight-body p {
-  margin-bottom: var(--dk-para-spacing);
+  margin-bottom: 1.5rem;
   color: var(--dk-secondary);
 }
 
 .insight-body strong {
   color: var(--dk-dark);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .insight-body ul,
@@ -1736,7 +1717,7 @@ li {
 .dk-article-featured-img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 16px;
   display: block;
 }
 
@@ -1989,9 +1970,63 @@ li {
   font-size: 0.9rem;
 }
 
+/* ============================================
+   INSIGHTS HERO CARD
+   ============================================ */
+
+.dk-display-md {
+  font-family: var(--font-display);
+  font-size: var(--dk-fs-h2);
+  font-weight: 400;
+  line-height: var(--dk-lh-heading);
+  letter-spacing: var(--dk-ls-heading);
+  color: var(--dk-dark);
+}
+
+.dk-insight-hero-card {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.dk-insight-hero-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.dk-insight-hero-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.dk-insight-hero-card:hover .dk-insight-hero-card-img {
+  transform: scale(1.02);
+}
+
+.dk-insight-hero-card-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--dk-accent);
+}
+
+.dk-insight-hero-card-body {
+  padding: 1.25rem 0 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dk-insight-hero-card:hover .dk-blog-card-read svg {
+  transform: translateX(4px);
+}
+
 .dk-blog-card {
-  background: var(--dk-white);
-  padding: 2rem 2rem 1.75rem;
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -1999,9 +2034,9 @@ li {
 }
 
 .dk-blog-card-image {
-  margin: -2rem -2rem 0.25rem;
   overflow: hidden;
   aspect-ratio: 16 / 9;
+  border-radius: 12px;
 }
 
 .dk-blog-card-img {
@@ -2020,7 +2055,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.4rem;
+  gap: 8px;
 }
 
 .dk-blog-card-category {
@@ -2043,19 +2078,22 @@ li {
   color: var(--dk-dark);
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .dk-blog-card-excerpt {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: var(--dk-secondary);
   line-height: 1.7;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   flex: 1;
+  margin-bottom: 0;
 }
 
 .dk-blog-card-read {
@@ -2074,6 +2112,17 @@ li {
 }
 .dk-blog-card:hover .dk-blog-card-read svg {
   transform: translateX(4px);
+}
+
+.dk-blog-card-read-time {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--dk-secondary);
+  letter-spacing: 0.02em;
+}
+
+.dk-insights-grid {
+  gap: 32px;
 }
 
 /* ============================================
@@ -2154,16 +2203,18 @@ li {
   color: var(--dk-dark);
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .dk-latest-card-excerpt {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: var(--dk-secondary);
   line-height: 1.65;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   flex: 1;

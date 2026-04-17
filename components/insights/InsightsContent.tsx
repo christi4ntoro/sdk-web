@@ -24,6 +24,9 @@ function readMoreKey(category: string): string {
 
 export function InsightsContent({ posts }: { posts: PostMeta[] }) {
   const { lang, t } = useLang()
+  const activeLang = lang === 'en' ? 'en' : lang === 'pt' ? 'pt' : 'es'
+  const heroPost = posts[0]
+  const remainingPosts = posts.slice(1)
 
   return (
     <div className="dk-insights-page">
@@ -45,51 +48,81 @@ export function InsightsContent({ posts }: { posts: PostMeta[] }) {
             {t('insights.empty')}
           </p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px">
-            {posts.map((post) => {
-              const activeLang = lang === 'en' ? 'en' : lang === 'pt' ? 'pt' : 'es'
-              const langData = post[activeLang]
-              const title = langData.title || post.es.title
-              const excerpt = langData.excerpt || post.es.excerpt
-              const category = langData.category || post.es.category
-              const tags = langData.tags.length > 0 ? langData.tags : post.es.tags
+          <>
+            <Link href={`/insights/${heroPost.slug}`} className="dk-insight-hero-card">
+              <div className="dk-insight-hero-card-image">
+                {heroPost.featuredImage ? (
+                  <Image
+                    src={heroPost.featuredImage}
+                    alt={heroPost[activeLang].featuredImageAlt || heroPost[activeLang].title || heroPost.es.title}
+                    width={1100}
+                    height={618}
+                    className="dk-insight-hero-card-img"
+                  />
+                ) : (
+                  <div className="dk-insight-hero-card-placeholder" />
+                )}
+              </div>
+              <div className="dk-insight-hero-card-body">
+                <h2 className="dk-display-md">
+                  {heroPost[activeLang].title || heroPost.es.title}
+                </h2>
+                <div className="dk-blog-card-read">
+                  {t(readMoreKey(heroPost[activeLang].category || heroPost.es.category))}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+              </div>
+            </Link>
 
-              return (
-                <Link
-                  key={post.slug}
-                  href={`/insights/${post.slug}`}
-                  className="blog-card-link dk-blog-card"
-                >
-                  {post.featuredImage && (
-                    <div className="dk-blog-card-image">
-                      <Image
-                        src={post.featuredImage}
-                        alt={langData.featuredImageAlt || title}
-                        width={600}
-                        height={340}
-                        className="dk-blog-card-img"
-                      />
-                    </div>
-                  )}
-                  {category && (
-                    <div className="dk-blog-card-meta">
-                      <span className="dk-blog-card-category">{category}</span>
-                    </div>
-                  )}
-                  <h2 className="dk-blog-card-title">{title}</h2>
-                  {excerpt && (
-                    <p className="dk-blog-card-excerpt">
-                      {excerpt.length > 120 ? excerpt.slice(0, 120).trimEnd() + '…' : excerpt}
-                    </p>
-                  )}
-                  <div className="dk-blog-card-read">
-                    {t(readMoreKey(category))}
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
+            {remainingPosts.length > 0 && (
+              <div className="grid grid-cols-1 md:grid-cols-3 dk-insights-grid">
+                {remainingPosts.map((post) => {
+                  const langData = post[activeLang]
+                  const title = langData.title || post.es.title
+                  const excerpt = langData.excerpt || post.es.excerpt
+                  const category = langData.category || post.es.category
+
+                  return (
+                    <Link
+                      key={post.slug}
+                      href={`/insights/${post.slug}`}
+                      className="blog-card-link dk-blog-card"
+                    >
+                      {post.featuredImage && (
+                        <div className="dk-blog-card-image">
+                          <Image
+                            src={post.featuredImage}
+                            alt={langData.featuredImageAlt || title}
+                            width={600}
+                            height={340}
+                            className="dk-blog-card-img"
+                          />
+                        </div>
+                      )}
+                      <h2 className="dk-blog-card-title">{title}</h2>
+                      <div className="dk-blog-card-meta">
+                        {category && (
+                          <span className="dk-blog-card-category">{category}</span>
+                        )}
+                        {post.readingTime && (
+                          <span className="dk-blog-card-read-time">{post.readingTime} {t('article_card.read_time')}</span>
+                        )}
+                      </div>
+                      {excerpt && (
+                        <p className="dk-blog-card-excerpt">
+                          {excerpt.length > 120 ? excerpt.slice(0, 120).trimEnd() + '…' : excerpt}
+                        </p>
+                      )}
+                      <div className="dk-blog-card-read">
+                        {t(readMoreKey(category))}
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                      </div>
+                    </Link>
+                  )
+                })}
+              </div>
+            )}
+          </>
         )}
       </section>
     </div>

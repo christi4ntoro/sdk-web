@@ -64,7 +64,8 @@
     "read_more_technology": "Ver qué está cambiando",
     "read_more_strategy": "Ver el panorama completo",
     "read_more_compliance": "Ver qué necesitas saber",
-    "read_more_default": "Ver qué funcionó"
+    "read_more_default": "Ver qué funcionó",
+    "read_time": "min de lectura"
   },
   "clients": {
     "label": "Han confiado en nosotros las organizaciones que tratan la formación como una inversión, no como un gasto."

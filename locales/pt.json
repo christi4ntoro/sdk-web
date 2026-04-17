@@ -64,7 +64,8 @@
     "read_more_technology": "Ver o que está mudando",
     "read_more_strategy": "Ver o panorama completo",
     "read_more_compliance": "Ver o que você precisa",
-    "read_more_default": "Ver o que funcionou"
+    "read_more_default": "Ver o que funcionou",
+    "read_time": "min de leitura"
   },
   "clients": {
     "label": "Confiam em nós as organizações que tratam o treinamento como investimento, não como custo."

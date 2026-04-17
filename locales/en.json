@@ -64,7 +64,8 @@
     "read_more_technology": "See what's shifting",
     "read_more_strategy": "See the full picture",
     "read_more_compliance": "See what you need",
-    "read_more_default": "See what worked"
+    "read_more_default": "See what worked",
+    "read_time": "min read"
   },
   "clients": {
     "label": "Trusted by organizations that treat training as an investment, not a cost."
