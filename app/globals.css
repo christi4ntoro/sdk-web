@@ -56,16 +56,20 @@
   --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-sans:    'Plus Jakarta Sans', system-ui, sans-serif;
 
-  /* ---- Fluid Type Scale (320px → 1240px) ---- */
-  --dk-fs-body: clamp(1.0625rem, calc(0.9973rem + 0.3261vw), 1.25rem);
-  --dk-fs-h1:   clamp(2.25rem,   calc(1.8152rem + 2.1739vw), 3.5rem);
-  --dk-fs-h2:   clamp(1.75rem,   calc(1.5761rem + 0.8696vw), 2.25rem);
-  --dk-fs-h3:   clamp(1.25rem,   calc(1.163rem  + 0.4348vw), 1.5rem);
+  /* ---- Refined Fluid Type Scale (17px → 20px) ---- */
+  --dk-fs-body: clamp(1.0625rem, 0.98rem + 0.4vw, 1.25rem);
+  --dk-fs-h1:   clamp(2.25rem, 1.8rem + 2vw, 3.5rem);
+  --dk-fs-h2:   clamp(1.75rem, 1.5rem + 1vw, 2.25rem);
+  --dk-fs-h3:   clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
 
-  --dk-lh-body:    1.6;
-  --dk-lh-heading: 1.2;
-  --dk-ls-body:    -0.015em;
-  --dk-ls-heading: -0.02em;
+  /* ---- Readability Calibration ---- */
+  --dk-lh-body:    1.65;    /* Optimized for Plus Jakarta Sans @20px */
+  --dk-lh-heading: 1.15;    /* Tighter for premium B2B look */
+  --dk-ls-body:    -0.011em; 
+  --dk-ls-heading: -0.025em; /* Framer-inspired "tight" headers */
+  
+  /* ---- Rhythmic Spacing ---- */
+  --dk-para-spacing: 2rem;
 }
 
 /* ============================================
@@ -148,30 +152,40 @@ p {
   font-size: var(--dk-fs-body);
   line-height: var(--dk-lh-body);
   letter-spacing: var(--dk-ls-body);
+  margin-bottom: var(--dk-para-spacing);
 }
 
 h1 {
   font-family: var(--font-display);
   font-size: var(--dk-fs-h1);
+  font-weight: 700;
   line-height: var(--dk-lh-heading);
   letter-spacing: var(--dk-ls-heading);
   color: var(--dk-dark);
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
 }
 
 h2 {
   font-family: var(--font-display);
   font-size: var(--dk-fs-h2);
+  font-weight: 600;
   line-height: var(--dk-lh-heading);
   letter-spacing: var(--dk-ls-heading);
   color: var(--dk-dark);
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
 }
 
 h3 {
   font-family: var(--font-display);
   font-size: var(--dk-fs-h3);
+  font-weight: 600;
   line-height: var(--dk-lh-heading);
   letter-spacing: var(--dk-ls-heading);
   color: var(--dk-dark);
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
 }
 
 li {
@@ -214,7 +228,7 @@ li {
 
 .section-label {
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--dk-secondary);
@@ -238,7 +252,7 @@ li {
 .btn-primary {
   font-family: var(--font-sans);
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   background: var(--dk-dark);
@@ -282,7 +296,7 @@ li {
 .btn-accent {
   font-family: var(--font-sans);
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   background: var(--dk-accent);
@@ -346,7 +360,7 @@ li {
 .dk-field-label {
   font-family: var(--font-sans);
   font-size: 0.68rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.11em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.38);
@@ -435,7 +449,7 @@ li {
 .dk-nav-cta {
   font-family: var(--font-sans);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   text-decoration: none;
@@ -687,7 +701,7 @@ li {
 .dk-hero-h1 {
   font-family: var(--font-display);
   font-size: clamp(3.2rem, 6vw, 5.8rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.06;
   letter-spacing: -0.02em;
   color: var(--dk-dark);
@@ -712,6 +726,7 @@ li {
 .dk-em {
   color: var(--dk-secondary);
   font-style: italic;
+  font-weight: 400;
 }
 
 /* ============================================
@@ -1493,7 +1508,7 @@ li {
 
 .dk-insight-date {
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--dk-secondary);
@@ -1501,7 +1516,7 @@ li {
 
 .dk-insight-tag {
   font-size: 0.65rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--dk-secondary);
@@ -1556,12 +1571,12 @@ li {
 .insight-body h2 {
   font-family: var(--font-display);
   font-size: var(--dk-fs-h2);
-  font-weight: 700;
+  font-weight: 600;
   line-height: var(--dk-lh-heading);
   letter-spacing: var(--dk-ls-heading);
   color: var(--dk-dark);
-  margin-top: 2.5em;
-  margin-bottom: 0.6em;
+  margin-top: 4rem;
+  margin-bottom: 1.25rem;
 }
 
 .insight-body h3 {
@@ -1571,18 +1586,18 @@ li {
   line-height: var(--dk-lh-heading);
   letter-spacing: var(--dk-ls-heading);
   color: var(--dk-dark);
-  margin-top: 2em;
-  margin-bottom: 0.5em;
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .insight-body p {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--dk-para-spacing);
   color: var(--dk-secondary);
 }
 
 .insight-body strong {
   color: var(--dk-dark);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .insight-body ul,
@@ -2033,7 +2048,7 @@ li {
 }
 
 .dk-blog-card-excerpt {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--dk-secondary);
   line-height: 1.7;
   display: -webkit-box;
@@ -2144,7 +2159,7 @@ li {
 }
 
 .dk-latest-card-excerpt {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--dk-secondary);
   line-height: 1.65;
   display: -webkit-box;
