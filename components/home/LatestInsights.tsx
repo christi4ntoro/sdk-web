@@ -43,7 +43,6 @@ export function LatestInsights({ posts }: { posts: PostMeta[] }) {
           {posts.map((post) => {
             const langData = post[activeLang]
             const title = langData.title || post.es.title
-            const excerpt = langData.excerpt || post.es.excerpt
             const category = langData.category || post.es.category
             const imageAlt = langData.featuredImageAlt || post.es.featuredImageAlt || title
 

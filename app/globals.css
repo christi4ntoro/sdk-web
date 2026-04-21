@@ -93,7 +93,7 @@
   --dk-white:     #1D1C33;
   --dk-dark:      #F9FAFC;
   --dk-primary:   #FF9400;
-  --dk-secondary: #9B8FD4;
+  --dk-secondary: #7F83A9;
   --dk-deep:      #0C0C15;
   --dk-border:    rgba(230, 231, 253, 0.12);
 
@@ -683,14 +683,14 @@ li {
    ============================================ */
 
 .dk-hero {
-  padding: 4rem 1.5rem 2rem;
+  padding: 4rem 2rem 2rem;
   max-width: 1100px;
   margin: 0 auto;
   text-align: center;
 }
 
 @media (min-width: 769px) {
-  .dk-hero { padding: 6rem 6rem 4rem; }
+  .dk-hero { padding: 6rem; }
 }
 
 .dk-hero-label {
@@ -699,7 +699,7 @@ li {
 
 .dk-hero-h1 {
   font-family: var(--font-display);
-  font-size: clamp(3.2rem, 6vw, 5.8rem);
+  font-size: clamp(2.5rem, 6vw, 5.8rem);
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -719,8 +719,14 @@ li {
   display: flex;
   align-items: center;
   gap: 1.75rem;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+}
+
+@media (min-width: 769px) {
+  .dk-hero-ctas {
+    flex-direction: row;
+  }
 }
 
 .dk-em {
@@ -2536,4 +2542,70 @@ li {
 [data-theme="dark"] .dk-search-result:hover,
 [data-theme="dark"] .dk-search-result--active {
   background: rgba(255, 255, 255, 0.05);
+}
+
+/* ─── Course Covers Gallery ─────────────────────────────── */
+.dk-covers-section {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 85%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+.dk-covers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  height: 100%;
+}
+
+.dk-covers-col {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.dk-covers-col--desktop-only {
+  display: none;
+}
+
+.dk-covers-item {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.dk-covers-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .dk-covers-section {
+    height: 700px;
+  }
+
+  .dk-covers-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .dk-covers-col--desktop-only {
+    display: flex;
+  }
 }
