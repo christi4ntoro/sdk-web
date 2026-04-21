@@ -37,10 +37,8 @@
   },
   "hero": {
     "label": "Formación corporativa · Experiencias que transforman equipos",
-    "h1_pre": "Formación que cambia",
-    "h1_mid": "lo que tu equipo ",
-    "h1_em1": "hace.",
-    "h1_em2": "No solo lo que sabe.",
+    "h1_pre": "Formación que cambia lo que tu equipo hace.",
+    "h1_em": "No solo lo que sabe.",
     "sub": "Decisiones basadas en datos, producción potenciada por IA y contenido que tu organización realmente finaliza.",
     "cta_secondary": "Ver servicios"
   },

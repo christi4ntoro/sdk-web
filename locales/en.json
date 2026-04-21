@@ -37,11 +37,9 @@
   },
   "hero": {
     "label": "Corporate training · Experiences that transform teams",
-    "h1_pre": "Training that changes",
-    "h1_mid": "what your team ",
-    "h1_em1": "does.",
-    "h1_em2": "Not just what they know.",
-    "sub": "Data-driven decisions, AI-powered production, and content your organization actually completes.",
+    "h1_pre": "Training that changes what your team does.",
+    "h1_em": "Not just what they know.",
+    "sub": "Designed with data. Powered by AI. Built to finish.",
     "cta_secondary": "Explore services"
   },
   "numbers": {

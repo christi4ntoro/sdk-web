@@ -13,9 +13,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <ClientLogos />
       <NumbersBand />
       <Services />
-      <ClientLogos />
       <Statement />
       <ManifestoTeaser />
       <LatestInsights posts={latestPosts} />

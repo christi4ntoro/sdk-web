@@ -39,7 +39,7 @@ export function LatestInsights({ posts }: { posts: PostMeta[] }) {
           <em>{t('latest_insights.heading_em')}</em>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px">
+        <div className="grid grid-cols-1 md:grid-cols-3 dk-insights-grid">
           {posts.map((post) => {
             const langData = post[activeLang]
             const title = langData.title || post.es.title
@@ -72,12 +72,6 @@ export function LatestInsights({ posts }: { posts: PostMeta[] }) {
                 )}
 
                 <h3 className="dk-latest-card-title">{title}</h3>
-
-                {excerpt && (
-                  <p className="dk-latest-card-excerpt">
-                    {excerpt.length > 120 ? excerpt.slice(0, 120).trimEnd() + '…' : excerpt}
-                  </p>
-                )}
 
                 <span className="dk-latest-card-read">
                   {t(readMoreKey(category))}

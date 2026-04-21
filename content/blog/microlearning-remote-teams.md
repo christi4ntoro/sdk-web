@@ -9,7 +9,7 @@ bodyPT: true
 es:
   title: 'Microlearning para equipos remotos: por qué las píldoras cortas ganan cuando nadie está en la misma oficina'
   excerpt: 'El microlearning no es hacer tus videos más cortos. Es rediseñar cómo aprende tu gente cuando trabaja desde cinco zonas horarias distintas.'
-  category: 'Diseño de aprendizaje'
+  category: 'Estrategia'
   tags: ['microlearning', 'equipos remotos', 'aprendizaje corporativo', 'diseño instruccional', 'l&d']
   featuredImageAlt: 'Profesional trabajando de forma remota revisando una lección breve en el celular durante una pausa de trabajo'
   keyTakeaways:
@@ -19,7 +19,7 @@ es:
 en:
   title: 'Microlearning for remote teams: why short bursts win when nobody shares an office'
   excerpt: 'Microlearning is not about making your videos shorter. It is about redesigning how your people learn when they work across five different time zones.'
-  category: 'Learning design'
+  category: 'Strategy'
   tags: ['microlearning', 'remote teams', 'corporate learning', 'instructional design', 'l&d']
   featuredImageAlt: 'Remote professional reviewing a short lesson on their phone during a work break'
   keyTakeaways:
@@ -29,7 +29,7 @@ en:
 pt:
   title: 'Microlearning para equipes remotas: por que as pílulas curtas vencem quando ninguém está no mesmo escritório'
   excerpt: 'Microlearning não é deixar seus vídeos mais curtos. É redesenhar como sua gente aprende quando trabalha a partir de cinco fusos horários diferentes.'
-  category: 'Design de aprendizagem'
+  category: 'Estratégia'
   tags: ['microlearning', 'equipes remotas', 'aprendizagem corporativa', 'design instrucional', 'l&d']
   featuredImageAlt: 'Profissional trabalhando remotamente revisando uma lição breve no celular durante uma pausa de trabalho'
   keyTakeaways:

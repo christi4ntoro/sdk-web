@@ -8,14 +8,13 @@ export function Hero() {
 
   return (
     <section className="dk-hero">
-      <div className="section-label dk-hero-label">
+      {/*<div className="section-label dk-hero-label">
         {t('hero.label')}
-      </div>
+      </div>*/}
 
       <h1 className="dk-hero-h1">
-        {t('hero.h1_pre')}<br />
-        {t('hero.h1_mid')}
-        <em className="dk-em">{t('hero.h1_em1')}<br />{t('hero.h1_em2')}</em>
+        <strong>{t('hero.h1_pre')}</strong><br />
+        <em className="dk-em">{t('hero.h1_em')}</em>
       </h1>
 
       <p className="dk-body dk-hero-sub">

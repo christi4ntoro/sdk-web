@@ -37,11 +37,9 @@
   },
   "hero": {
     "label": "Treinamento corporativo · Experiências que transformam equipes",
-    "h1_pre": "Treinamento que muda",
-    "h1_mid": "o que sua equipe ",
-    "h1_em1": "faz.",
-    "h1_em2": "Não só o que sabe.",
-    "sub": "Decisões baseadas em dados, produção potencializada por IA e conteúdo que sua organização realmente conclui.",
+    "h1_pre": "Treinamento que muda o que sua equipe faz.",
+    "h1_em": "Não só o que sabe.",
+    "sub": "Concebido com dados. Potenciado por IA. Feito para concluir.",
     "cta_secondary": "Ver serviços"
   },
   "numbers": {
