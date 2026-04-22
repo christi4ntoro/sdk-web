@@ -1,4 +1,19 @@
 {
+  "nav": {
+    "skip": "Skip to main content",
+    "services": "Services",
+    "insights": "Blog",
+    "manifesto": "Core",
+    "contact": "Contact",
+    "cta": "Start here"
+  },
+  "footer": {
+    "seed": "Looking for a learning partner year-round. Ask us about our continuous partnership programs.",
+    "theme": "Toggle theme",
+    "lang": "Language",
+    "social_linkedin": "Follow us on LinkedIn",
+    "social_instagram": "Follow us on Instagram"
+  },
   "shared": {
     "cta_primary": "Tell us your challenge",
     "cta_find_solution": "Find my solution",
@@ -20,26 +35,11 @@
     "form_size_500_2000": "500 – 2,000",
     "form_sending": "Sending..."
   },
-  "nav": {
-    "skip": "Skip to main content",
-    "services": "Services",
-    "insights": "Insights",
-    "manifesto": "Manifesto",
-    "contact": "Contact",
-    "cta": "Start here"
-  },
-  "footer": {
-    "seed": "Looking for a learning partner year-round. Ask us about our continuous partnership programs.",
-    "theme": "Toggle theme",
-    "lang": "Language",
-    "social_linkedin": "Follow us on LinkedIn",
-    "social_instagram": "Follow us on Instagram"
-  },
   "hero": {
     "label": "Corporate training · Experiences that transform teams",
     "h1_pre": "Training that changes what your team does.",
     "h1_em": "Not just what they know.",
-    "sub": "We understand what your team needs to learn. Then we build it so they actually apply it.",
+    "sub": "We understand what your team needs to learn, then we build it so they actually apply it.",
     "cta_secondary": "Explore services"
   },
   "numbers": {
@@ -112,18 +112,18 @@
     "min_read": "min read"
   },
   "insights": {
-    "label": "Insights",
+    "label": "Blog",
     "h1_pre": "What we know,",
     "h1_em": "shared without filter.",
     "lead": "Articles on learning, design and technology applied to organizations.",
     "empty": "Coming soon.",
     "read": "Read →",
-    "back": "← Insights",
+    "back": "← Blog",
     "article_footer_lead": "Want to talk about how this applies to your organization?",
     "only_in_spanish": "This article is only available in Spanish for now."
   },
   "manifesto": {
-    "label": "Manifesto",
+    "label": "Core",
     "cta": "Work with us",
     "block_opening": "We started with a simple idea.",
     "block_body1": "That any topic, no matter how complex, can be understood by anyone, if someone takes the time to design it well. We didn't arrive at corporate learning by accident. We arrived because we saw what happens when training is built without that principle. Presentations nobody completes. Content that exists for the report, not for the person receiving it.",

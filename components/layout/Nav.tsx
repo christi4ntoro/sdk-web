@@ -82,7 +82,7 @@ export function Nav({ posts }: NavProps) {
             </button>
           </li>
           <li>
-            <Link href="/contact" className="dk-nav-cta">
+            <Link href="/contact" className="btn-primary">
               {t('nav.cta')}
             </Link>
           </li>
@@ -134,7 +134,7 @@ export function Nav({ posts }: NavProps) {
             </svg>
             {t('search.open')}
           </button>
-          <Link href="/contact" className="dk-mobile-cta" onClick={() => setMenuOpen(false)}>
+          <Link href="/contact" className="btn-primary btn-primary--lg" onClick={() => setMenuOpen(false)}>
             {t('nav.cta')}
           </Link>
         </div>

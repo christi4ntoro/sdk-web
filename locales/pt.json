@@ -1,4 +1,19 @@
 {
+  "nav": {
+    "skip": "Pular para o conteúdo principal",
+    "services": "Serviços",
+    "insights": "Blog",
+    "manifesto": "Fundamento",
+    "contact": "Contato",
+    "cta": "Fale conosco"
+  },
+  "footer": {
+    "seed": "Procura um parceiro de aprendizagem para o ano todo. Pergunte sobre nossos programas de acompanhamento contínuo.",
+    "theme": "Alternar tema",
+    "lang": "Idioma",
+    "social_linkedin": "Siga-nos no LinkedIn",
+    "social_instagram": "Siga-nos no Instagram"
+  },
   "shared": {
     "cta_primary": "Conte-nos seu desafio",
     "cta_find_solution": "Quero uma solução",
@@ -20,26 +35,11 @@
     "form_size_500_2000": "500 – 2.000",
     "form_sending": "Enviando..."
   },
-  "nav": {
-    "skip": "Pular para o conteúdo principal",
-    "services": "Serviços",
-    "insights": "Perspectivas",
-    "manifesto": "Manifesto",
-    "contact": "Contato",
-    "cta": "Fale conosco"
-  },
-  "footer": {
-    "seed": "Procura um parceiro de aprendizagem para o ano todo. Pergunte sobre nossos programas de acompanhamento contínuo.",
-    "theme": "Alternar tema",
-    "lang": "Idioma",
-    "social_linkedin": "Siga-nos no LinkedIn",
-    "social_instagram": "Siga-nos no Instagram"
-  },
   "hero": {
     "label": "Treinamento corporativo · Experiências que transformam equipes",
     "h1_pre": "Treinamento que muda o que sua equipe faz.",
     "h1_em": "Não só o que sabe.",
-    "sub": "Entendemos o que sua equipe precisa aprender. E construímos para que realmente apliquem.",
+    "sub": "Entendemos o que sua equipe precisa aprender e construímos para que realmente apliquem.",
     "cta_secondary": "Ver serviços"
   },
   "numbers": {
@@ -78,7 +78,7 @@
   "manifesto_teaser": {
     "label": "Manifesto",
     "p1": "Somos um estúdio de estratégia, design e tecnologia aplicada ao aprendizado.",
-    "p2": "El diseño es nuestra forma de pensar. La tecnología es lo que nos permite escalar. Los resultados son nuestra única métrica.",
+    "p2": "O design é a nossa forma de pensar. A tecnologia é o que nos permite escalar. Os resultados são a nossa única métrica.",
     "cta": "Descubra no que acreditamos"
   },
   "cta_section": {

@@ -76,12 +76,12 @@ export const metadata: Metadata = {
 
   // Title template: page titles append "— Studio Deki" automatically
   title: {
-    default: 'Studio Deki — Formación corporativa que funciona',
+    default: 'Studio Deki - Formación corporativa que funciona',
     template: '%s — Studio Deki',
   },
 
   description:
-    'Estudio de diseño de experiencias eLearning y producción potenciada por IA. Cursos SCORM, xAPI, cumplimiento normativo y formación corporativa que tu equipo realmente completa. Colombia, Latinoamérica y Europa.',
+    'Somos un estudio de estrategia, diseño y tecnología aplicada al aprendizaje. Colombia, Latinoamérica y Europa.',
 
   // Canonical and alternates for multilingual SEO
   alternates: {
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     siteName: 'Studio Deki',
     title: 'Studio Deki — Formación corporativa que funciona',
     description:
-      'Diseño de experiencias elearning basado en datos, producción eLearning con IA y experiencias de aprendizaje que los equipos realmente completan. 92% de tasa de finalización en Copa Airlines.',
+      'Diseño de experiencias elearning, producción eLearning con IA y experiencias de aprendizaje que los equipos realmente completan. 92% de tasa de finalización.',
     locale: 'es_CO',
     alternateLocale: ['en_US', 'es_ES'],
     // Drop a 1200x630px image at /public/og-image.jpg to activate
@@ -118,7 +118,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Studio Deki — Formación corporativa que funciona',
     description:
-      'Diseño de experiencias elearning basado en datos, producción eLearning con IA y experiencias de aprendizaje que los equipos realmente completan. 92% de tasa de finalización en Copa Airlines.',
+      'Diseño de experiencias elearning, producción eLearning con IA y experiencias de aprendizaje que los equipos realmente completan. 92% de tasa de finalización.',
     images: ['/og-image.jpg'],
   },
 

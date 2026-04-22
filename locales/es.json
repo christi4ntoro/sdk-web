@@ -1,4 +1,19 @@
 {
+  "nav": {
+    "skip": "Saltar al contenido principal",
+    "services": "Servicios",
+    "insights": "Blog",
+    "manifesto": "Fundamento",
+    "contact": "Contacto",
+    "cta": "Hablemos"
+  },
+  "footer": {
+    "seed": "Buscas un socio de aprendizaje para todo el año. Pregúntanos por nuestros programas de acompañamiento continuo.",
+    "theme": "Cambiar tema",
+    "lang": "Idioma",
+    "social_linkedin": "Síguenos en LinkedIn",
+    "social_instagram": "Síguenos en Instagram"
+  },
   "shared": {
     "cta_primary": "Cuéntanos tu reto",
     "cta_find_solution": "Quiero una solución",
@@ -20,26 +35,11 @@
     "form_size_500_2000": "500 – 2.000",
     "form_sending": "Enviando..."
   },
-  "nav": {
-    "skip": "Saltar al contenido principal",
-    "services": "Servicios",
-    "insights": "Perspectivas",
-    "manifesto": "Manifiesto",
-    "contact": "Contacto",
-    "cta": "Hablemos"
-  },
-  "footer": {
-    "seed": "Buscas un socio de aprendizaje para todo el año. Pregúntanos por nuestros programas de acompañamiento continuo.",
-    "theme": "Cambiar tema",
-    "lang": "Idioma",
-    "social_linkedin": "Síguenos en LinkedIn",
-    "social_instagram": "Síguenos en Instagram"
-  },
   "hero": {
     "label": "Formación corporativa · Experiencias que transforman equipos",
     "h1_pre": "Formación que cambia lo que tu equipo hace.",
     "h1_em": "No solo lo que sabe.",
-    "sub": "Entendemos lo que tu equipo necesita aprender. Y lo construimos para que realmente lo apliquen.",
+    "sub": "Entendemos lo que tu equipo necesita aprender y lo construimos para que realmente lo apliquen.",
     "cta_secondary": "Ver servicios"
   },
   "numbers": {

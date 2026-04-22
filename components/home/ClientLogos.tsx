@@ -23,6 +23,12 @@ export function ClientLogos() {
 
   return (
     <section className="dk-clients-section">
+      <div className="dk-clients-inner">
+        <div className="section-label">
+          {t('clients.label')}
+        </div>
+      </div>
+
       <div className="dk-marquee-wrapper" aria-label={t('clients.label')}>
         <div className="dk-marquee-track">
           {[...clients, ...clients].map((client, i) => (
@@ -35,12 +41,8 @@ export function ClientLogos() {
             />
           ))}
         </div>
-      </div>
-      <div className="dk-clients-inner">
-        <div className="section-label dk-clients-label">
-          {t('clients.label')}
-        </div>
-      </div>
+      </div>      
     </section>
   )
+
 }

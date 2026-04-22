@@ -13,7 +13,7 @@ export function NumbersBand() {
 
   return (
     <section className="dk-numbers-section">
-      <div className="dk-numbers-grid grid grid-cols-1 md:grid-cols-3 gap-px">
+      <div className="dk-numbers-grid grid grid-cols-1 md:grid-cols-3">
         {numbers.map((n) => (
           <div
             key={n.value}
