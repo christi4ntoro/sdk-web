@@ -153,19 +153,17 @@ export default function ContactForm() {
               </p>
             )}
 
-            <button
-              type="submit"
-              disabled={state === 'sending'}
-              className={`btn-accent dk-contact-submit${state === 'sending' ? ' dk-contact-submit--sending' : ''}`}
-            >
-              {state === 'sending'
-                ? t('shared.form_sending')
-                : t('shared.cta_find_solution')}
-            </button>
-
-            <p className="dk-contact-disclaimer">
-              {t('shared.form_disclaimer')}
-            </p>
+            <div className='dk-contact-link'>
+              <button
+                type="submit"
+                disabled={state === 'sending'}
+                className={`dk-contact-submit${state === 'sending' ? ' dk-contact-submit--sending' : ''}`}
+              >
+                {state === 'sending'
+                  ? t('shared.form_sending')
+                  : t('shared.cta_find_solution')}
+              </button>
+            </div>
           </form>
         )}
       </div>

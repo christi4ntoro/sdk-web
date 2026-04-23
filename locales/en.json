@@ -37,9 +37,11 @@
   },
   "hero": {
     "label": "Corporate training · Experiences that transform teams",
-    "h1_pre": "Training that changes what your team does.",
-    "h1_em": "Not just what they know.",
-    "sub": "We understand what your team needs to learn, then we build it so they actually apply it.",
+    "h1_pre1": "Training that changes",
+    "h1_pre2": "what your team does",
+    "h1_span": "Not just what they know.",
+    "sub1": "We understand what your team needs to learn,",
+    "sub2": "then we build it so they actually apply it",
     "cta_secondary": "Explore services"
   },
   "numbers": {

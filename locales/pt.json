@@ -37,9 +37,11 @@
   },
   "hero": {
     "label": "Treinamento corporativo · Experiências que transformam equipes",
-    "h1_pre": "Treinamento que muda o que sua equipe faz.",
-    "h1_em": "Não só o que sabe.",
-    "sub": "Entendemos o que sua equipe precisa aprender e construímos para que realmente apliquem.",
+    "h1_pre1": "Treinamento que muda",
+    "h1_pre2": "o que sua equipe faz",
+    "h1_span": "Não só o que sabe.",
+    "sub1": "Entendemos o que sua equipe precisa aprender",
+    "sub2": "e construímos para que realmente apliquem",
     "cta_secondary": "Ver serviços"
   },
   "numbers": {

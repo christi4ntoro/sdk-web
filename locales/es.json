@@ -37,9 +37,11 @@
   },
   "hero": {
     "label": "Formación corporativa · Experiencias que transforman equipos",
-    "h1_pre": "Formación que cambia lo que tu equipo hace.",
-    "h1_em": "No solo lo que sabe.",
-    "sub": "Entendemos lo que tu equipo necesita aprender y lo construimos para que realmente lo apliquen.",
+    "h1_pre1": "Formación que cambia",
+    "h1_pre2": "lo que tu equipo hace",
+    "h1_span": "No solo lo que sabe.",
+    "sub1": "Entendemos lo que tu equipo necesita aprender y",
+    "sub2": "lo construimos para que realmente lo apliquen.",
     "cta_secondary": "Ver servicios"
   },
   "numbers": {
@@ -54,7 +56,8 @@
     "s2_title": "Cumplimiento que funciona más allá de la auditoría",
     "s2_desc": "Contenido técnico y regulatorio convertido en formación que tu equipo comprende, aplica y recuerda.",
     "s3_title": "Estrategia para sacar el máximo a tu plataforma",
-    "s3_desc": "No necesitas otra plataforma. Necesitas saber cómo hacer que la que tienes trabaje para tu gente. Diseñamos la estrategia, los flujos y la experiencia."
+    "s3_desc": "No necesitas otra plataforma. Necesitas saber cómo hacer que la que tienes trabaje para tu gente. Diseñamos la estrategia, los flujos y la experiencia.",
+    "cta": "Conoce nuestros servicios"
   },
   "article_card": {
     "read_more_case_study": "Ver qué funcionó",
@@ -91,11 +94,11 @@
     "heading_pre": "Ideas que",
     "heading_em": "vale la pena leer.",
     "read": "Leer →",
-    "view_all": "Ver todas las perspectivas"
+    "view_all": "Ver todas los artículos"
   },
   "article": {
     "breadcrumb_home": "Inicio",
-    "breadcrumb_insights": "Perspectivas",
+    "breadcrumb_insights": "Blog",
     "key_takeaways": "Puntos clave",
     "toc_label": "En este artículo",
     "cta_heading": "¿Quieres aplicar esto?",
@@ -105,13 +108,13 @@
     "min_read": "min de lectura"
   },
   "insights": {
-    "label": "Perspectivas",
+    "label": "Blog",
     "h1_pre": "Lo que sabemos,",
     "h1_em": "compartido sin filtro.",
     "lead": "Artículos sobre aprendizaje, diseño y tecnología aplicada a organizaciones.",
     "empty": "Próximamente.",
     "read": "Leer →",
-    "back": "← Perspectivas",
+    "back": "← Blog",
     "article_footer_lead": "¿Quieres hablar sobre cómo esto aplica a tu organización?",
     "only_in_spanish": "Este artículo está disponible solo en español por ahora."
   },

@@ -51,14 +51,20 @@ export function Footer() {
               </svg>
             </a>
           </div>
-        </div>
-
-        {/* Brand + seed */}
-        <div className="dk-footer-seed">
+          <div className="dk-footer-seed">
+          <p>
+            <a href="mailto:info@studiodeki.co" className="dk-footer-email">
+              info@studiodeki.co
+            </a>
+          </p>
           <p>
             {t('footer.seed')}
           </p>
         </div>
+        </div>
+
+        {/* Brand + seed */}
+        
 
         {/* Nav */}
         <nav className="dk-footer-nav">
@@ -71,9 +77,12 @@ export function Footer() {
 
         {/* Contact + controls */}
         <div className="dk-footer-contact">
-          <a href="mailto:info@studiodeki.co" className="dk-footer-email">
-            info@studiodeki.co
-          </a>
+          <select value={lang} onChange={(e) => setLang(e.target.value as Lang)}
+            className="dk-footer-select" aria-label={t('footer.lang')}>
+            <option value="es">ES — Español</option>
+            <option value="en">EN — English</option>
+            <option value="pt">PT — Português</option>
+          </select>
           <button onClick={toggleTheme} className="dk-footer-theme-btn"
             aria-label={t('footer.theme')}>
             {theme === 'light' ? (
@@ -94,12 +103,6 @@ export function Footer() {
               </svg>
             )}
           </button>
-          <select value={lang} onChange={(e) => setLang(e.target.value as Lang)}
-            className="dk-footer-select" aria-label={t('footer.lang')}>
-            <option value="es">ES — Español</option>
-            <option value="en">EN — English</option>
-            <option value="pt">PT — Português</option>
-          </select>
         </div>
       </div>
 

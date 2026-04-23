@@ -34,9 +34,7 @@ export function LatestInsights({ posts }: { posts: PostMeta[] }) {
           {t('latest_insights.label')}
         </div>
         <h2 className="dk-latest-heading">
-          {t('latest_insights.heading_pre')}
-          <br />
-          <em>{t('latest_insights.heading_em')}</em>
+          {t('latest_insights.heading_pre')} <em>{t('latest_insights.heading_em')}</em>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 dk-insights-grid">
