@@ -2,6 +2,12 @@
 
 import { useLang } from '@/lib/lang-context'
 
+const numbers = [
+  { value: '92%',  statKey: 'numbers.stat1' },
+  { value: '+32K', statKey: 'numbers.stat2' },
+  { value: '+150', statKey: 'numbers.stat3' },
+]
+
 const services = [
   { num: '01', titleKey: 'services_home.s1_title', descKey: 'services_home.s1_desc' },
   { num: '02', titleKey: 'services_home.s2_title', descKey: 'services_home.s2_desc' },
@@ -16,14 +22,31 @@ export function Services() {
       <div className="section-label dk-services-label">
         {t('services_home.label')}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-px">
-        {services.map((s) => (
-          <div key={s.num} className="dk-service-card">
-            <div className="dk-service-num">{s.num}</div>
-            <h3 className="dk-service-card-title">{t(s.titleKey)}</h3>
-            <p className="dk-body dk-service-card-desc">{t(s.descKey)}</p>
+
+      <div className="dk-services-grid">
+        <div className="dk-numbers-col">
+          <div className="dk-numbers-cell dk-numbers-cell-highlight">
+            <div className="dk-numbers-value">{numbers[0].value}</div>
+            <div className="dk-numbers-label">{t(numbers[0].statKey)}</div>
           </div>
-        ))}
+          <div className="dk-numbers-row">
+            {numbers.slice(1).map((n) => (
+              <div key={n.value} className="dk-numbers-cell-plain">
+                <div className="dk-numbers-value-sm">{n.value}</div>
+                <div className="dk-numbers-label-plain">{t(n.statKey)}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="dk-service-list">
+          {services.map((s) => (
+            <div key={s.num} className="dk-service-item">
+              <span className="dk-service-item-title">{t(s.titleKey)}.</span>{' '}
+              <span className="dk-service-item-desc">{t(s.descKey)}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

@@ -67,7 +67,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --dk-surface:    #080216;
-    --dk-surface-hi: #120D21;
+    --dk-surface-hi: #2e254b;
     --dk-border:     rgba(249, 250, 252, 0.12);
     --text-main:     rgba(249, 250, 252, 0.76);
     --text-hi:       #F9FAFC;
@@ -80,7 +80,7 @@
   /* Inherits from the dark media query values above */
   --dk-secondary:  #a3aad5;
   --dk-surface:    #080216;
-  --dk-surface-hi: #120D21;
+  --dk-surface-hi: #2c2346;
   --text-main:     rgba(249, 250, 252, 0.674);
   --text-hi:       #F9FAFC;
   --text-highlight: #FFC309;
@@ -232,10 +232,7 @@ p, li { margin-bottom: 1rem; }
   .dk-nav-hamburger { display: none; }
 }
 
-/* ============================================
-   SECTION LABEL
-   ============================================ */
-
+/* SECTION LABEL */
 .section-label {
   font-size: var(--dk-fs-tiny);
   font-weight: 700;
@@ -246,7 +243,7 @@ p, li { margin-bottom: 1rem; }
   align-items: center;
   gap: 0.75rem;
   position: relative;
-  margin: 0 auto 3rem;
+  margin: 0 auto 4rem;
   padding-left: 1.5rem;
 }
 
@@ -259,7 +256,7 @@ p, li { margin-bottom: 1rem; }
   display: block;
   flex-shrink: 0;
   position: absolute;
-  top: .25rem;
+  top: .2rem;
   left: 0;
 }
 
@@ -589,12 +586,10 @@ p, li { margin-bottom: 1rem; }
 }
 
 .dk-hero-h1 {
-  font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 400;
   line-height: 1;
   letter-spacing: var(--dk-ls-tight);
-  color: var(--text-main);
+  color: var(--text-hi);
   max-width: 880px;
   margin-bottom: 2.25rem;
 }
@@ -628,70 +623,6 @@ p, li { margin-bottom: 1rem; }
 }
 
 /* ============================================
-   NUMBERS BAND
-   ============================================ */
-  .dk-numbers-section {
-    padding: 2rem 1.5rem;
-  }
-
-  .dk-numbers-grid {
-    max-width: 1020px;
-    margin: 0 auto;
-    gap: 16px;
-  }
-  
-  .dk-numbers-cell {
-    padding: 3.5rem;
-    border-radius: 0.75rem;
-    text-align: center;
-  }
-  
-  .dk-numbers-cell-highlight {
-    background: var(--dk-primary);
-    font-weight: 700;
-  }
-  
-  .dk-numbers-cell-dark {
-    background: var(--dk-surface-hi);
-  }
-  
-  .dk-numbers-value {
-    font-family: var(--font-display);
-    font-size: clamp(4rem, 5.5vw, 6rem);
-    font-weight: 400;
-    line-height: 1;
-    margin-bottom: 0.75rem;
-  }
-  
-  .dk-numbers-value-highlight { color: var(--dk-dark); }
-  .dk-numbers-value-dark      { color: var(--dk-white); }
-  
-  .dk-numbers-label {
-    font-weight: 700;
-    letter-spacing: var(--dk-ls-ui);
-    text-transform: uppercase;
-    line-height: 1.25;
-  }
-  
-  .dk-numbers-label-highlight { 
-    color: rgba(29,28,51,0.55); 
-  }
-  .dk-numbers-label-dark { 
-    color: rgba(255,255,255,0.45); 
-  }
-  
-  .dk-numbers-sub {
-    display: block;
-    margin-top: 0.25rem;
-    font-size: var(--dk-fs-sm);
-    font-weight: 600;
-    letter-spacing: var(--dk-ls-ui);
-  }
-  
-  .dk-numbers-sub-highlight { color: rgba(29,28,51,0.38); }
-  .dk-numbers-sub-dark      { color: rgba(255,255,255,0.28); }
-
-  /* ============================================
    SERVICES
    ============================================ */
 
@@ -709,37 +640,121 @@ p, li { margin-bottom: 1rem; }
   margin-bottom: 3.5rem;
 }
 
-.dk-service-card {
+.dk-services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .dk-services-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  .dk-numbers-col {
+    height: 100%;
+  }
+  .dk-numbers-cell-highlight {
+    flex: 3;
+  }
+  .dk-numbers-row {
+    flex: 2;
+  }
+}
+
+/* LEFT: Stats column */
+.dk-numbers-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dk-numbers-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  border-radius: 16px;
+}
+
+.dk-numbers-cell-highlight {
+  background: var(--dk-primary);
+  padding: 0 2rem 2rem;
+}
+
+.dk-numbers-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.dk-numbers-cell-plain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.75rem 1.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--dk-border);
   background: var(--dk-surface-hi);
-  padding: 2.5rem;
-  border-top: 3px solid transparent;
-  transition: border-color 0.2s;
-  cursor: default;
-}
-.dk-service-card:hover {
-  border-top-color: var(--dk-accent);
 }
 
-.dk-service-num {
+.dk-numbers-value {
+  font-size: clamp(4rem, 5.5vw, 6rem);
+  font-weight: var(--dk-fw-bold);
+  color: var(--dk-surface-hi);
+}
+
+.dk-numbers-value-sm {
   font-family: var(--font-display);
-  font-size: 2.8rem;
+  font-size: clamp(2.25rem, 3vw, 3rem);
   font-weight: 400;
-  color: rgba(29,28,51,0.08);
-  margin-bottom: 1.5rem;
   line-height: 1;
-}
-
-.dk-service-card-title {
-  font-size: 1rem;
-  font-weight: 700;
+  margin-bottom: 0.5rem;
   color: var(--dk-dark);
-  margin-bottom: 0.85rem;
-  line-height: 1.35;
 }
 
-.dk-service-card-desc {
-  font-size: var(--dk-fs-sm);
-  line-height: 1.8;
+.dk-numbers-label {
+  font-size: var(--dk-fs-lg);
+  font-weight: 700;
+  letter-spacing: var(--dk-ls-ui);
+  text-transform: uppercase;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.dk-numbers-label-plain {
+  font-size: var(--dk-fs-xs);
+  font-weight: 700;
+  letter-spacing: var(--dk-ls-ui);
+  text-transform: uppercase;
+  color: var(--dk-secondary);
+}
+
+/* RIGHT: Services list */
+.dk-service-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dk-service-item {
+  padding: 2rem 0;
+  border-top: 1px solid var(--dk-border);
+}
+
+.dk-service-item:last-child {
+  border-bottom: 1px solid var(--dk-border);
+}
+
+.dk-service-item-title {
+  font-weight: 600;
+  color: var(--dk-dark);
+}
+
+.dk-service-item-desc {
+  font-style: italic;
+  color: var(--text-main);
 }
 
 /* ============================================
@@ -747,7 +762,7 @@ p, li { margin-bottom: 1rem; }
    ============================================ */
 
   .dk-clients-section {
-    padding: 5rem 1.25rem;
+    padding: 3rem 1.25rem 6rem;
   }
 
   @media (min-width: 769px) {
@@ -774,7 +789,7 @@ p, li { margin-bottom: 1rem; }
     display: flex;
     align-items: center;
     width: max-content;
-    animation: dk-marquee-scroll 40s linear infinite;
+    animation: dk-marquee-scroll 48s linear infinite;
   }
 
   @keyframes dk-marquee-scroll {
@@ -786,7 +801,7 @@ p, li { margin-bottom: 1rem; }
     flex-shrink: 0;
     width: 160px;
     height: 48px;
-    margin: 0 2.5rem;
+    margin: 0 3rem;
     background-color: var(--text-main);
     mask-size: contain;
     mask-repeat: no-repeat;

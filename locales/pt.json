@@ -68,13 +68,6 @@
   "clients": {
     "label": "Confiam em nós as organizações que tratam o treinamento como investimento, não como custo."
   },
-  "statement": {
-    "h2_pre": "Não fabricamos conteúdo.",
-    "h2_em": "Desenhamos o que sua equipe é capaz de fazer depois.",
-    "body": "A maioria do eLearning corporativo falha pelo mesmo motivo: foi projetado para existir, não para funcionar. Começamos por entender o seu time. O que ele precisa, como aprende, qual é o seu contexto. Isso define a estrutura. O storytelling faz com que seja concluído. E a IA nos permite produzir com uma precisão e velocidade que antes era impossível.",
-    "quote": "\"Vimos o que acontece quando o treinamento é desenhado para preencher relatórios. Nós o desenhamos para o momento em que alguém aplica o que aprendeu, e faz certo.\"",
-    "quote_author": "Studio Deki"
-  },
   "manifesto_teaser": {
     "label": "Manifesto",
     "p1": "Somos um estúdio de estratégia, design e tecnologia aplicada ao aprendizado.",

@@ -68,13 +68,6 @@
   "clients": {
     "label": "Trusted by organizations that treat training as an investment, not a cost."
   },
-  "statement": {
-    "h2_pre": "We don't manufacture content.",
-    "h2_em": "We design what your team can do afterwards.",
-    "body": "Most corporate eLearning fails for the same reason: it was designed to exist, not to work. We start with what your team needs, how they learn, what context they have. That defines the structure. Storytelling makes it stick. And AI lets us produce with a precision and speed that wasn't possible before.",
-    "quote": "\"We've seen what happens when training is built to fill reports. We build it for the moment someone applies what they learned, and gets it right.\"",
-    "quote_author": "Studio Deki"
-  },
   "manifesto_teaser": {
     "label": "Manifesto",
     "p1": "We are a strategy, design and technology studio applied to learning.",

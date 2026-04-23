@@ -68,13 +68,6 @@
   "clients": {
     "label": "Han confiado en nosotros las organizaciones que tratan la formación como una inversión, no como un gasto."
   },
-  "statement": {
-    "h2_pre": "No fabricamos contenido.",
-    "h2_em": "Diseñamos lo que tu equipo es capaz de hacer después.",
-    "body": "La mayoría del eLearning corporativo falla por la misma razón: fue diseñado para existir, no para funcionar. Empezamos por entender a tu equipo. Qué necesita, cómo aprende, qué contexto tiene. Eso define la estructura. El storytelling hace que se complete. Y la IA nos permite producir con una precisión y velocidad que antes era imposible.",
-    "quote": "\"Hemos visto lo que pasa cuando la formación se diseña para cumplir informes. Nosotros la diseñamos para el momento en que alguien aplica lo que aprendió, y lo hace bien.\"",
-    "quote_author": "Studio Deki"
-  },
   "manifesto_teaser": {
     "label": "Manifiesto",
     "p1": "Somos un estudio de estrategia, diseño y tecnología aplicada al aprendizaje.",
@@ -124,14 +117,14 @@
   },
   "manifesto": {
     "label": "Manifiesto",
-    "cta": "Trabaja con nosotros",
+    "cta": "Trabajemos juntos",
     "block_opening": "Empezamos con una idea simple.",
     "block_body1": "Que cualquier tema, por complejo que sea, puede ser entendido por cualquier persona, si alguien se toma el tiempo de diseñarlo bien. No llegamos al aprendizaje corporativo por accidente. Llegamos porque vimos lo que pasa cuando la formación se hace sin ese principio. Presentaciones que nadie completa. Contenido que existe para el informe, no para la persona que lo recibe.",
-    "block_body2": "Diseñamos experiencias para las personas que se sientan frente a la pantalla y necesitan salir sabiendo hacer algo que antes no sabían hacer. Lo hacemos con interacción, con cómics, con infografías, con simulaciones, con narrativas que enganchan desde el primer segundo. La forma cambia. El principio no.",
+    "block_body2": "Diseñamos experiencias para las personas que se sientan frente a la pantalla y necesitan salir sabiendo hacer algo que antes no sabían hacer. Lo hacemos con interacción, con cómics, con infografías, con simulaciones, con narrativas que enganchan desde el primer segundo. El storytelling hace que se complete. La forma cambia. El principio no.",
     "block_anchor": "Somos un estudio de estrategia, diseño y tecnología aplicada al aprendizaje.",
-    "block_body3": "Los datos nos dicen qué necesita tu equipo. Diseñamos esos datos en algo humano. La tecnología nos permite hacerlo a escala. La creatividad es nuestra alma. Escuchamos, analizamos y comprendemos a las personas antes de proponer cualquier solución. Porque una buena solución solo es posible cuando entiendes de verdad el problema.",
+    "block_body3": "Empezamos por entender a tu equipo. Qué necesita, cómo aprende, qué contexto tiene. Eso define la estructura. Diseñamos ese entendimiento en algo humano. La tecnología nos permite hacerlo a escala. La IA nos permite producir con una precisión y velocidad que antes era imposible. La creatividad es nuestra alma. Escuchamos, analizamos y comprendemos a las personas antes de proponer cualquier solución. Porque una buena solución solo es posible cuando entiendes de verdad el problema.",
     "block_highlight": "No fabricamos contenido. Construimos el momento en que alguien entiende algo que antes no entendía. Y lo aplica. Y cambia lo que hace.",
-    "block_body4": "Trabajamos con organizaciones que creen que su gente merece formación bien hecha. No plantillas. No atajos. No contenido diseñado para existir.",
+    "block_body4": "Eso es lo que merece la persona que recibe tu formación. Y es lo único con lo que trabajamos.",
     "block_body5": "Trabajamos donde está el mejor talento y donde nuestros clientes nos necesitan.",
     "block_leader": "Si estás leyendo esto, probablemente ya sabes que tu gente no es un número en un reporte de capacitación. Este estudio existe para los líderes que piensan igual.",
     "block_closing1": "Esto es lo que construimos.",
