@@ -71,7 +71,7 @@
     --dk-border:     rgba(249, 250, 252, 0.12);
     --text-main:     rgba(249, 250, 252, 0.76);
     --text-hi:       #F9FAFC;
-    --text-highlight: #FFC309;
+    --text-highlight: #ca7705;
     --footer-text:   rgba(249, 250, 252, 0.4);
   }
 }
@@ -679,7 +679,7 @@ p, li { margin-bottom: 1rem; }
 }
 
 .dk-numbers-cell-highlight {
-  background: var(--dk-primary);
+  background: linear-gradient(45deg,rgba(202, 119, 5, 1) 0%, rgba(255, 195, 9, 1) 100%);
   padding: 0 2rem 2rem;
 }
 
@@ -700,7 +700,7 @@ p, li { margin-bottom: 1rem; }
 }
 
 .dk-numbers-value {
-  font-size: clamp(4rem, 5.5vw, 6rem);
+  font-size: clamp(4.5rem, 8vw, 7.25rem);
   font-weight: var(--dk-fw-bold);
   color: var(--dk-surface-hi);
 }
@@ -716,11 +716,11 @@ p, li { margin-bottom: 1rem; }
 
 .dk-numbers-label {
   font-size: var(--dk-fs-lg);
-  font-weight: 700;
+  font-weight: var(--dk-fw-bold);
   letter-spacing: var(--dk-ls-ui);
   text-transform: uppercase;
   line-height: 1.25;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--dk-surface-hi);
 }
 
 .dk-numbers-label-plain {
