@@ -1,17 +1,19 @@
 # Studio Deki — Claude Code Init
 
 ## Project
-eLearning studio website. Next.js 15 App Router, TypeScript, Tailwind CSS + custom CSS classes, Vercel deployment.
+eLearning studio website. Next.js 16 App Router, TypeScript, Tailwind CSS + custom CSS classes, Vercel deployment.
 
 ## Stack
-- Framework: Next.js 15 (App Router, Turbopack)
+- Framework: Next.js 16 (App Router)
 - Styling: Tailwind CSS utilities + custom classes in app/globals.css
 - Fonts: Plus Jakarta Sans (all weights, single font system)
 - Language: TypeScript strict mode
 - i18n: JSON locale files in /locales/, t('namespace.key') API, generateMetadata() for server pages
 - Theme: Light/dark via CSS custom properties + data-theme on html
 - Email: Resend via /api/contact — reads RESEND_TO_EMAIL + RESEND_FROM_EMAIL from env
-- Blog/Insights: MD files in content/blog/, read via lib/blog.ts
+- Blog/Insights: MD files in content/blog/, read via lib/blog.ts (gray-matter + marked)
+- Markdown: sanitize-html sanitizes content before dangerouslySetInnerHTML
+- MDX: next-mdx-remote installed, reserved for Sprint 27 manifesto migration
 - Deploy: Vercel, domain studiodeki.co
 - Analytics: GA4 via next/third-parties, blocked until cookie consent accepted
 - Cookie consent: GDPR banner, persisted in localStorage key: sdk-cookie-consent
@@ -21,6 +23,8 @@ app/                      Pages and API routes
   layout.tsx              Root layout, fonts, metadata, JSON-LD
   globals.css             ALL styles live here. No inline styles in components.
   page.tsx                Homepage (imports home components)
+  robots.ts               robots.txt generation
+  sitemap.ts              XML sitemap generation (static routes + all blog posts)
   contact/page.tsx        Server component, metadata export
   services/page.tsx       Server component, metadata export
   insights/page.tsx       Server shell only, imports InsightsContent
@@ -31,12 +35,13 @@ components/
   layout/
     Nav.tsx               Sticky nav, mobile drawer, inline SVG logo, search trigger
     Footer.tsx            Lang select, theme toggle, inline SVG logo, social icons
+    SearchOverlay.tsx     Full-screen search overlay, keyboard nav, searches title/excerpt/tags
+    CookieConsent.tsx     GDPR cookie banner, GA4 conditional init, consent persisted in localStorage
   home/
     Hero.tsx
-    NumbersBand.tsx
+    ProjectsCovers.tsx    Masonry-style project cover grid (public/projects/*.jpg)
     Services.tsx
     ClientLogos.tsx       SVG mask technique, infinite marquee, theme-aware
-    Statement.tsx
     ManifestoTeaser.tsx
     CTASection.tsx        2-field form: email + topic dropdown, auto-reply via Resend
     LatestInsights.tsx    3 latest articles by date
@@ -61,6 +66,8 @@ locales/
 public/
   logos/                  Client SVG logos, currentColor fill, CSS mask in ClientLogos
   blog/[slug]/            Article images: featured.jpg + supporting images
+  projects/               Project cover images (*.jpg) used by ProjectsCovers
+  shared/                 Shared assets (deki-favicon.svg)
   og-image.jpg            1200x630px social sharing image
 scripts/                  CLI tools (none active — article processing is manual via Claude.ai)
 
@@ -132,10 +139,9 @@ Images: public/blog/[slug]/featured.jpg (1200x630px JPG, under 300kb)
 - OS preference detected on mount, user override in localStorage key: sdk-theme
 
 ### Security
-- Content Security Policy in next.config.mjs
-- Security headers: X-Frame-Options, X-Content-Type-Options, Referrer-Policy
-- poweredByHeader: false
-- Markdown sanitized before dangerouslySetInnerHTML
+- CSP set as Content-Security-Policy-Report-Only in next.config.mjs (not yet enforced)
+- Security headers: X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy
+- Markdown sanitized via sanitize-html before dangerouslySetInnerHTML
 
 ### Client logos
 - SVG files in public/logos/[slug].svg
